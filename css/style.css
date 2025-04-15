@@ -1,4 +1,10 @@
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Debug temporaire */
+img {
+  border: 3px solid red !important; /* Rend toutes les images visibles */
+}
+
 /* Nouveau style simplifié */
 .header-image-wrapper {
   text-align: center;
