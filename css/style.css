@@ -111,10 +111,6 @@
     margin-right: 20px;
   }
 }
-/* Debug temporaire */
-img {
-  border: 3px solid red !important; /* Rend toutes les images visibles */
-}
 
 /* Nouveau style simplifié */
 .header-image-wrapper {
