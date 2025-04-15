@@ -1,4 +1,28 @@
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* ===== TITRE PRINCIPAL ===== */
+.page-title {
+  font-family: 'Arial', sans-serif;
+  font-size: 2rem;
+  color: #321D1D;
+  text-align: center;
+  margin: 20px 0;
+  line-height: 1.4;
+}
+
+.page-title .subtitle {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin-top: 10px;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .page-title {
+    font-size: 1.5rem;
+  }
+}
+
 /* ========== NAVIGATION PRINCIPALE ========== */
 .navbar {
   padding: 30px 0;
