@@ -410,11 +410,6 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
    Pour l'instant, je garde la version HTML simple.
 */
 
-
-.tarif-item-highlight { /* Pour la haute saison */
-    border: 2px solid #F5A623;
-    /* transform: scale(1.03); Peut être enlevé si ça gêne l'alignement en ligne */
-}
 .tarifs-notes {
   text-align: center;
   font-size: 16px;
