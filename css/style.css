@@ -319,11 +319,28 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
 }
 .tarifs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  /* Par défaut, on laisse auto-fit pour la responsivité sur mobile */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
   gap: 20px;
   margin-top: 30px;
   margin-bottom: 30px;
 }
+
+/* Pour les écrans plus larges, on force 5 colonnes */
+@media (min-width: 1200px) { /* Vous pouvez ajuster ce point de rupture (breakpoint) */
+    .tarifs-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+/* S'il y a un léger débordement avant 1200px, vous pouvez aussi utiliser un point de rupture intermédiaire */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .tarifs-grid {
+         /* 3 ou 4 colonnes ici si 5 est trop serré */
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+}
+
+
 .tarif-item {
   background-color: #ffffff;
   padding: 25px 20px;
@@ -332,41 +349,61 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
   box-shadow: 0 5px 15px rgba(0,0,0,0.07);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; /* Garder pour l'alignement vertical général */
 }
 .tarif-item h3 {
-  font-size: 18px;
+  font-size: 17px; /* Légèrement plus petit pour faire de la place */
   font-weight: 700;
   color: #1E2439;
   margin-bottom: 8px;
 }
 .tarif-item .period {
-  font-size: 14px;
+  font-size: 13px; /* Plus petit */
   color: #5F6368;
   margin-bottom: 15px;
-  min-height: 30px; /* Pour aligner même si pas de texte */
+  min-height: 40px; /* Ajuster pour l'alignement vertical des descriptions */
+  line-height: 1.3;
 }
-.tarif-item .price {
-  font-size: 32px;
-  font-weight: 700;
-  color: #F5A623;
-  margin-bottom: 5px;
-}
-.tarif-item .price span { /* Pour "À partir de" */
-    display: block;
-    font-size: 14px;
-    font-weight: 500;
-    color: #5F6368;
-    margin-bottom: -5px;
-}
-.tarif-item .per-what {
-  font-size: 15px;
-  color: #5F6368;
+
+.tarif-item .price-line {
+  font-size: 18px; /* Taille de base pour "/ semaine" */
+  color: #5F6368; /* Couleur pour "/ semaine" */
   font-weight: 500;
+  margin-top: auto; /* Pousse la ligne de prix vers le bas si contenu au-dessus varie */
+  margin-bottom: 0; /* Enlever la marge du paragraphe */
 }
+
+.tarif-item .price-amount {
+  font-size: 28px; /* Taille du montant */
+  font-weight: 700;
+  color: #F5A623; /* Couleur du montant */
+  display: inline-block; /* Pour que le span se comporte bien */
+  margin-right: 5px; /* Petit espace avant "/ semaine" */
+}
+
+/* Spécifique pour "À partir de" dans la Basse Saison */
+.tarif-item .price-amount:contains("À partir de") { /* Sélecteur non standard, CSS pur n'a pas :contains */
+    /* On va devoir styler "À partir de" autrement si besoin, ou accepter qu'il ait la même taille */
+}
+/* Alternative si "À partir de" doit être plus petit :
+   Dans le HTML pour Basse Saison:
+   <p class="price-line"><span class="price-intro">À partir de</span> <span class="price-amount">350€</span> / semaine</p>
+   Et en CSS:
+   .tarif-item .price-intro {
+       display: block;
+       font-size: 14px;
+       font-weight: 500;
+       color: #5F6368;
+       margin-bottom: -5px;
+   }
+   .tarif-item .price-amount { margin-right: 5px; }
+   Pour l'instant, je garde la version HTML simple.
+*/
+
+
 .tarif-item-highlight { /* Pour la haute saison */
     border: 2px solid #F5A623;
-    transform: scale(1.03); /* La mettre un peu en avant */
+    /* transform: scale(1.03); Peut être enlevé si ça gêne l'alignement en ligne */
 }
 .tarifs-notes {
   text-align: center;
