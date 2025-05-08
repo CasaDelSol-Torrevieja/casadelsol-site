@@ -3,478 +3,662 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* Défilement doux pour les ancres */
 }
 
 body {
-  background-color: #faf9f6; /* Similaire au fond de Dorik */
-  font-family: 'Inter', sans-serif;
-  font-size: 17px; /* Taille de base observée sur Dorik */
-  line-height: 1.7; /* Interligne observé */
-  color: #3c4043; /* Couleur de texte principale observée */
-  margin: 0;
-  padding: 0;
+  background-color: #ffffff; /* Dorik utilise un fond blanc pour le body */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 17px;
+  line-height: 1.7;
+  color: #3C4043; /* Couleur de texte principale (gris foncé) */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
   width: 100%;
-  max-width: 1140px; /* Largeur max observée sur Dorik */
+  max-width: 1140px; /* Largeur de contenu principale */
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px; /* Padding observé */
+  padding-left: 20px;
   padding-right: 20px;
 }
 
 /* === TYPOGRAPHY === */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700; /* Poids observé pour les titres */
-  color: #1e2439; /* Couleur de titre observée */
-  margin-top: 0;
+  font-weight: 700;
+  color: #1E2439; /* Couleur de titre principale (bleu très foncé/noir) */
   line-height: 1.3;
+  margin-bottom: 0.75em;
 }
 
-h1 { /* Titre principal de la section Hero */
-  font-size: 38px; /* Taille observée */
+h1 { /* Hero Title */
+  font-size: clamp(28px, 5vw, 38px); /* Responsive */
+  font-weight: 800; /* Plus gras pour le titre principal */
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h2 { /* Hero Subtitle & Section Titles */
+  font-size: clamp(22px, 4vw, 30px);
+  font-weight: 700;
+  text-align: center;
+}
+
+.section-title { /* Classe spécifique pour les titres de section */
+    margin-bottom: 40px;
+    position: relative; /* Pour le pseudo-élément de soulignement */
+    padding-bottom: 10px;
+}
+/* Petit soulignement stylé sous les titres de section, comme sur Dorik */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #F5A623; /* Jaune doré d'accent */
+    margin: 10px auto 0;
+}
+
+
+h3 { /* Titres dans les blocs (logement, tarifs, faq) */
+  font-size: 20px;
+  font-weight: 600;
+  color: #1E2439;
   margin-bottom: 15px;
 }
 
-h2.section-title { /* Pour les titres de section comme "LE LOGEMENT" */
-  font-size: 30px; /* Taille observée */
-  text-align: center;
-  margin-bottom: 40px; /* Espace sous les titres de section */
-  font-weight: 700;
-}
-
-h3 { /* Titres dans les colonnes du logement, FAQ */
-  font-size: 20px; /* Taille observée */
-  font-weight: 600; /* Un peu moins gras que H2 */
-  margin-bottom: 10px;
-  color: #1e2439;
-}
-
 p {
-  margin-bottom: 1em; /* Interligne entre paragraphes */
+  margin-bottom: 1.2em;
+  color: #3C4043;
+}
+p strong {
+    font-weight: 600;
+    color: #1E2439;
 }
 
 a {
-  color: #F5A623; /* Jaune doré observé pour les liens */
+  color: #F5A623; /* Jaune doré pour les liens */
   text-decoration: none;
+  transition: color 0.2s ease-in-out;
 }
-
 a:hover {
-  text-decoration: underline;
+  color: #d18c14; /* Jaune plus foncé au survol */
+  text-decoration: none; /* Pas de soulignement par défaut, Dorik ne le fait pas beaucoup */
 }
 
 img {
   max-width: 100%;
   height: auto;
   display: block;
+  border-radius: 6px; /* Coins arrondis par défaut pour les images */
 }
 
 ul {
-  list-style: none; /* Dorik semble utiliser des listes sans puces par défaut, stylées ensuite */
+  list-style: none;
   padding-left: 0;
-  margin-bottom: 1em;
+}
+li {
+    margin-bottom: 0.5em;
 }
 
-/* === HEADER === */
-header {
-  background-color: #ffffff;
-  padding: 12px 0; /* Padding vertical observé */
-  border-bottom: 1px solid #eaeaea; /* Bordure observée */
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  height: 80px; /* Hauteur fixe du header observée */
-  display: flex; /* Pour centrer verticalement le contenu */
-  align-items: center;
-}
-
-header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo-container img {
-  height: 50px; /* Hauteur du logo observée */
-}
-
-nav ul {
-  display: flex;
-  gap: 30px; /* Espace entre les liens de nav observé */
-  margin: 0;
-}
-
-nav li a {
-  color: #3c4043; /* Couleur des liens de nav observée */
-  font-weight: 500; /* Poids observé */
-  font-size: 16px; /* Taille observée */
-  transition: color 0.3s;
-}
-
-nav li a:hover {
-  color: #F5A623; /* Jaune au survol */
+.button-primary {
+  display: inline-block;
+  background-color: #F5A623;
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
   text-decoration: none;
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
-
-.button-reserve {
-  background-color: #F5A623; /* Jaune doré pour le bouton */
-  color: #ffffff; /* Texte blanc */
-  padding: 12px 24px; /* Padding observé */
-  border-radius: 6px; /* Bordure observée */
-  font-weight: 600; /* Poids observé */
-  font-size: 16px; /* Taille observée */
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.button-reserve:hover {
-  background-color: #e09014; /* Jaune un peu plus foncé */
+.button-primary:hover {
+  background-color: #d18c14;
   color: #ffffff;
   text-decoration: none;
 }
-
-/* === SECTIONS PADDING === */
-section {
-  padding-top: 60px; /* Padding vertical général des sections */
-  padding-bottom: 60px;
-}
-section#accueil { /* La section hero peut avoir un padding différent */
-  padding-top: 40px;
-  padding-bottom: 40px;
+.button-large {
+    padding: 14px 32px;
+    font-size: 17px;
 }
 
 
-/* === HERO SECTION (ACCUEIL) === */
-.hero {
-  text-align: center;
+/* === HEADER === */
+#header {
+  background-color: #ffffff;
+  padding: 0; /* Padding géré par le container et la hauteur */
+  border-bottom: 1px solid #eaeaea;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 80px;
 }
-/* Le H1 de l'HTML est déjà stylé globalement */
-
-.hero h2.slogan { /* Slogan sous le H1, si vous en avez un */
-  font-size: 22px;
+#header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+.logo-container img {
+  height: 50px;
+  border-radius: 0; /* Logo pas arrondi */
+}
+#header nav ul {
+  display: flex;
+  gap: 28px;
+}
+#header nav li a {
+  color: #3C4043;
   font-weight: 500;
-  color: #5f6368;
-  margin-bottom: 30px;
-  margin-top: -10px; /* Rapprocher du H1 */
+  font-size: 16px;
+  padding: 5px 0;
+  position: relative;
+}
+#header nav li a::after { /* Effet de soulignement au survol */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #F5A623;
+    transition: width 0.3s ease;
+    -webkit-transition: width 0.3s ease;
+}
+#header nav li a:hover::after {
+    width: 100%;
+    left: 0;
+    background-color: #F5A623;
+}
+#header nav li a:hover {
+    color: #F5A623;
 }
 
-.hero-image-container { /* Conteneur pour l'image si besoin de marges spécifiques */
-  margin-top: 30px;
+#mobile-menu-toggle { /* Bouton Burger pour mobile */
+  display: none; /* Caché sur desktop */
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #1E2439;
+  cursor: pointer;
+}
+
+
+/* === SECTIONS PADDING & STRUCTURE === */
+section {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alternance de fond léger pour certaines sections */
+    background-color: #f8f9fa; /* Blanc cassé très léger */
+}
+.hero-section { /* Premier bloc sans padding en haut si header fixe */
+    padding-top: 40px; /* Moins de padding car sous le header */
+}
+.separator {
+  border: 0;
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 0 auto; /* Prend la largeur du container */
+}
+
+
+/* === HERO SECTION === */
+.hero-section h2 { /* Sous-titre du Hero */
+  font-size: clamp(18px, 3vw, 24px);
+  font-weight: 600;
+  color: #5F6368; /* Gris plus clair pour le sous-titre */
   margin-bottom: 30px;
+  margin-top: 5px;
+}
+.hero-image-container {
+  margin-top: 30px;
+  margin-bottom: 40px;
 }
 .hero-image {
-  border-radius: 8px;
-  max-width: 800px; /* Limiter la largeur de l'image hero */
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
-
-.hero .intro-text p { /* Paragraphes descriptifs sous l'image */
-  font-size: 18px; /* Un peu plus grand pour l'intro */
-  line-height: 1.8;
+.hero-description {
   max-width: 750px;
   margin-left: auto;
   margin-right: auto;
-  color: #3c4043;
-  margin-bottom: 10px;
+  text-align: center;
+}
+.hero-description p {
+  font-size: 18px;
+  line-height: 1.8;
 }
 
-/* === SECTION SEPARATOR (HR) === */
-hr.separator {
-  border: 0;
-  height: 1px;
-  background-color: #e0e0e0; /* Gris clair */
-  margin: 60px auto;
-  width: 100%; /* Pleine largeur dans son conteneur */
-}
 
 /* === LOGEMENT SECTION === */
-/* .section-title est déjà défini */
-
 .logement-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 colonnes comme sur Dorik */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive */
   gap: 30px;
-  margin-top: 20px; /* Espace après le titre de section */
+  margin-top: 20px;
 }
-
+@media (min-width: 768px) { /* Forcer 2 colonnes sur tablette */
+    .logement-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 992px) { /* Forcer 4 colonnes sur desktop si voulu, comme Dorik */
+    .logement-grid {
+        /* Si vous voulez absolument 4 colonnes comme sur Dorik, même si le contenu ne remplit pas: */
+        /* grid-template-columns: repeat(4, 1fr); */
+        /* Sinon, auto-fit est bien pour la flexibilité */
+    }
+}
 .logement-col {
-  /* Pas de style spécifique ici si le contenu s'aligne bien */
+  background-color: #ffffff; /* Fond blanc pour les colonnes si section sur fond gris */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
-
-.logement-col h3 { /* Titres des caractéristiques (Chambres, Extérieurs...) */
-  font-size: 18px; /* Un peu plus petit que les H3 normaux */
-  font-weight: 600;
-  margin-bottom: 15px;
-  display: flex; /* Pour aligner l'emoji */
-  align-items: center;
-}
-.logement-col h3 span.icon { /* Si vous mettez l'emoji dans un span */
-  margin-right: 8px;
+.logement-col h3 .icon {
+  margin-right: 10px;
   font-size: 22px; /* Taille de l'emoji */
+  color: #F5A623;
 }
-
 .logement-col ul li {
+  padding-left: 10px; /* Petit décalage pour la lisibilité */
+  position: relative;
   margin-bottom: 8px;
-  padding-left: 0; /* Pas de puce par défaut */
-  color: #3c4043;
+  color: #3C4043;
 }
-/* Si vous voulez des puces personnalisées, ajoutez ::before comme dans l'exemple précédent */
+.logement-col ul li::before {
+    content: "•";
+    color: #F5A623;
+    position: absolute;
+    left: -5px; /* Ajuster position de la puce */
+    font-weight: bold;
+}
 
 
 /* === GALLERIE PHOTOS SECTION === */
-.gallery {
+.gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colonnes comme Dorik */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
   margin-top: 20px;
 }
-
-.gallery img {
-  border-radius: 8px;
+@media (min-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur tablette et plus */
+    }
+}
+.gallery-grid img {
   width: 100%;
-  height: 250px; /* Hauteur fixe observée */
-  object-fit: cover;
-  transition: transform 0.3s ease;
+  height: 220px; /* Hauteur fixe pour uniformité */
+  object-fit: cover; /* Couvre sans déformer */
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
-.gallery img:hover {
-    transform: scale(1.03); /* Léger zoom au survol */
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
+
 
 /* === TARIFS SECTION === */
-.tarifs-section .container {
-  max-width: 800px; /* Section tarifs souvent plus étroite */
+.tarifs-section {
+    background-color: #f0f4f8; /* Fond spécifique pour cette section */
 }
-.tarifs-intro {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 17px;
-}
-
-.tarifs-details {
-  background-color: #ffffff;
-  padding: 25px 30px;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  margin-top: 20px;
-}
-.tarifs-details h3 { /* Pour les titres de saison si vous en ajoutez */
-    font-size: 18px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 8px;
-}
-.tarifs-details p, .tarifs-details ul li {
-  margin-bottom: 12px;
-  font-size: 16px;
-  color: #3c4043;
-}
-.tarifs-details strong {
-  color: #1e2439;
-  font-weight: 600;
-}
-.tarifs-contact-info { /* Pour "Contactez-nous pour un devis" */
-  text-align: center;
+.tarifs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
   margin-top: 30px;
-  font-size: 17px;
+  margin-bottom: 30px;
+}
+.tarif-item {
+  background-color: #ffffff;
+  padding: 25px 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.tarif-item h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1E2439;
+  margin-bottom: 8px;
+}
+.tarif-item .period {
+  font-size: 14px;
+  color: #5F6368;
+  margin-bottom: 15px;
+  min-height: 30px; /* Pour aligner même si pas de texte */
+}
+.tarif-item .price {
+  font-size: 32px;
+  font-weight: 700;
+  color: #F5A623;
+  margin-bottom: 5px;
+}
+.tarif-item .price span { /* Pour "À partir de" */
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #5F6368;
+    margin-bottom: -5px;
+}
+.tarif-item .per-what {
+  font-size: 15px;
+  color: #5F6368;
+  font-weight: 500;
+}
+.tarif-item-highlight { /* Pour la haute saison */
+    border: 2px solid #F5A623;
+    transform: scale(1.03); /* La mettre un peu en avant */
+}
+.tarifs-notes {
+  text-align: center;
+  font-size: 16px;
+  color: #3C4043;
+  margin-top: 30px;
+  line-height: 1.6;
 }
 
-/* === DISPONIBILITES & RESERVATION SECTION === */
-.reservation-section .container {
-    text-align: center;
-}
+
+/* === RESERVATION SECTION === */
 .reservation-section p {
-    max-width: 650px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-bottom: 25px;
 }
 .calendar-placeholder {
   border: 1px solid #d1d5db;
-  padding: 20px;
+  padding: 25px;
   text-align: center;
   margin: 30px auto;
-  background-color: #f9fafb;
-  border-radius: 6px;
-  max-width: 600px; /* Ajuster selon votre calendrier */
-  min-height: 300px; /* Pour donner de l'espace au calendrier */
+  background-color: #fdfdfd;
+  border-radius: 8px;
+  max-width: 700px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.calendar-placeholder img {
+    border-radius: 6px;
 }
 .reservation-action {
-    margin-top: 30px;
-}
-.reservation-action .button-reserve { /* S'assurer que le bouton est stylé */
-    /* Déjà stylé globalement */
+  text-align: center;
+  margin-top: 30px;
 }
 .paiement-securise-info {
-    margin-top: 15px;
-    font-size: 15px;
-    color: #5f6368;
+  margin-top: 15px;
+  font-size: 15px;
+  color: #5F6368;
 }
-.paiement-securise-info svg { /* Si vous utilisez une icône SVG pour le cadenas */
-    vertical-align: middle;
-    margin-right: 5px;
-    width: 16px;
-    height: 16px;
+.paiement-securise-info svg { /* Si vous ajoutez une icone cadenas */
+  vertical-align: middle;
+  margin-right: 5px;
+  width: 16px; height: 16px;
+  fill: currentColor;
 }
 
 /* === TEMOIGNAGES SECTION === */
 .testimonial-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
   margin-top: 20px;
 }
 .testimonial {
   background-color: #ffffff;
-  padding: 25px;
+  padding: 30px 25px;
   border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
   display: flex;
   flex-direction: column;
 }
-.testimonial p.quote {
+.testimonial .quote {
   font-size: 16px;
   line-height: 1.7;
-  color: #3c4043;
+  color: #3C4043;
   margin-bottom: 20px;
-  flex-grow: 1; /* Pour que le texte pousse le footer en bas */
-  font-style: italic; /* Comme sur Dorik */
+  flex-grow: 1;
+  font-style: italic;
+  position: relative;
+  padding-left: 35px; /* Espace pour les guillemets */
+}
+.testimonial .quote::before { /* Guillemets stylés */
+    content: '“';
+    font-family: Georgia, serif;
+    font-size: 40px;
+    color: #F5A623;
+    position: absolute;
+    left: 0px;
+    top: -10px;
 }
 .testimonial footer {
   font-size: 15px;
-  color: #1e2439;
+  color: #1E2439;
   font-weight: 600;
   text-align: right;
-  margin-top: auto; /* Pousse le footer en bas */
+  margin-top: auto;
 }
 .testimonial footer::before {
-    content: "— "; /* Tiret devant le nom */
+  content: "— ";
 }
 
+
 /* === FAQ SECTION === */
-.faq-section .container {
-    max-width: 800px;
+.faq-section {
+    background-color: #f8f9fa; /* Fond spécifique */
 }
-.faq-item {
+.faq-grid {
+  max-width: 800px;
+  margin: 20px auto 0;
+}
+.faq-item details {
   background-color: #ffffff;
   border: 1px solid #eaeaea;
   border-radius: 8px;
   margin-bottom: 15px;
-  /* Pour l'effet accordéon, on aurait besoin de JS ou d'une astuce avec des checkbox */
+  box-shadow: 0 3px 10px rgba(0,0,0,0.04);
 }
-.faq-item .faq-question { /* Supposant que vous mettez la question dans un div/bouton cliquable */
+.faq-item summary {
   padding: 18px 25px;
   font-weight: 600;
   font-size: 17px;
-  color: #1e2439;
-  cursor: pointer; /* Pour indiquer que c'est cliquable */
+  color: #1E2439;
+  cursor: pointer;
+  list-style: none; /* Enlève le marqueur par défaut */
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: background-color 0.2s ease;
 }
-.faq-item .faq-question::after { /* Icône +/- pour l'accordéon */
-    content: '+'; /* Ou une icône SVG */
-    font-size: 22px;
-    color: #F5A623;
+.faq-item summary::-webkit-details-marker { display: none; } /* Cache marqueur sur Chrome/Safari */
+.faq-item summary::after { /* Icône flèche */
+  content: '▼';
+  font-size: 12px;
+  color: #F5A623;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
 }
-.faq-item .faq-answer { /* La réponse, initialement cachée pour un accordéon */
-  padding: 0 25px 20px 25px;
+.faq-item details[open] summary {
+    background-color: #fdfaf2; /* Léger fond quand ouvert */
+    border-bottom: 1px solid #f0e5cf;
+}
+.faq-item details[open] summary::after {
+  transform: rotate(180deg);
+}
+.faq-item details p {
+  padding: 0px 25px 20px 25px;
   font-size: 16px;
   line-height: 1.7;
-  color: #3c4043;
-  /* display: none; Par défaut pour un accordéon */
+  color: #3C4043;
+  margin-bottom: 0;
 }
-/* Pour un accordéon qui s'ouvre : */
-/* .faq-item.active .faq-question::after { content: '−'; } */
-/* .faq-item.active .faq-answer { display: block; } */
 
 
-/* === CONTACT SECTION === */
-.contact-section .container {
+/* === CONTACT FORM SECTION === */
+.contact-form-section {
+    background-color: #1E2439; /* Fond foncé pour le contact */
+    color: #ffffff;
+}
+.contact-form-section .section-title,
+.contact-form-section .section-title::after {
+    color: #ffffff; /* Titre blanc sur fond foncé */
+}
+.contact-form-section .section-title::after {
+    background-color: #F5A623; /* Garder le soulignement jaune */
+}
+.contact-form-section p {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #e0e0e0; /* Texte légèrement moins blanc */
+  font-size: 18px;
+}
+.contact-action {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.contact-email-info {
     text-align: center;
+    font-size: 16px;
+    color: #f0f0f0;
 }
-.contact-section p {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 25px;
+.contact-email-info a {
+    color: #F5A623;
+    font-weight: 500;
 }
-.email-link {
-    font-weight: 600;
-    font-size: 18px;
-    /* Couleur de lien globale déjà définie */
+.contact-email-info a:hover {
+    color: #ffffff;
 }
+
 
 /* === FOOTER === */
 footer {
-  background-color: #f8f9fa; /* Fond légèrement différent */
-  padding: 40px 0;
+  background-color: #f8f9fa;
+  padding: 50px 0 30px;
   text-align: center;
   font-size: 15px;
-  color: #5f6368;
+  color: #5F6368;
   border-top: 1px solid #eaeaea;
 }
+.footer-logo img {
+  height: 45px;
+  margin-bottom: 20px;
+  border-radius:0;
+}
 .footer-nav {
-    margin-top: 10px;
+  margin-bottom: 20px;
 }
 .footer-nav a {
-  color: #5f6368;
+  color: #5F6368;
   margin: 0 10px;
   font-size: 14px;
+  font-weight: 500;
 }
 .footer-nav a:hover {
   color: #F5A623;
 }
+.copyright {
+  font-size: 14px;
+  color: #70757a;
+}
+
 
 /* === RESPONSIVE ADJUSTMENTS === */
-@media (max-width: 992px) { /* Tablettes */
-  .logement-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 colonnes pour le logement */
+@media (max-width: 991px) { /* Tablettes */
+  #header nav {
+    display: none; /* Cacher la nav desktop */
+    position: absolute;
+    top: 80px; /* Sous le header */
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #ffffff;
+    flex-direction: column;
+    padding: 15px 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    border-top: 1px solid #eaeaea;
   }
-  .gallery {
-    grid-template-columns: repeat(2, 1fr); /* 2 colonnes pour la galerie */
+  #header nav.active { /* Classe ajoutée par JS pour afficher */
+    display: flex;
+  }
+  #header nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  #header nav li {
+    width: 100%;
+    text-align: center;
+  }
+  #header nav li a {
+    display: block;
+    padding: 12px 20px;
+    width: 100%;
+  }
+  #header nav li a::after { /* Enlever effet soulignement sur mobile */
+      display: none;
+  }
+  #mobile-menu-toggle {
+    display: block; /* Afficher le bouton burger */
+  }
+  .header-cta { /* Cacher le bouton du header sur mobile si la nav prend toute la place */
+      display: none; /* Ou le styler différemment */
   }
 }
 
-@media (max-width: 768px) { /* Mobiles */
-  h1 { font-size: 32px; }
-  h2.section-title { font-size: 26px; margin-bottom: 30px;}
+@media (max-width: 767px) { /* Mobiles */
+  body { font-size: 16px; }
+  h1 { font-size: 26px; }
+  h2.section-title { font-size: 24px; margin-bottom: 30px; }
+  h3 { font-size: 18px; }
 
-  header { height: auto; padding: 15px 0;} /* Hauteur auto pour le header */
-  header .container {
-    flex-direction: column;
-    gap: 15px;
-  }
-  nav ul { /* Nav sur mobile */
-    flex-wrap: wrap; /* Permet de passer à la ligne si besoin */
-    justify-content: center;
-    gap: 15px 20px; /* Espacement vertical et horizontal */
-  }
-  .header-cta {
-    margin-top: 10px;
-  }
+  section { padding-top: 50px; padding-bottom: 50px; }
+  .hero-section { padding-top: 30px; }
 
   .logement-grid {
-    grid-template-columns: 1fr; /* 1 colonne pour le logement */
-    gap: 25px;
+    grid-template-columns: 1fr; /* 1 colonne */
+    gap: 20px;
   }
-  .gallery {
-    grid-template-columns: 1fr; /* 1 colonne pour la galerie sur mobile, ou 2 si les images sont petites */
-     /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); Alternative */
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Images plus petites */
+     /* ou grid-template-columns: 1fr 1fr; */
   }
-  .testimonial-grid {
-    grid-template-columns: 1fr;
+  .gallery-grid img { height: 180px; }
+
+  .tarifs-grid {
+    grid-template-columns: 1fr; /* Tarifs en 1 colonne */
+  }
+  .tarif-item-highlight {
+      transform: scale(1); /* Pas de zoom sur mobile pour la mise en page */
   }
 
-  .faq-item .faq-question {
-      font-size: 16px;
-      padding: 15px 20px;
-  }
-  .faq-item .faq-answer {
-      padding: 0 20px 15px 20px;
-      font-size: 15px;
-  }
+  .testimonial-grid { grid-template-columns: 1fr; }
+  .testimonial .quote { padding-left: 30px; }
+  .testimonial .quote::before { font-size: 35px; left: -5px; top: -5px;}
+
+  .faq-item summary { font-size: 16px; padding: 15px 20px; }
+  .faq-item details p { font-size: 15px; padding: 0 20px 15px 20px; }
+
+  .button-primary { padding: 10px 20px; font-size: 15px;}
+  .button-large { padding: 12px 24px; font-size: 16px;}
 }
