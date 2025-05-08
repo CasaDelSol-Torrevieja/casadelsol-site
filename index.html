@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+<link rel="stylesheet" href="style.css">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,14 +16,6 @@
   <!-- Gardez seulement UN lien vers votre fichier style.css local -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- 
-    IMPORTANT : Déplacez TOUS les styles ci-dessous (et ceux inline dans le body) 
-    vers votre fichier style.css ! 
-    Je les laisse ici pour l'instant pour que vous voyiez d'où ils viennent,
-    mais un fichier HTML propre ne contient pas de balise <style> dans le head 
-    ni d'attributs style="" dans les balises du body (sauf cas très spécifiques).
-  -->
-  <!-- <style>
     body {
       background-color: #faf9f6;
       font-size: 18px;
@@ -35,15 +28,11 @@
 </head>
 
 <body>
-  <header> {/* Supprimez style="" et mettez-le dans style.css */}
-    <div> {/* Supprimez style="" et mettez-le dans style.css pour .container ou .header-content */}
-      <div class="logo-container"> {/* Supprimez style="" */}
-        <img src="https://casadelsol-torrevieja.com/images/Logo_Casa_Del_Sol.png" alt="Logo Casa del Sol - Location appartement Torrevieja" style="height: 60px; margin-right: 40px;"> {/* Alt amélioré */}
+        <img src="https://casadelsol-torrevieja.com/images/Logo_Casa_Del_Sol.png" alt="Logo Casa del Sol - Location appartement Torrevieja" 
       </div>
 
-      <nav> {/* Supprimez style="" */}
-        <ul style="list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 24px; margin: 0; padding: 0;"> {/* Mettre dans CSS */}
-          <li><a href="#accueil">Accueil</a></li> {/* Supprimez style="" */}
+      <nav> 
+          <li><a href="#accueil">Accueil</a></li>
           <li><a href="#logement">Logement</a></li>
           <li><a href="#galerie">Gallerie Photos</a></li>
           <li><a href="#tarifs">Tarifs</a></li>
@@ -53,7 +42,7 @@
         </ul>
       </nav>
 
-      <div class="header-cta"> {/* Supprimez style="" */}
+      <div class="header-cta">
         <a href="https://tally.so/r/nWqyEv" target="_blank" class="button-reserve"> {/* Utilisez une classe pour le style */}
           Réserver votre séjour
         </a>
@@ -169,7 +158,7 @@
           <p>Consultez notre planning à jour avant d’envoyer votre demande de réservation. Les périodes colorées sont déjà réservées.</p>
           {/* Intégrez ici votre calendrier de disponibilité si vous en avez un (iframe, widget, image...) */}
           {/* Exemple de placeholder : */}
-          <div class="calendar-placeholder" style="border:1px solid #ccc; padding:20px; text-align:center; margin:20px 0;">
+          <div class="calendar-placeholder">
               [Intégration de votre calendrier de disponibilités ici]
               <p><a href="LIEN_VERS_CALENDRIER_EXTERNE_SI_BESOIN" target="_blank">Voir le calendrier complet</a></p>
           </div>
