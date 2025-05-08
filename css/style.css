@@ -452,7 +452,6 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
 }
 
 .calendar-placeholder iframe {
-  display: block; /* Assure un bon comportement */
   width: 100%; /* Prend toute la largeur du .calendar-placeholder */
   max-width: 100%; /* Empêche le dépassement */
   min-height: 400px; /* Hauteur minimale pour une bonne visibilité, même sur mobile */
