@@ -434,8 +434,11 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
   margin: 30px auto;
   background-color: #fdfdfd;
   border-radius: 8px;
-  max-width: 700px;
+  max-width: 750px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.calendar-placeholder iframe {
+    max-width: 100%; /* Important pour que l'iframe ne dépasse pas son conteneur sur mobile */
 }
 .calendar-placeholder img {
     border-radius: 6px;
