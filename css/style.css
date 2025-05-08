@@ -222,13 +222,32 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
 }
 .hero-image-container {
   margin-top: 30px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 .hero-image {
-  max-width: 800px;
+  display: block; /* Assure un bon comportement */
+  width: 100%; /* Fait en sorte que l'image prenne 100% de la largeur de son conteneur */
+  max-width: 700px; /* Limite la largeur maximale sur les grands écrans, ajustez selon vos préférences */
+  height: auto; /* Maintient le ratio de l'image */
   margin-left: auto;
   margin-right: auto;
+  border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+@media (max-width: 767px) {
+  /* ... (autres styles mobiles) ... */
+  .hero-image-container {
+    margin-top: 20px; /* Réduire les marges sur mobile */
+    margin-bottom: 25px;
+  }
+  .hero-image {
+    max-width: 95%; /* S'assure qu'elle ne touche pas les bords, laisse une petite marge */
+    /* La largeur est déjà à 100% du .hero-image-container, 
+       mais si .hero-image-container n'a pas de padding,
+       cette ligne peut aider à ne pas coller aux bords de l'écran.
+       Alternativement, ajoutez du padding au .hero-section .container sur mobile. */
+  }
+  /* ... (autres styles mobiles) ... */
 }
 .hero-description {
   max-width: 750px;
