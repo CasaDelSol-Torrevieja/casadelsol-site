@@ -149,8 +149,7 @@ li {
   height: 100%;
 }
 .logo-container img {
-  height: 50px;
-  border-radius: 0; /* Logo pas arrondi */
+  height: 50px; 
 }
 #header nav ul {
   display: flex;
