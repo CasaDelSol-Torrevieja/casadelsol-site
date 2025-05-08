@@ -344,41 +344,51 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
 .tarif-item {
   background-color: #ffffff;
   padding: 25px 20px;
-  border-radius: 8px;
+  border-radius: 8px; /* Vous pouvez ajuster si la bordure rend les coins trop "durs" */
   text-align: center;
   box-shadow: 0 5px 15px rgba(0,0,0,0.07);
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Garder pour l'alignement vertical général */
+  justify-content: space-between;
+  border: 2px solid #F5A623; /* Bordure appliquée à tous les items */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Pour un effet au survol (optionnel) */
 }
+
+/* Effet de survol optionnel pour tous les items */
+.tarif-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+
 .tarif-item h3 {
-  font-size: 17px; /* Légèrement plus petit pour faire de la place */
+  font-size: 17px;
   font-weight: 700;
   color: #1E2439;
   margin-bottom: 8px;
 }
 .tarif-item .period {
-  font-size: 13px; /* Plus petit */
+  font-size: 13px;
   color: #5F6368;
   margin-bottom: 15px;
-  min-height: 40px; /* Ajuster pour l'alignement vertical des descriptions */
+  min-height: 40px;
   line-height: 1.3;
 }
 
 .tarif-item .price-line {
-  font-size: 18px; /* Taille de base pour "/ semaine" */
-  color: #5F6368; /* Couleur pour "/ semaine" */
+  font-size: 18px;
+  color: #5F6368;
   font-weight: 500;
-  margin-top: auto; /* Pousse la ligne de prix vers le bas si contenu au-dessus varie */
-  margin-bottom: 0; /* Enlever la marge du paragraphe */
+  margin-top: auto;
+  margin-bottom: 0;
 }
 
 .tarif-item .price-amount {
-  font-size: 28px; /* Taille du montant */
+  font-size: 28px;
   font-weight: 700;
-  color: #F5A623; /* Couleur du montant */
-  display: inline-block; /* Pour que le span se comporte bien */
-  margin-right: 5px; /* Petit espace avant "/ semaine" */
+  color: #F5A623; /* Couleur du prix assortie à la bordure */
+  display: inline-block;
+  margin-right: 5px;
 }
 
 /* Spécifique pour "À partir de" dans la Basse Saison */
