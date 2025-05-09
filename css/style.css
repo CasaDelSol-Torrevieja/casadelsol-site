@@ -447,7 +447,7 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
   margin: 30px auto;
   background-color: #fdfdfd;
   border-radius: 8px;
-  max-width: 750px; /* Largeur maximale du conteneur du calendrier */
+  max-width: 800px; /* Largeur maximale du conteneur du calendrier */
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
