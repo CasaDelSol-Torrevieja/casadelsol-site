@@ -452,23 +452,24 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
 }
 
 .calendar-placeholder iframe {
+  display: block; /* Bonne pratique pour les iframes responsives */
   width: 100%; /* Prend toute la largeur du .calendar-placeholder */
   max-width: 100%; /* Empêche le dépassement */
-  min-height: 400px; /* Hauteur minimale pour une bonne visibilité, même sur mobile */
-  /* La hauteur est définie à 500px dans l'attribut HTML, 
-     cette min-height est une sécurité. */
-  border: none; /* Assure qu'il n'y a pas de bordure */
-  margin: 20px auto 0; /* Centrage et marge en haut */
+  height: 500px; /* Hauteur par défaut pour desktop, vous pouvez ajuster */
+  min-height: 400px; /* Gardez ou ajustez cette sécurité */
+  border: none;
+  margin: 20px auto 0;
 }
 
 /* Dans vos media queries pour mobile, par exemple @media (max-width: 767px) */
 @media (max-width: 767px) {
   /* ... (autres styles mobiles) ... */
-  .calendar-placeholder {
-    padding: 10px; /* Padding encore plus réduit pour les petits écrans */
-    margin-left: 0; /* Permettre au placeholder de prendre plus de largeur si besoin */
-    margin-right: 0; /* en enlevant les marges auto s'il est dans un .container plus étroit */
+  .calendar-placeholder iframe {
+    height: 450px; /* Hauteur pour mobile */
+    min-height: 350px; /* Ajuster la hauteur minimale aussi */
+    margin-top: 15px;
   }
+}
   .calendar-placeholder iframe {
     height: 450px; /* Vous pouvez ajuster la hauteur spécifiquement pour mobile */
     min-height: 350px; /* Ajuster la hauteur minimale aussi */
