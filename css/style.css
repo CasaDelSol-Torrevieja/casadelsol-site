@@ -475,7 +475,7 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
     margin-top: 15px;
   }
   /* ... (autres styles mobiles) ... */
-}
+
 }
 .calendar-placeholder img {
     border-radius: 6px;
