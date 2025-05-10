@@ -191,7 +191,60 @@ li {
   color: #1E2439;
   cursor: pointer;
 }
+/* Cacher le CTA mobile sur desktop par défaut */
+.mobile-cta {
+  display: none;
+}
 
+/* ... (vos styles de navigation existants) ... */
+
+
+/* === RESPONSIVE ADJUSTMENTS === */
+@media (max-width: 991px) { /* Tablettes et mobiles où le menu burger s'active */
+  /* ... (vos styles existants pour #header nav, #header nav ul, etc.) ... */
+
+  /* Afficher le CTA mobile dans le menu burger */
+  .mobile-cta {
+    display: block; /* ou list-item, mais block fonctionnera bien ici */
+    /* Vous pouvez ajouter des styles spécifiques si vous voulez qu'il se distingue un peu */
+    /* Par exemple, pour le mettre un peu en évidence : */
+    /* margin-top: 10px; */ /* Ajoute un peu d'espace au-dessus */
+  }
+  
+  .mobile-cta a {
+    /* Styles pour que le lien ressemble aux autres liens du menu mobile */
+    /* Ces styles sont probablement déjà couverts par #header nav li a, 
+       mais on peut les forcer ici si besoin. */
+    /* display: block; */
+    /* padding: 12px 20px; */
+    /* width: 100%; */
+    /* color: #3C4043; */ /* ou la couleur que vous voulez */
+    /* font-weight: 500; */
+    /* text-align: center; */ /* Si tous vos liens de menu mobile sont centrés */
+  }
+
+  /* Si vous voulez que le lien "Réserver" dans le menu mobile ait un fond de couleur (comme un bouton) : */
+  /*
+  .mobile-cta a {
+    background-color: #F5A623; 
+    color: #ffffff;
+    padding: 10px 20px; 
+    margin: 10px 20px; 
+    border-radius: 6px;
+    display: inline-block; 
+    font-weight: 600;
+  }
+  .mobile-cta a:hover {
+    background-color: #d18c14;
+    color: #ffffff;
+  }
+  */
+
+  /* S'assurer que le .header-cta original reste caché */
+  .header-cta { 
+      display: none; 
+  }
+}
 
 /* === SECTIONS PADDING & STRUCTURE === */
 section {
