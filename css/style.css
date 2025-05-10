@@ -203,42 +203,36 @@ li {
 @media (max-width: 991px) { /* Tablettes et mobiles où le menu burger s'active */
   /* ... (vos styles existants pour #header nav, #header nav ul, etc.) ... */
 
-  /* Afficher le CTA mobile dans le menu burger */
+/* Afficher le CTA mobile dans le menu burger */
   .mobile-cta {
-    display: block; /* ou list-item, mais block fonctionnera bien ici */
-    /* Vous pouvez ajouter des styles spécifiques si vous voulez qu'il se distingue un peu */
-    /* Par exemple, pour le mettre un peu en évidence : */
-    /* margin-top: 10px; */ /* Ajoute un peu d'espace au-dessus */
+    display: block; 
+    margin-top: 15px; /* Ajoute un peu d'espace au-dessus du bouton */
+    margin-bottom: 10px; /* Ajoute un peu d'espace en dessous du bouton */
+    text-align: center; /* Pour centrer le bouton si son conteneur <li> est en width: 100% */
   }
   
+  /* Style du lien .mobile-cta a pour qu'il ressemble à un bouton */
   .mobile-cta a {
-    /* Styles pour que le lien ressemble aux autres liens du menu mobile */
-    /* Ces styles sont probablement déjà couverts par #header nav li a, 
-       mais on peut les forcer ici si besoin. */
-    /* display: block; */
-    /* padding: 12px 20px; */
-    /* width: 100%; */
-    /* color: #3C4043; */ /* ou la couleur que vous voulez */
-    /* font-weight: 500; */
-    /* text-align: center; */ /* Si tous vos liens de menu mobile sont centrés */
+    display: inline-block; /* Important pour que padding et margin fonctionnent bien */
+    background-color: #F5A623; /* Couleur de fond du bouton-primaire */
+    color: #ffffff !important; /* Couleur du texte du bouton-primaire, !important pour s'assurer qu'il prime */
+    padding: 10px 25px;    /* Padding un peu plus petit que le .button-primary pour s'adapter au menu */
+    border-radius: 6px;      /* Coins arrondis comme .button-primary */
+    font-weight: 600;        /* Graisse de la police comme .button-primary */
+    font-size: 15px;         /* Taille de police un peu plus petite pour le menu */
+    text-decoration: none;   /* Enlever le soulignement */
+    border: 2px solid transparent; /* Bordure comme .button-primary */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Transition comme .button-primary */
+    
+    /* S'assurer qu'il ne prend pas toute la largeur comme les autres liens de menu, sauf si voulu */
+    /* width: auto; */ /* Ou une largeur fixe si besoin, mais auto est bien pour inline-block */
   }
 
-  /* Si vous voulez que le lien "Réserver" dans le menu mobile ait un fond de couleur (comme un bouton) : */
-  /*
-  .mobile-cta a {
-    background-color: #F5A623; 
-    color: #ffffff;
-    padding: 10px 20px; 
-    margin: 10px 20px; 
-    border-radius: 6px;
-    display: inline-block; 
-    font-weight: 600;
-  }
   .mobile-cta a:hover {
-    background-color: #d18c14;
-    color: #ffffff;
+    background-color: #d18c14; /* Couleur de survol du bouton-primaire */
+    color: #ffffff !important;    /* Couleur de texte au survol */
+    text-decoration: none;
   }
-  */
 
   /* S'assurer que le .header-cta original reste caché */
   .header-cta { 
