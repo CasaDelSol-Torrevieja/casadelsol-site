@@ -203,38 +203,35 @@ li {
 @media (max-width: 991px) { /* Tablettes et mobiles où le menu burger s'active */
   /* ... (vos styles existants pour #header nav, #header nav ul, etc.) ... */
 
-/* Afficher le CTA mobile dans le menu burger */
-  .mobile-cta {
+#header nav ul li.mobile-cta { /* Augmentation de la spécificité pour le li */
     display: block; 
-    margin-top: 15px; /* Ajoute un peu d'espace au-dessus du bouton */
-    margin-bottom: 10px; /* Ajoute un peu d'espace en dessous du bouton */
-    text-align: center; /* Pour centrer le bouton si son conteneur <li> est en width: 100% */
+    margin-top: 15px;
+    margin-bottom: 10px;
+    text-align: center;
+    /* Assurez-vous qu'il n'y a pas de padding sur le <li> qui pourrait empêcher le bouton de s'étirer si besoin */
+    padding: 0; 
   }
   
-  /* Style du lien .mobile-cta a pour qu'il ressemble à un bouton */
-  .mobile-cta a {
-    display: inline-block; /* Important pour que padding et margin fonctionnent bien */
-    background-color: #F5A623; /* Couleur de fond du bouton-primaire */
-    color: #ffffff !important; /* Couleur du texte du bouton-primaire, !important pour s'assurer qu'il prime */
-    padding: 10px 25px;    /* Padding un peu plus petit que le .button-primary pour s'adapter au menu */
-    border-radius: 6px;      /* Coins arrondis comme .button-primary */
-    font-weight: 600;        /* Graisse de la police comme .button-primary */
-    font-size: 15px;         /* Taille de police un peu plus petite pour le menu */
-    text-decoration: none;   /* Enlever le soulignement */
-    border: 2px solid transparent; /* Bordure comme .button-primary */
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Transition comme .button-primary */
-    
-    /* S'assurer qu'il ne prend pas toute la largeur comme les autres liens de menu, sauf si voulu */
-    /* width: auto; */ /* Ou une largeur fixe si besoin, mais auto est bien pour inline-block */
+  #header nav ul li.mobile-cta a { /* Augmentation de la spécificité pour le a */
+    display: inline-block; 
+    background-color: #F5A623; 
+    color: #ffffff !important; /* Gardez !important pour la couleur pour l'instant */
+    padding: 10px 25px;    
+    border-radius: 6px;      
+    font-weight: 600;        
+    font-size: 15px;         
+    text-decoration: none;   
+    border: 2px solid transparent; 
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    line-height: normal; /* Réinitialiser la hauteur de ligne si héritée bizarrement */
   }
 
-  .mobile-cta a:hover {
-    background-color: #d18c14; /* Couleur de survol du bouton-primaire */
-    color: #ffffff !important;    /* Couleur de texte au survol */
+  #header nav ul li.mobile-cta a:hover { /* Augmentation de la spécificité pour le hover */
+    background-color: #d18c14; 
+    color: #ffffff !important;    
     text-decoration: none;
   }
 
-  /* S'assurer que le .header-cta original reste caché */
   .header-cta { 
       display: none; 
   }
