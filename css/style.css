@@ -198,44 +198,6 @@ li {
 
 /* ... (vos styles de navigation existants) ... */
 
-
-/* === RESPONSIVE ADJUSTMENTS === */
-@media (max-width: 991px) { /* Tablettes et mobiles où le menu burger s'active */
-  /* ... (vos styles existants pour #header nav, #header nav ul, etc.) ... */
-
-#header nav ul li.mobile-cta { /* Augmentation de la spécificité pour le li */
-    display: block; 
-    margin-top: 15px;
-    margin-bottom: 10px;
-    text-align: center;
-    /* Assurez-vous qu'il n'y a pas de padding sur le <li> qui pourrait empêcher le bouton de s'étirer si besoin */
-    padding: 0; 
-  }
-  
-  #header nav ul li.mobile-cta a { /* Augmentation de la spécificité pour le a */
-    display: inline-block; 
-    background-color: #F5A623; 
-    color: #ffffff !important; /* Gardez !important pour la couleur pour l'instant */
-    padding: 10px 25px;    
-    border-radius: 6px;      
-    font-weight: 600;        
-    font-size: 15px;         
-    text-decoration: none;   
-    border: 2px solid transparent; 
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    line-height: normal; /* Réinitialiser la hauteur de ligne si héritée bizarrement */
-  }
-
-  #header nav ul li.mobile-cta a:hover { /* Augmentation de la spécificité pour le hover */
-    background-color: #d18c14; 
-    color: #ffffff !important;    
-    text-decoration: none;
-  }
-
-  .header-cta { 
-      display: none; 
-  }
-
 /* === SECTIONS PADDING & STRUCTURE === */
 section {
   padding-top: 70px;
@@ -644,7 +606,6 @@ footer {
   color: #70757a;
 }
 
-
 /* === RESPONSIVE ADJUSTMENTS === */
 @media (max-width: 991px) { /* Tablettes */
   #header nav {
@@ -687,6 +648,43 @@ footer {
       display: none; 
   }
 }
+
+/* === RESPONSIVE ADJUSTMENTS === */
+@media (max-width: 991px) { /* Tablettes et mobiles où le menu burger s'active */
+  /* ... (vos styles existants pour #header nav, #header nav ul, etc.) ... */
+
+#header nav ul li.mobile-cta { /* Augmentation de la spécificité pour le li */
+    display: block; 
+    margin-top: 15px;
+    margin-bottom: 10px;
+    text-align: center;
+    /* Assurez-vous qu'il n'y a pas de padding sur le <li> qui pourrait empêcher le bouton de s'étirer si besoin */
+    padding: 0; 
+  }
+  
+  #header nav ul li.mobile-cta a { /* Augmentation de la spécificité pour le a */
+    display: inline-block; 
+    background-color: #F5A623; 
+    color: #ffffff !important; /* Gardez !important pour la couleur pour l'instant */
+    padding: 10px 25px;    
+    border-radius: 6px;      
+    font-weight: 600;        
+    font-size: 15px;         
+    text-decoration: none;   
+    border: 2px solid transparent; 
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    line-height: normal; /* Réinitialiser la hauteur de ligne si héritée bizarrement */
+  }
+
+  #header nav ul li.mobile-cta a:hover { /* Augmentation de la spécificité pour le hover */
+    background-color: #d18c14; 
+    color: #ffffff !important;    
+    text-decoration: none;
+  }
+
+  .header-cta { 
+      display: none; 
+  }
 
 @media (max-width: 767px) { /* Mobiles */
   body { font-size: 16px; }
