@@ -135,7 +135,7 @@ li {
 /* === HEADER === */
 #header {
   background-color: #ffffff;
-  padding: 0; /* Padding géré par le container et la hauteur */
+  padding: 0;
   border-bottom: 1px solid #eaeaea;
   position: sticky;
   top: 0;
@@ -151,66 +151,21 @@ li {
 .logo-container img {
   height: 50px; 
 }
+
+/* Styles de la navigation Desktop */
 #header nav ul {
-  display: flex;
+  display: flex; /* Affiché par défaut sur desktop */
   gap: 28px;
 }
-/* Cacher le bouton CTA mobile par défaut (pour desktop) */
-#header nav ul li.mobile-cta-item {
-  display: none;
-}
-
-/* === RESPONSIVE ADJUSTMENTS === */
-@media (max-width: 991px) { /* Tablettes */
-  #header nav {
-    /* ... (styles existants pour #header nav en mobile) ... */
-  }
-  #header nav.active {
-    display: flex;
-  }
-  #header nav ul {
-    /* ... (styles existants pour #header nav ul en mobile) ... */
-  }
-  #header nav li {
-    width: 100%;
-    text-align: center;
-  }
-  #header nav li a {
-    display: block;
-    padding: 12px 20px;
-    width: 100%;
-  }
-  #header nav li a::after { 
-      display: none;
-  }
-
-  /* Afficher et styler le bouton CTA dans le menu mobile */
-  #header nav ul li.mobile-cta-item {
-    display: block; /* Le rendre visible */
-    margin-top: 15px; /* Ajouter un peu d'espace au-dessus */
-    padding-bottom: 10px; /* Un peu d'espace en dessous */
-  }
-  #header nav ul li.mobile-cta-item a.button-primary {
-    display: inline-block; /* Pour que le padding et le style de bouton s'appliquent bien */
-    width: auto; /* Laisser le bouton prendre sa largeur naturelle */
-    padding: 10px 25px; /* Ajuster le padding du bouton si besoin pour mobile */
-  }
-
-  #mobile-menu-toggle {
-    display: block;
-  }
-  .header-cta { /* Le CTA original du header reste caché sur mobile */
-      display: none; 
-  }
-}
-#header nav li a {
+#header nav li a { /* Styles de base pour les liens de nav desktop */
   color: #3C4043;
   font-weight: 500;
   font-size: 16px;
   padding: 5px 0;
   position: relative;
+  text-decoration: none; /* Assurez-vous qu'il n'y a pas de soulignement par défaut */
 }
-#header nav li a::after { /* Effet de soulignement au survol */
+#header nav li a::after { /* Effet de soulignement au survol pour desktop */
     content: '';
     position: absolute;
     width: 0;
@@ -222,17 +177,29 @@ li {
     transition: width 0.3s ease;
     -webkit-transition: width 0.3s ease;
 }
-#header nav li a:hover::after {
+#header nav li a:hover::after { /* Comportement au survol pour desktop */
     width: 100%;
     left: 0;
-    background-color: #F5A623;
+    /* background-color: #F5A623; /* Déjà défini dans ::after, pas besoin de redéfinir ici */
 }
-#header nav li a:hover {
+#header nav li a:hover { /* Changement de couleur au survol pour desktop */
     color: #F5A623;
 }
 
-#mobile-menu-toggle { /* Bouton Burger pour mobile */
-  display: none; /* Caché sur desktop */
+/* Bouton CTA dans le header (version desktop) */
+.header-cta { 
+  /* display: block; /* ou inline-block, selon le reste du layout du header */
+  /* Vous pouvez ajouter d'autres styles si besoin pour le positionner */
+}
+
+/* Bouton CTA dans la liste nav (pour mobile, caché sur desktop) */
+#header nav ul li.mobile-cta-item {
+  display: none; 
+}
+
+/* Bouton Burger pour mobile (caché sur desktop) */
+#mobile-menu-toggle {
+  display: none;
   background: none;
   border: none;
   font-size: 28px;
@@ -240,6 +207,73 @@ li {
   cursor: pointer;
 }
 
+/* === RESPONSIVE ADJUSTMENTS === */
+@media (max-width: 991px) { /* Tablettes et en dessous */
+  #header nav { /* Le conteneur <nav> lui-même */
+    display: none; /* Caché par défaut sur mobile, affiché par JS via la classe .active */
+    position: absolute;
+    top: 80px; /* Sous le header */
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #ffffff;
+    flex-direction: column;
+    padding: 15px 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    border-top: 1px solid #eaeaea;
+  }
+  #header nav.active { /* Quand le menu mobile est ouvert */
+    display: flex;
+  }
+  #header nav ul { /* La liste <ul> dans le menu mobile */
+    flex-direction: column;
+    align-items: center;
+    gap: 0; /* Pas de gap, le padding sur les <a> gère l'espacement */
+  }
+  #header nav li { /* Chaque item <li> dans le menu mobile */
+    width: 100%;
+    text-align: center;
+  }
+  #header nav li a { /* Chaque lien <a> dans le menu mobile */
+    display: block;
+    padding: 12px 20px; /* Espacement cliquable */
+    width: 100%;
+    /* La couleur et le font-weight sont hérités des styles desktop, c'est bien */
+  }
+  #header nav li a::after { /* Enlever l'effet de soulignement desktop sur mobile */
+      display: none;
+  }
+  /* Pas besoin de :hover spécifique pour le soulignement sur mobile si ::after est none */
+  /* Le :hover pour color: #F5A623; s'appliquera toujours, ce qui est bien */
+
+  /* Afficher et styler le bouton CTA dans le menu mobile */
+  #header nav ul li.mobile-cta-item {
+    display: block; 
+    margin-top: 15px; 
+    padding-bottom: 10px; 
+  }
+  #header nav ul li.mobile-cta-item a.button-primary {
+    display: inline-block; 
+    width: auto; 
+    padding: 10px 25px; 
+  }
+
+  /* Afficher le bouton burger */
+  #mobile-menu-toggle {
+    display: block; 
+  }
+
+  /* Cacher le bouton CTA original du header sur mobile */
+  .header-cta { 
+      display: none; 
+  }
+}
+
+/* ... reste de vos media queries pour mobiles plus petits ... */
+@media (max-width: 767px) { /* Mobiles */
+  /* ... */
+  /* Vos styles pour .calendar-placeholder iframe etc. sont bien ici ... */
+}
 
 /* === SECTIONS PADDING & STRUCTURE === */
 section {
