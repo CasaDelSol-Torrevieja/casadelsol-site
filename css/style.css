@@ -155,6 +155,54 @@ li {
   display: flex;
   gap: 28px;
 }
+/* Cacher le bouton CTA mobile par défaut (pour desktop) */
+#header nav ul li.mobile-cta-item {
+  display: none;
+}
+
+/* === RESPONSIVE ADJUSTMENTS === */
+@media (max-width: 991px) { /* Tablettes */
+  #header nav {
+    /* ... (styles existants pour #header nav en mobile) ... */
+  }
+  #header nav.active {
+    display: flex;
+  }
+  #header nav ul {
+    /* ... (styles existants pour #header nav ul en mobile) ... */
+  }
+  #header nav li {
+    width: 100%;
+    text-align: center;
+  }
+  #header nav li a {
+    display: block;
+    padding: 12px 20px;
+    width: 100%;
+  }
+  #header nav li a::after { 
+      display: none;
+  }
+
+  /* Afficher et styler le bouton CTA dans le menu mobile */
+  #header nav ul li.mobile-cta-item {
+    display: block; /* Le rendre visible */
+    margin-top: 15px; /* Ajouter un peu d'espace au-dessus */
+    padding-bottom: 10px; /* Un peu d'espace en dessous */
+  }
+  #header nav ul li.mobile-cta-item a.button-primary {
+    display: inline-block; /* Pour que le padding et le style de bouton s'appliquent bien */
+    width: auto; /* Laisser le bouton prendre sa largeur naturelle */
+    padding: 10px 25px; /* Ajuster le padding du bouton si besoin pour mobile */
+  }
+
+  #mobile-menu-toggle {
+    display: block;
+  }
+  .header-cta { /* Le CTA original du header reste caché sur mobile */
+      display: none; 
+  }
+}
 #header nav li a {
   color: #3C4043;
   font-weight: 500;
