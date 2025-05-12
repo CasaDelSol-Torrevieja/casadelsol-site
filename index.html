@@ -17,20 +17,89 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="shortcut icon" href="/favicon.ico"> 
-  <!-- Vous pouvez aussi ajouter un <meta name="msapplication-TileColor" content="#da532c"> et <meta name="theme-color" content="#ffffff"> si votre site.webmanifest ne les gère pas ou pour plus de compatibilité -->
-  <!-- Vérifiez le contenu de votre site.webmanifest pour voir si ces couleurs y sont. -->
-
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Apartment",
+  "name": "Appartement Casa Del Sol Torrevieja",
+  "description": "Location d'appartement de vacances à Torrevieja (Costa Blanca) pour 4 à 6 personnes, avec piscine partagée et solarium privé.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Torrevieja",
+    "addressRegion": "Alicante",
+    "addressCountry": "ES"
+  },
+  "numberOfRooms": 2.5,
+  "occupancy": {
+     "@type": "QuantitativeValue",
+     "minValue": 4,
+     "maxValue": 6
+  },
+  "amenityFeature": [
+    {
+      "@type": "LocationFeatureSpecification",
+      "value": "true",
+      "name": "Piscine partagée"
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "value": "true",
+      "name": "Climatisation"
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "value": "true",
+      "name": "Solarium privé"
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "value": "true",
+      "name": "Wi-Fi gratuit"
+    }
+  ],
+  "petsAllowed": "false",
+  "tourBookingPage": "https://tally.so/r/nWqyEv",
+  "photo": [
+    {
+      "@type": "ImageObject",
+      "contentUrl": "https://casadelsol-torrevieja.com/images/piscine-partagee-famille-torrevieja-vacances.jpg",
+      "caption": "Grande piscine partagée de la résidence"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "https://casadelsol-torrevieja.com/images/solarium-prive-transats-pergola-bbq-torrevieja.jpg",
+      "caption": "Solarium privé sur le toit"
+    }
+   ],
+   "offers": {
+    "@type": "Offer",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "priceCurrency": "EUR",
+      "priceRange": "350-620"
+    },
+     "availability": "http://schema.org/InStock",
+     "url": "https://www.casadelsol-torrevieja.com/#reservation"
+  },
+  "geo": { 
+    "@type": "GeoCoordinates",
+    "latitude": "37.9849",  
+    "longitude": "-0.6804"
+  } 
+}
+</script>
 <body>
 
   <!-- ====== Header ====== -->
   <header id="header">
     <div class="container">
       <div class="logo-container">
-        <a href="#"> <!-- Lien vers l'accueil de la page elle-même -->
+        <a href="#"> 
           <img src="images/Logo_Casa_Del_Sol.png" alt="Logo Casa del Sol Torrevieja - Location appartement vacances">
         </a>
       </div>
