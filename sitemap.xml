@@ -2,8 +2,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.casadelsol-torrevieja.com/</loc>
-    <lastmod>2025-05-12</lastmod> 
+    <lastmod>2025-05-12</lastmod> <!-- Date de la dernière modification importante de la page d'accueil -->
     <changefreq>monthly</changefreq> 
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://www.casadelsol-torrevieja.com/mentions-legales.html</loc>
+    <lastmod>2025-05-12</lastmod> <!-- Date de création/dernière modification de cette page -->
+    <changefreq>yearly</changefreq>  <!-- Ces pages changent rarement -->
+    <priority>0.3</priority>       <!-- Priorité plus basse que la page d'accueil -->
+  </url>
+  <url>
+    <loc>https://www.casadelsol-torrevieja.com/politique-de-confidentialite.html</loc>
+    <lastmod>2025-05-12</lastmod> <!-- Date de création/dernière modification de cette page -->
+    <changefreq>yearly</changefreq>  <!-- Ces pages changent rarement -->
+    <priority>0.3</priority>       <!-- Priorité plus basse -->
+  </url>
+  <!-- Si vous avez une page FAQ séparée (faq.html) et qu'elle n'est pas noindex, ajoutez-la aussi -->
+  <!-- 
+  <url>
+    <loc>https://www.casadelsol-torrevieja.com/faq.html</loc>
+    <lastmod>2025-05-12</lastmod> 
+    <changefreq>monthly</changefreq> 
+    <priority>0.7</priority> 
+  </url>
+  -->
 </urlset>
