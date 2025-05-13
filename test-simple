@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Page de Test Simple</title>
+</head>
+<body>
+    <h1>Bonjour, ceci est un test !</h1>
+    <p>Si vous voyez ceci, la page se charge.</p>
+</body>
+</html>
