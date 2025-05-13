@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Découvrir Torrevieja : Plages, Activités & Guide Vacances Costa Blanca</title>
-  <meta name="description" content="Préparez vos vacances à Torrevieja ! Notre guide complet : plages de rêve, activités nautiques, culture, gastronomie et conseils pour un séjour inoubliable sur la Costa Blanca.">
-  <!-- Cette page est destinée à attirer du trafic, donc on la laisse indexable -->
-  <!-- <meta name="robots" content="index, follow"> (par défaut, c'est index, follow) -->
+  <title>Politique de Confidentialité - Casa Del Sol Torrevieja</title>
+  <meta name="description" content="Politique de confidentialité du site Casa Del Sol Torrevieja, location d'appartement de vacances.">
+  <!-- Noindex pour les pages légales -->
+  <meta name="robots" content="noindex, follow"> 
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css"> <!-- VOTRE CSS PRINCIPAL -->
 
-  <!-- Vos liens Favicon -->
+  <!-- Vos liens Favicon (copiez-les depuis votre index.html) -->
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
@@ -20,9 +20,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Si vous utilisez Lightbox sur cette page pour des images dans le guide -->
-  <!-- <link rel="stylesheet" href="css/lightbox.min.css"> -->
 </head>
 <body>
 
@@ -30,9 +27,9 @@
   <header id="header">
     <div class="container">
       <div class="logo-container">
-        <a href="index.html">
+        <a href="index.html"> <!-- Lien vers votre page d'accueil -->
           <img src="images/logo-casa-del-sol-torrevieja.webp" 
-               alt="Logo Casa del Sol Torrevieja - Location appartement vacances"> 
+               alt="Logo Casa del Sol Torrevieja - Location appartement vacances">
         </a>
       </div>
       <nav>
@@ -41,10 +38,9 @@
           <li><a href="index.html#logement">Logement</a></li>
           <li><a href="index.html#galerie">Photos</a></li>
           <li><a href="index.html#tarifs">Tarifs</a></li>
-          <li><a href="index.html#reservation">Réservation</a></li>
+          <li><a href="index.html#reservation">Disponibilités</a></li>
           <li><a href="index.html#temoignages">Témoignages</a></li>
           <li><a href="faq.html">FAQ</a></li>
-          <!-- Lien vers "Découvrir Torrevieja" peut être ajouté ici ou seulement dans le footer/contenu -->
           <li class="mobile-cta-item"><a href="https://tally.so/r/nWqyEv" target="_blank" class="button-primary">Réserver votre séjour</a></li>
         </ul>
       </nav>
