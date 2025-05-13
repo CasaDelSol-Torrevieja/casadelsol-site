@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Découvrir Torrevieja : Plages, Activités & Guide Vacances Costa Blanca</title>
+  <meta name="description" content="Préparez vos vacances à Torrevieja ! Notre guide complet : plages de rêve, activités nautiques, culture, gastronomie et conseils pour un séjour inoubliable sur la Costa Blanca.">
+  <!-- Cette page est destinée à attirer du trafic, donc on la laisse indexable -->
+  <!-- <meta name="robots" content="index, follow"> (par défaut, c'est index, follow) -->
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Vos liens Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Si vous utilisez Lightbox sur cette page pour des images dans le guide -->
+  <!-- <link rel="stylesheet" href="css/lightbox.min.css"> -->
+</head>
+<body>
+
+  <!-- ====== Header ====== -->
+  <header id="header">
+    <div class="container">
+      <div class="logo-container">
+        <a href="index.html">
+          <img src="images/logo-casa-del-sol-torrevieja.webp" 
+               alt="Logo Casa del Sol Torrevieja - Location appartement vacances"> 
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html#accueil">Accueil</a></li>
+          <li><a href="index.html#logement">Logement</a></li>
+          <li><a href="index.html#galerie">Photos</a></li>
+          <li><a href="index.html#tarifs">Tarifs</a></li>
+          <li><a href="index.html#reservation">Réservation</a></li>
+          <li><a href="index.html#temoignages">Témoignages</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <!-- Lien vers "Découvrir Torrevieja" peut être ajouté ici ou seulement dans le footer/contenu -->
+          <li class="mobile-cta-item"><a href="https://tally.so/r/nWqyEv" target="_blank" class="button-primary">Réserver votre séjour</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="https://tally.so/r/nWqyEv" target="_blank" class="button-primary">Réserver votre séjour</a>
+      </div>
+      <button id="mobile-menu-toggle" aria-label="Ouvrir le menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="guide-torrevieja-content" class="guide-page-section" style="padding-top: 40px; padding-bottom: 40px;">
+      <div class="container">
+        <h1 class="section-title" style="font-size: 2.5rem; text-align: center;">Torrevieja : Le Guide Complet pour des Vacances Inoubliables sur la Costa Blanca</h1>
+        
+        <p style="text-align: center; max-width: 800px; margin-left: auto; margin-right: auto; margin-bottom: 30px; font-size: 1.1em;">Bienvenue à Torrevieja, perle ensoleillée de la Costa Blanca dans la province d'Alicante ! Que vous rêviez de plages de sable doré, d'aventures nautiques palpitantes ou de découvertes culturelles enrichissantes, Torrevieja est la destination idéale pour des vacances mémorables en Espagne. Ce guide pratique vous aidera à planifier votre séjour et à profiter au maximum de tout ce que cette ville balnéaire dynamique et cosmopolite a à offrir. Et pour un hébergement confortable et idéalement situé, pensez à <a href="index.html">l'appartement Casa Del Sol</a> !</p>
+        <!-- Photo ici : Une photo panoramique attrayante de Torrevieja -->
+        <!-- <img src="images/panorama-torrevieja.webp" alt="Panorama de Torrevieja et son port" style="width:100%; max-width:800px; margin: 20px auto; border-radius: 8px;"> -->
+        <hr class="separator" style="margin-top: 40px; margin-bottom: 40px;">
+
+        <h2 class="section-title">Plages de Rêve et Nature Préservée à Torrevieja</h2>
+        <p>Torrevieja est avant tout célèbre pour ses kilomètres de plages magnifiques, baignées par les eaux cristallines de la Méditerranée, et pour son environnement naturel unique. Préparez serviettes et crème solaire !</p>
+
+        <h3>Les Plages Incontournables de Torrevieja</h3>
+        <ul>
+          <li><strong>Playa de La Mata :</strong> S'étendant sur plusieurs kilomètres, c'est la plus vaste plage de Torrevieja. Son sable fin et doré et ses eaux peu profondes en font un lieu parfait pour la baignade en famille, les longues promenades les pieds dans l'eau, ou simplement pour se détendre au soleil. De nombreux chiringuitos (bars de plage) animent ses abords.</li>
+          <li><strong>Playa del Cura :</strong> Située en plein cœur de la ville, cette plage urbaine est très populaire pour son ambiance animée et sa proximité avec les commerces et restaurants. Idéale pour une journée de farniente facilement accessible.</li>
+          <li><strong>Playa de Los Locos :</strong> Appréciée pour son sable fin et ses eaux calmes, elle offre une atmosphère détendue, parfaite pour les familles et les amateurs de soleil.</li>
+          <li><strong>Playa de Los Náufragos :</strong> Récompensée par le Pavillon Bleu pour la qualité de ses eaux et de ses services, cette plage est également très prisée. Elle est bien équipée et propose des activités pour tous.</li>
+        </ul>
+        <p>Ces plages sont également le point de départ de nombreuses <strong>activités nautiques à Torrevieja</strong>, comme la voile, le paddle surf, la plongée sous-marine, le jet-ski, ou encore le flyboard pour les plus audacieux.</p>
+        <!-- Photo ici : Une photo de la Playa de La Mata ou un collage des plages -->
+        <!-- <img src="images/plage-la-mata-torrevieja.webp" alt="Plage de La Mata à Torrevieja" style="width:100%; max-width:700px; margin: 15px auto; border-radius: 8px;"> -->
+
+        <h3>Le Parc Naturel des Lagunes de La Mata et Torrevieja</h3>
+        <p>Un spectacle naturel à ne pas manquer ! Ce parc protégé abrite deux impressionnantes lagunes salées. La plus célèbre, la <strong>Laguna Rosa (Lagune Rose)</strong>, doit sa couleur unique à des micro-organismes et offre un paysage presque surréaliste. Le parc est un sanctuaire pour de nombreux oiseaux migrateurs, dont les majestueux <strong>flamants roses</strong> que l'on peut observer à certaines périodes de l'année. Des sentiers de randonnée et des pistes cyclables permettent d'explorer cet écosystème fascinant et de découvrir les traditions de l'exploitation du sel.</p>
+        <!-- Photo ici : Lagune rose, si possible avec des flamants -->
+        <!-- <img src="images/lagune-rose-flamants-torrevieja.webp" alt="Lagune rose avec flamants roses à Torrevieja" style="width:100%; max-width:700px; margin: 15px auto; border-radius: 8px;"> -->
+        <hr class="separator" style="margin-top: 40px; margin-bottom: 40px;">
+
+        <h2 class="section-title">Activités Palpitantes et Découvertes Culturelles à Torrevieja</h2>
+        <p>Au-delà de ses plages, Torrevieja vibre d'une énergie contagieuse et propose une multitude d'activités pour tous les goûts, des sensations fortes aquatiques aux explorations culturelles enrichissantes.</p>
+
+        <h3>Sports et Loisirs Nautiques</h3>
+        <p>Si vous êtes amateur de sensations, la côte de Torrevieja est votre terrain de jeu ! Essayez-vous à la <strong>voile</strong>, explorez les criques en <strong>paddle</strong> ou en <strong>kayak</strong>, découvrez les fonds marins en <strong>plongée</strong>, ou faites monter l'adrénaline en <strong>jet-ski</strong> ou en <strong>flyboard</strong>. De nombreuses écoles et centres de location vous attendent.</p>
+        <!-- Photo ici : Activité nautique dynamique -->
+
+        <h3>Le Charme du Port et Excursions en Mer</h3>
+        <p>Flânez le long du <strong>port de pêche animé</strong> de Torrevieja, observez le retour des bateaux et imprégnez-vous de l'ambiance maritime authentique. Le port de plaisance moderne propose également des <strong>excursions en bateau</strong>, notamment vers la magnifique <strong>île de Tabarca</strong>, une réserve marine protégée, parfaite pour une journée d'évasion.</p>
+        <!-- Photo ici : Port de Torrevieja ou bateau pour Tabarca -->
+
+        <h3>Patrimoine et Culture</h3>
+        <p>Plongez dans l'histoire de Torrevieja en visitant ses sites emblématiques :</p>
+        <ul>
+          <li><strong>Église de l’Immaculée Conception :</strong> Un bel exemple d'architecture néoclassique au cœur de la ville.</li>
+          <li><strong>Torre del Moro :</strong> Une ancienne tour de guet médiévale offrant des vues panoramiques sur la côte.</li>
+          <li><strong>Musée de la Mer et du Sel :</strong> Découvrez l'histoire fascinante de Torrevieja, intimement liée à l'exploitation du sel et à la mer.</li>
+          <li><strong>Navires-Musées :</strong> Montez à bord du sous-marin S-61 Delfin et du patrouilleur Albatros III pour une expérience unique (vérifiez les horaires d'ouverture).</li>
+        </ul>
+        <!-- Photo ici : Église, Torre del Moro ou navire-musée -->
+
+        <h3>Marchés et Ambiance Locale</h3>
+        <p>Ne manquez pas le grand <strong>marché hebdomadaire de Torrevieja</strong>, qui a lieu chaque vendredi matin. C'est l'endroit idéal pour flâner, découvrir les produits frais locaux (fruits, légumes, charcuterie, fromages), l'artisanat, les vêtements et bien plus encore, dans une ambiance conviviale et colorée.</p>
+        <!-- Photo ici : Marché de Torrevieja -->
+
+        <h3>Vie Nocturne Festive</h3>
+        <p>Quand le soleil se couche, Torrevieja s'anime ! Profitez d'une grande variété de <strong>bars à tapas</strong>, de pubs chaleureux, de restaurants avec terrasses, et de clubs pour ceux qui souhaitent prolonger la soirée. L'ambiance est festive et accueillante tout au long de l'année.</p>
+        <!-- Photo ici : Terrasse de restaurant animée le soir -->
+        <hr class="separator" style="margin-top: 40px; margin-bottom: 40px;">
+
+        <h2 class="section-title">Excursions Incontournables Autour de Torrevieja</h2>
+        <p>Si vous souhaitez explorer au-delà de Torrevieja, la région regorge de trésors historiques et culturels facilement accessibles pour une excursion d'une journée. Voici quelques suggestions pour enrichir votre séjour sur la Costa Blanca :</p>
+        <ul>
+          <li><strong>Carthagène (Cartagena) :</strong> Plongez dans plus de 2000 ans d'histoire en visitant Carthagène. Découvrez son impressionnant théâtre romain, son forum, ses murailles puniques et son riche patrimoine maritime. Une ville fascinante pour les amateurs d'archéologie et d'histoire ancienne.</li>
+          <li><strong>Alicante :</strong> Capitale de la province, Alicante vous séduira avec son imposant château de Santa Bárbara offrant une vue panoramique spectaculaire, sa charmante vieille ville (El Barrio) avec ses ruelles colorées, son port animé et sa célèbre Explanada de España bordée de palmiers.</li>
+          <li><strong>Elche (Elx) :</strong> Explorez la Palmeraie d'Elche, classée au patrimoine mondial de l'UNESCO, un paysage unique en Europe avec des centaines de milliers de palmiers. Visitez également la basilique de Santa María et découvrez le Mystère d'Elche, un drame liturgique médiéval.</li>
+          <li><strong>Murcie (Murcia) :</strong> Découvrez la capitale de la région voisine, réputée pour sa magnifique cathédrale de style baroque, son ambiance universitaire animée, ses places charmantes et sa délicieuse gastronomie locale.</li>
+        </ul>
+        <!-- Photo ici : Collage des 4 villes ou une photo emblématique pour chaque -->
+        <hr class="separator" style="margin-top: 40px; margin-bottom: 40px;">
+
+        <h2 class="section-title">Saveurs de Torrevieja : Un Voyage Culinaire</h2>
+        <p>Vos vacances à Torrevieja ne seraient pas complètes sans savourer la délicieuse gastronomie locale ! La cuisine de la Costa Blanca met à l'honneur les produits frais de la mer et de la terre. Attendez-vous à des plats riches en saveurs, parfaits pour partager des moments conviviaux.</p>
+        <p>Au menu, vous trouverez une abondance de <strong>poissons frais et fruits de mer</strong> pêchés localement, souvent préparés simplement grillés (a la plancha) ou en fritures savoureuses. Les <strong>riz (arroces)</strong> sont une autre spécialité incontournable, avec des variantes comme l'arroz a banda (riz cuit dans un bouillon de poisson), l'arroz negro (riz à l'encre de seiche) ou la fameuse paella. Les amateurs de viande ne seront pas en reste avec des <strong>viandes grillées</strong> de qualité et des plats traditionnels mijotés. N'oubliez pas d'accompagner vos repas d'une sélection de vins espagnols locaux.</p>
+        <p>Pour une expérience authentique, voici quelques types d'établissements et des noms souvent cités par les connaisseurs (pensez à vérifier les avis récents et à réserver !) :</p>
+        <ul>
+          <li><strong>Restaurants de fruits de mer traditionnels :</strong> Des adresses comme "El Pescador" ou "Restaurante Bahía" sont souvent recommandées pour leurs produits frais.</li>
+          <li><strong>Tapas et cuisine régionale :</strong> Pour une ambiance conviviale, des lieux comme "Bar Restaurante Las Cañas" ou "Tasca Nueva Bahía" offrent un large choix de tapas et de plats typiques.</li>
+          <li><strong>Cuisine plus raffinée :</strong> Si vous cherchez une expérience gastronomique, "Restaurante Oryza Cabo Cervera" est souvent cité pour son cadre élégant et sa cuisine créative.</li>
+          <li><strong>Ambiance en bord de mer :</strong> Des restaurants comme "Restaurante Sunset Beach" ou "Le Nautilus" permettent de dîner avec une vue imprenable sur la Méditerranée.</li>
+          <li><strong>Saveurs d'ailleurs :</strong> Pour varier les plaisirs, "El Charro Negro" est une option populaire pour une cuisine mexicaine authentique.</li>
+        </ul>
+        <p>N'hésitez pas à vous perdre dans les ruelles et à demander conseil aux locaux pour découvrir les perles cachées de la gastronomie de Torrevieja !</p>
+        <!-- Photo ici : Plat de paella, tapas, ou ambiance de restaurant -->
+        <hr class="separator" style="margin-top: 40px; margin-bottom: 40px;">
+
+        <h2 class="section-title">Conseils Pratiques pour des Vacances Réussies à Torrevieja</h2>
+        <p>Pour que votre séjour à Torrevieja se déroule sans encombre, voici quelques informations et conseils utiles :</p>
+        <ul>
+          <li><strong>Climat Idéal :</strong> Torrevieja jouit d'un microclimat exceptionnel, avec plus de 300 jours de soleil par an et des températures douces même en hiver. C'est une destination agréable quasiment toute l'année, bien que l'été soit la période la plus animée.</li>
+          <li><strong>Se Déplacer :</strong> La ville est bien desservie par un réseau de bus locaux. De nombreux quartiers, notamment le centre-ville et les zones proches des plages, peuvent se découvrir facilement à pied. Pour plus de flexibilité, la location de vélos ou de voiture est également possible.</li>
+          <li><strong>Stationnement :</strong> En haute saison (juillet-août), trouver une place de stationnement gratuite en centre-ville ou près des plages les plus populaires peut s'avérer difficile. Privilégiez les parkings payants ou utilisez les transports en commun si vous séjournez au centre. (<em>Heureusement, autour de l'appartement Casa Del Sol, le stationnement est généralement facile et gratuit !</em> <a href="index.html#logement">En savoir plus sur notre emplacement</a>).</li>
+          <li><strong>Budget :</strong> Torrevieja est souvent considérée comme une destination balnéaire abordable en Espagne, offrant un bon rapport qualité-prix pour l'hébergement, la restauration et les activités.</li>
+          <li><strong>Langue :</strong> L'espagnol (castillan) est la langue officielle. Cependant, en raison de sa forte population internationale et touristique, l'anglais est largement parlé dans les zones touristiques, et vous trouverez aussi du personnel parlant français dans de nombreux établissements.</li>
+          <li><strong>Horaires :</strong> Soyez conscient des horaires espagnols, notamment pour les repas (déjeuner souvent entre 14h et 16h, dîner rarement avant 21h) et l'ouverture des commerces, qui peuvent inclure une pause l'après-midi (sieste).</li>
+        </ul>
+        <!-- Photo ici : Aspect pratique, bus, promenade -->
+        <hr class="separator" style="margin-top: 40px; margin-bottom: 40px;">
+        
+        <h2 class="section-title">Torrevieja : Votre Prochaine Destination Vacances !</h2>
+        <p>En résumé, Torrevieja est une destination de choix pour des vacances ensoleillées et variées sur la Costa Blanca. Entre ses plages magnifiques, ses lagunes colorées, son large éventail d'activités nautiques et culturelles, et son ambiance festive et familiale, la ville a de quoi séduire tous les types de voyageurs.</p>
+        <p>L'offre d'hébergements est vaste et les prix restent attractifs, vous permettant de profiter pleinement de votre séjour sans vous ruiner. Que vous veniez en famille pour profiter de la piscine et des animations, en couple pour des moments romantiques en bord de mer, ou entre amis pour explorer la vie nocturne et les sports nautiques, Torrevieja vous promet des souvenirs inoubliables.</p>
+        <p style="text-align: center; margin-top: 30px;"><strong>Prêt à réserver votre séjour ?</strong> Découvrez notre confortable <a href="index.html" class="button-primary" style="margin: 0 5px;">appartement Casa Del Sol à Torrevieja</a> ou <a href="index.html#reservation" class="button-primary" style="margin: 0 5px;">Consultez nos disponibilités !</a></p>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ====== Footer ====== -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <a href="index.html">
+            <img src="images/logo-casa-del-sol-torrevieja.webp" 
+                 alt="Logo Casa del Sol Torrevieja - Location appartement vacances"> 
+        </a>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html#accueil">Accueil</a> |
+        <a href="index.html#logement">Logement</a> |
+        <a href="decouvrir-torrevieja.html">Découvrir Torrevieja</a> | <!-- Ajouté ici -->
+        <a href="index.html#tarifs">Tarifs</a> |
+        <a href="index.html#reservation">Réservation</a> |
+        <a href="mentions-legales.html">Mentions légales</a> | 
+        <a href="politique-de-confidentialite.html">Politique de confidentialité</a> |
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <p class="copyright">© <span id="currentYear"></span> Casa Del Sol Torrevieja. Tous droits réservés. Location d'appartement de vacances.</p>
+    </div>
+  </footer>
+
+  <!-- Si vous utilisez Lightbox sur cette page -->
+  <!-- <script src="js/lightbox.min.js"></script> -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const nav = document.querySelector('header nav');
+      if (mobileMenuToggle && nav) {
+        mobileMenuToggle.addEventListener('click', function() {
+          nav.classList.toggle('active');
+          this.setAttribute('aria-expanded', nav.classList.contains('active'));
+        });
+      }
+
+      const currentYearSpan = document.getElementById('currentYear');
+      if (currentYearSpan) {
+        currentYearSpan.textContent = new Date().getFullYear();
+      }
+      
+      // Si vous avez Lightbox et l'avez configuré dans index.html, et que vous voulez l'utiliser ici
+      // if (typeof lightbox !== 'undefined') {
+      //   lightbox.option({
+      //     'resizeDuration': 200,
+      //     'wrapAround': true,
+      //     'albumLabel': "Image %1 sur %2"
+      //   });
+      // }
+    });
+  </script>
+</body>
+</html>
