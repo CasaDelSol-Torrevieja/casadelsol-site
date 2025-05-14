@@ -481,15 +481,25 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
 
 .tarif-item {
   background-color: #ffffff;
-  padding: 25px 20px;
-  border-radius: 8px; /* Vous pouvez ajuster si la bordure rend les coins trop "durs" */
-  text-align: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.07);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 2px solid #F5A623; /* Bordure appliquée à tous les items */
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Pour un effet au survol (optionnel) */
+  padding: 30px 25px; /* Un peu plus de padding */
+  border: 3px solid #F5A623; /* Bordure plus épaisse */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* Ombre légèrement plus forte */
+  /* ... autres styles ... */
+}
+.tarif-item .period {
+    font-size: 14px; /* Texte de période légèrement plus grand peut-être */
+    color: #5F6368;
+    margin-bottom: 20px; /* Plus d'espace avant le prix */
+    min-height: 45px; /* S'assurer qu'il y a assez de place pour 2 lignes même si le contenu est court */
+    line-height: 1.4;
+}
+.tarif-item .price-line {
+    font-size: 20px; /* Ligne de prix un peu plus grande */
+    /* ... */
+}
+.tarif-item .price-amount {
+    font-size: 32px; /* Montant du prix plus grand */
+    /* ... */
 }
 
 /* Effet de survol optionnel pour tous les items */
