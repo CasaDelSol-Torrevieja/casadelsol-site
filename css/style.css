@@ -33,35 +33,46 @@ body {
 /* === TYPOGRAPHY === */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
-  color: #1E2439; /* Couleur de titre principale (bleu très foncé/noir) */
+  color: #1E2439;
   line-height: 1.3;
   margin-bottom: 0.75em;
 }
 
-h1 { /* Styles spécifiques H1 */
-  /* ... autres styles ... */
-  text-transform: uppercase; /* Pour forcer l'affichage en majuscules */
+h1 { /* Styles spécifiques H1 pour la page d'accueil */
+  font-size: clamp(28px, 5vw, 38px); /* Responsive */
+  font-weight: 800; /* Plus gras pour le titre principal */
+  text-align: center;
+  margin-bottom: 10px;
+  /* text-transform: uppercase; /* Si vous voulez spécifiquement le H1 de l'index en majuscule */
 }
 
-h2 { /* Styles spécifiques H2 */
-  /* ... autres styles ... */
-  text-transform: uppercase; /* Pour forcer l'affichage en majuscules */
-  
-.section-title { /* Classe spécifique pour les titres de section */
-    margin-bottom: 40px;
-    position: relative; /* Pour le pseudo-élément de soulignement */
-    padding-bottom: 10px;
+h2 { /* Styles généraux pour les H2 (comme le sous-titre du hero) */
+  font-size: clamp(22px, 4vw, 30px);
+  font-weight: 700;
+  text-align: center;
+  /* text-transform: uppercase; /* Si vous voulez spécifiquement le H2 du hero en majuscule */
 }
-/* Petit soulignement stylé sous les titres de section, comme sur Dorik */
+
+/* Classe spécifique pour les titres de section (souvent des H2) */
+.section-title { 
+    /* Si vous voulez que tous les .section-title soient en majuscules : */
+    /* text-transform: uppercase; */ 
+    /* La taille est déjà définie par le h2 auquel la classe est appliquée, 
+       mais vous pourriez la surcharger ici si besoin pour .section-title */
+    /* font-size: clamp(22px, 4vw, 30px); */
+    margin-bottom: 40px;
+    position: relative; 
+    padding-bottom: 10px;
+    text-align: center; /* Assurez-vous qu'il est centré si ce n'est pas hérité */
+}
 .section-title::after {
     content: '';
     display: block;
     width: 60px;
     height: 3px;
-    background-color: #F5A623; /* Jaune doré d'accent */
+    background-color: #F5A623;
     margin: 10px auto 0;
 }
-
 
 h3 { /* Titres dans les blocs (logement, tarifs, faq) */
   font-size: 20px;
