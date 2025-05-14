@@ -454,92 +454,106 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
 /* === TARIFS SECTION === */
 .tarifs-section {
     background-color: #f0f4f8; 
-    padding-top: 70px; /* Assurer le padding standard des sections */
-    padding-bottom: 70px; /* Assurer le padding standard des sections */
+    /* padding-top et padding-bottom sont déjà gérés par la règle générale "section" */
 }
+
 .tarifs-grid {
   display: grid;
-  gap: 20px;
-  /* ... autres styles ... */
+  gap: 25px; /* Un peu plus d'espace */
+  /* Responsive par défaut : commence avec 1 colonne, puis s'adapte */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Ajustez minmax pour le nombre d'items souhaité par ligne */
+  
+  /* Pour centrer la grille elle-même si elle n'occupe pas toute la largeur du container */
+  /* (Utile si vous avez un nombre d'items qui ne remplit pas la dernière ligne sur certains écrans) */
+  /* Mais avec auto-fit, les items vont s'étirer, donc ce n'est pas toujours nécessaire. */
+  /* Si vous voulez que la grille soit moins large que son conteneur et centrée : */
+  /* max-width: 900px; /* Exemple, à ajuster */
+  /* margin-left: auto; */
+  /* margin-right: auto; */
 
-  /* Pour les écrans > 767px, quand la grille a plus d'une colonne */
-  /* Utilisez auto-fit pour la flexibilité */
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  /* Pour centrer les items À L'INTÉRIEUR de leurs cellules de grille si les cellules sont plus larges que les items */
+  /* justify-items: center; */ /* Peut être utile si minmax laisse beaucoup d'espace */
 
-  /* Centre les items dans les cellules si besoin (moins pertinent ici) */
-  /* justify-items: center; */
-
-  /* Centre les colonnes de la grille si elles n'occupent pas toute la largeur */
-  /* C'est utile si vous utilisez auto-fit ou si le total des colonnes est inférieur à la largeur du conteneur */
-  /* Cette propriété centre les pistes de la grille */
-  justify-content: center; 
+  /* Pour aligner les colonnes elles-mêmes si la grille a une largeur fixe ou si auto-fit ne remplit pas */
+  justify-content: center; /* Important pour centrer les colonnes si elles ne remplissent pas tout l'espace alloué par le conteneur */
+  
+  margin-top: 30px; /* Espace au-dessus de la grille */
+  margin-bottom: 30px; /* Espace en dessous de la grille */
 }
 
-/* Pour les media queries larges (992px et 1200px) : */
-/* Vous pourriez peut-être simplifier et revenir à auto-fit + justify-content: center; */
-@media (min-width: 992px) { 
+/* Media query pour s'assurer qu'on n'a pas plus de 5 colonnes (ou le nombre max souhaité) */
+/* Et pour ajuster la taille minimale des items sur les grands écrans */
+@media (min-width: 1200px) {
     .tarifs-grid {
-         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Laisse auto-fit */
-         justify-content: center; /* Centre les colonnes si elles ne remplissent pas */
-         max-width: none; /* Retire le max-width si vous l'aviez mis */
-         margin-left: auto; /* Conserve ou retire si justify-content suffit */
-         margin-right: auto; /* Conserve ou retire si justify-content suffit */
+        /* Si vous voulez un maximum de 5 colonnes et qu'elles soient bien réparties : */
+        /* Si vous avez exactement 5 items, vous pouvez faire : grid-template-columns: repeat(5, 1fr); */
+        /* Si vous voulez de la flexibilité avec auto-fit mais un maximum de 5 items visibles : */
+        /* Vous pouvez limiter la largeur du conteneur .tarifs-grid ou ajuster minmax. */
+        /* Pour 5 items comme vous avez, ceci est simple : */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+        /* S'il y a 5 items, ils vont se répartir. Si vous en avez moins de 5, auto-fit s'en chargera. */
+        /* Si vous voulez FORCER 5 colonnes même avec moins d'items (ce qui laissera des trous): */
+        /* grid-template-columns: repeat(5, minmax(0, 1fr)); */
+        /* Pour votre cas avec 5 items, la ligne ci-dessous est probablement la meilleure pour les répartir : */
+        grid-template-columns: repeat(5, 1fr); /* Cela force 5 colonnes si la largeur le permet */
     }
 }
-@media (min-width: 1200px) { 
-     .tarifs-grid {
-         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Peut-être augmenter un peu le min-width */
-         justify-content: center;
-         max-width: none;
-         margin-left: auto;
-         margin-right: auto;
+@media (max-width: 1199.98px) and (min-width: 992px) { /* Tablettes larges */
+    .tarifs-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* 3 ou 4 items par ligne */
     }
 }
+@media (max-width: 991.98px) and (min-width: 768px) { /* Tablettes */
+    .tarifs-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 2 ou 3 items par ligne */
+    }
+}
+/* Sur mobile (en dessous de 768px), auto-fit avec minmax(240px, 1fr) fera probablement 1 colonne, ce qui est bien. */
+/* La media query existante pour @media (max-width: 767px) gère déjà .tarifs-grid { grid-template-columns: 1fr; } */
+
 
 .tarif-item {
   background-color: #ffffff;
-  padding: 30px 25px; /* Un peu plus de padding */
-  border: 3px solid #F5A623; /* Bordure plus épaisse */
+  padding: 25px 20px; /* Ajusté */
+  border: 2px solid #F5A623; /* Style de bordure de base */
   border-radius: 8px;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* Ombre légèrement plus forte */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.07);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; 
+  justify-content: space-between; /* Aligne le contenu verticalement */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-/* Styles pour les éléments internes d'un tarif item */
+.tarif-item:hover {
+    transform: translateY(-5px) scale(1.02); /* Léger mouvement vers le haut et agrandissement */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
 .tarif-item h3 {
-  font-size: 17px;
+  font-size: 18px; /* Un peu plus grand */
   font-weight: 700;
   color: #1E2439;
-  margin-bottom: 8px;
-}
-.tarif-item .period {
-  font-size: 14px; /* <-- J'ai gardé les valeurs les plus grandes que vous aviez */
-  color: #5F6368;
-  margin-bottom: 20px; 
-  min-height: 45px; /* <-- J'ai gardé les valeurs les plus grandes que vous aviez */
-  line-height: 1.4; /* <-- J'ai gardé les valeurs les plus grandes que vous aviez */
-}
-.tarif-item .price-line {
-  font-size: 20px; /* <-- J'ai gardé les valeurs les plus grandes que vous aviez */
-  color: #5F6368;
-  font-weight: 500;
-  margin-top: auto;
-  margin-bottom: 0;
-}
-.tarif-item .price-amount {
-  font-size: 32px; /* <-- J'ai gardé les valeurs les plus grandes que vous aviez */
-  font-weight: 700;
-  color: #F5A623; 
-  display: inline-block;
-  margin-right: 5px; /* Espace entre le montant et "/ semaine" */
+  margin-bottom: 10px;
 }
 
-/* Styles spécifiques pour "À partir de" */
-.tarif-item .price-line .price-intro {
+.tarif-item .period {
+  font-size: 14px;
+  color: #5F6368;
+  margin-bottom: 15px;
+  min-height: 42px; /* Ajustez pour aligner les blocs de prix si les textes varient trop */
+  line-height: 1.4;
+}
+
+.tarif-item .price-line {
+  font-size: 18px; 
+  color: #3C4043; /* Un peu plus foncé pour le texte " / semaine" */
+  font-weight: 500;
+  margin-top: auto; /* Pousse cette ligne vers le bas si l'item s'agrandit */
+  margin-bottom: 0;
+}
+
+.tarif-item .price-line .price-intro { /* Pour "À partir de" */
   display: block; 
   font-size: 14px; 
   font-weight: 500;
@@ -548,213 +562,84 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
   line-height: 1.2;
 }
 
-
-/* Effet de survol pour tous les items */
-.tarif-item:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-/* Mise en avant de l'item avec la classe .tarif-item-highlight */
-.tarif-item-highlight {
-    border-color: #1E2439; 
-    background-color: #fdfaf2; 
-    transform: scale(1.05); 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1); 
-    position: relative; 
-    z-index: 1; 
-}
-
-/* Ajuster l'effet de survol pour l'item highlighté */
-.tarif-item-highlight:hover {
-    transform: scale(1.06); 
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-/* Style spécifique pour le prix de l'item highlighté */
-.tarif-item-highlight .price-amount {
-    color: #1E2439; 
-}
-
-/* OPTIONNEL : Ajouter un petit badge "Populaire" ou "Haute Saison" */
-.tarif-item-highlight::before {
-    content: 'POPULAIRE'; 
-    position: absolute;
-    top: -10px; 
-    right: -10px; 
-    background-color: #1E2439; 
-    color: #ffffff; 
-    font-size: 11px;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 4px;
-    transform: rotate(5deg); 
-    z-index: 2; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-/* Ajustement mobile pour l'item highlighté */
-@media (max-width: 767px) { 
-    .tarif-item-highlight {
-        transform: scale(1); 
-        box-shadow: 0 5px 15px rgba(0,0,0,0.07); 
-    }
-    .tarif-item-highlight:hover { 
-         transform: scale(1);
-         box-shadow: 0 5px 15px rgba(0,0,0,0.07);
-    }
-    .tarif-item-highlight::before { 
-        font-size: 10px;
-        padding: 2px 6px;
-        top: -8px;
-        right: -8px;
-    }
-}
-
-.tarif-item h3 {
-  font-size: 17px;
-  font-weight: 700;
-  color: #1E2439;
-  margin-bottom: 8px;
-}
-.tarif-item .period {
-  font-size: 13px;
-  color: #5F6368;
-  margin-bottom: 15px;
-  min-height: 40px;
-  line-height: 1.3;
-}
-
-.tarif-item .price-line {
-  font-size: 18px;
-  color: #5F6368;
-  font-weight: 500;
-  margin-top: auto;
-  margin-bottom: 0;
-}
-
 .tarif-item .price-amount {
-  font-size: 28px;
-  font-weight: 700;
-  color: #F5A623; /* Couleur du prix assortie à la bordure */
-  display: inline-block;
-  margin-right: 5px;
+  font-size: 30px; /* Un peu plus grand */
+  font-weight: 800; /* Plus gras */
+  color: #F5A623; 
+  display: inline-block; /* Ou block si vous voulez qu'il prenne toute la largeur avant "/ semaine" */
+  margin-right: 3px;
 }
+
+/* Mise en avant spécifique pour l'item "Haute Saison" */
+.tarif-item-highlight {
+    border-color: #1E2439; /* Bordure plus foncée */
+    background-color: #fffbea; /* Fond légèrement crème/jaune très pâle */
+    transform: scale(1.05); /* Un peu plus grand par défaut */
+    z-index: 1; /* Pour qu'il soit au-dessus des autres au survol si transform change */
+    position: relative; /* Nécessaire pour le pseudo-élément ::before */
+}
+
+.tarif-item-highlight:hover {
+    transform: translateY(-5px) scale(1.07); /* Effet de survol un peu plus prononcé */
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+.tarif-item-highlight .price-amount {
+    color: #c70000; /* Prix en rouge pour attirer l'attention, par exemple */
+    font-size: 34px; /* Encore un peu plus grand */
+}
+
+/* Badge "Populaire" (optionnel, à activer si vous aimez) */
+/*
+.tarif-item-highlight::before {
+    content: 'LE + RÉSERVÉ'; 
+    position: absolute;
+    top: -12px; 
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg); 
+    background-color: #d18c14; 
+    color: #ffffff; 
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+    z-index: 2; 
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+*/
 
 .tarifs-notes {
   text-align: center;
   font-size: 16px;
   color: #3C4043;
-  margin-top: 30px;
+  margin-top: 40px; /* Plus d'espace */
   line-height: 1.6;
-}
-
-.tarif-item .price-line .price-intro {
-  display: block; /* Pour qu'il soit sur sa propre ligne */
-  font-size: 14px; /* Plus petit */
-  font-weight: 500;
-  color: #5F6368; /* Couleur moins prononcée */
-  margin-bottom: -5px; /* Rapproche le prix */
-  line-height: 1.2;
-}
-/* Assurer un petit espace après le montant si nécessaire */
-.tarif-item .price-line .price-amount {
-    margin-right: 5px; /* Espace entre le montant et "/ semaine" */
-}
-
-/* === RESERVATION SECTION === */
-.reservation-section p {
-  max-width: 700px;
+  max-width: 700px; /* Pour que le texte ne soit pas trop large */
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
-  margin-bottom: 25px;
-}
-.calendar-placeholder {
-  border: 1px solid #d1d5db;
-  padding: 15px;
-  text-align: center;
-  margin: 30px auto;
-  background-color: #fdfdfd;
-  border-radius: 8px;
-  max-width: 750px; /* Largeur maximale du conteneur du calendrier */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-.calendar-placeholder iframe {
-  display: block; /* Bonne pratique pour les iframes responsives */
-  width: 100%; /* Prend toute la largeur du .calendar-placeholder */
-  max-width: 100%; /* Empêche le dépassement */
-  height: 600px; /* Hauteur par défaut pour desktop, ajustez si besoin */
-  min-height: 400px; 
-  border: none; /* Assure qu'il n'y a pas de bordure */
-  margin: 20px auto 0; /* Centrage et marge en haut */
+/* Assurez-vous que les styles mobiles pour les tarifs sont bien appliqués */
+@media (max-width: 767px) { 
+    .tarifs-grid {
+        grid-template-columns: 1fr; /* Force une seule colonne */
+    }
+    .tarif-item-highlight {
+        transform: scale(1); /* Pas de mise à l'échelle par défaut sur mobile */
+    }
+    .tarif-item-highlight:hover {
+        transform: scale(1); /* Pas de mise à l'échelle au survol sur mobile */
+    }
+    /* Ajustement du badge sur mobile si activé */
+    /*
+    .tarif-item-highlight::before { 
+        font-size: 9px;
+        padding: 3px 7px;
+        top: -10px;
+    }
+    */
 }
-
-.calendar-placeholder img { /* Au cas où une image serait mise dans le placeholder */
-    border-radius: 6px;
-}
-.reservation-action {
-  text-align: center;
-  margin-top: 30px;
-}
-.paiement-securise-info {
-  margin-top: 15px;
-  font-size: 15px;
-  color: #5F6368;
-}
-.paiement-securise-info svg { /* Si vous ajoutez une icone cadenas */
-  vertical-align: middle;
-  margin-right: 5px;
-  width: 16px; height: 16px;
-  fill: currentColor;
-}
-
-/* === TEMOIGNAGES SECTION === */
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 20px;
-}
-.testimonial {
-  background-color: #ffffff;
-  padding: 30px 25px;
-  border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  display: flex;
-  flex-direction: column;
-}
-.testimonial .quote {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #3C4043;
-  margin-bottom: 20px;
-  flex-grow: 1;
-  font-style: italic;
-  position: relative;
-  padding-left: 35px; /* Espace pour les guillemets */
-}
-.testimonial .quote::before { /* Guillemets stylés */
-    content: '“';
-    font-family: Georgia, serif;
-    font-size: 40px;
-    color: #F5A623;
-    position: absolute;
-    left: 0px;
-    top: -10px;
-}
-.testimonial footer {
-  font-size: 15px;
-  color: #1E2439;
-  font-weight: 600;
-  text-align: right;
-  margin-top: auto;
-}
-.testimonial footer::before {
-  content: "— ";
-}
-
 
 /* === FAQ SECTION === */
 .faq-section {
