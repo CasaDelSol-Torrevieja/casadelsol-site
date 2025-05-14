@@ -610,6 +610,18 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
   line-height: 1.6;
 }
 
+.tarif-item .price-line .price-intro {
+  display: block; /* Pour qu'il soit sur sa propre ligne */
+  font-size: 14px; /* Plus petit */
+  font-weight: 500;
+  color: #5F6368; /* Couleur moins prononcée */
+  margin-bottom: -5px; /* Rapproche le prix */
+  line-height: 1.2;
+}
+/* Assurer un petit espace après le montant si nécessaire */
+.tarif-item .price-line .price-amount {
+    margin-right: 5px; /* Espace entre le montant et "/ semaine" */
+}
 
 /* === RESERVATION SECTION === */
 .reservation-section p {
