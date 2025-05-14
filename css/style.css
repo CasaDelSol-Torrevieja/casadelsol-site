@@ -31,10 +31,6 @@ body {
 }
 
 /* === TYPOGRAPHY === */
-h1, h2 { /* Ou des classes plus spécifiques si vous ne voulez pas tous les h1/h2 en majuscules */
-  text-transform: uppercase;
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   color: #1E2439; /* Couleur de titre principale (bleu très foncé/noir) */
@@ -42,19 +38,15 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.75em;
 }
 
-h1 { /* Hero Title */
-  font-size: clamp(28px, 5vw, 38px); /* Responsive */
-  font-weight: 800; /* Plus gras pour le titre principal */
-  text-align: center;
-  margin-bottom: 10px;
+h1 { /* Styles spécifiques H1 */
+  /* ... autres styles ... */
+  text-transform: uppercase; /* Pour forcer l'affichage en majuscules */
 }
 
-h2 { /* Hero Subtitle & Section Titles */
-  font-size: clamp(22px, 4vw, 30px);
-  font-weight: 700;
-  text-align: center;
-}
-
+h2 { /* Styles spécifiques H2 */
+  /* ... autres styles ... */
+  text-transform: uppercase; /* Pour forcer l'affichage en majuscules */
+  
 .section-title { /* Classe spécifique pour les titres de section */
     margin-bottom: 40px;
     position: relative; /* Pour le pseudo-élément de soulignement */
