@@ -454,44 +454,54 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
 /* === TARIFS SECTION === */
 .tarifs-section {
     background-color: #f0f4f8; 
-    /* padding-top et padding-bottom sont déjà gérés par la règle générale "section" */
 }
 
 .tarifs-grid {
   display: grid;
   gap: 25px;
-  /* Fait en sorte qu'il y ait au maximum 4 colonnes, et moins si l'écran est petit */
-  /* Chaque colonne prendra 1fr de l'espace disponible. */
-  /* Sur les écrans larges, cela devrait faire 4 colonnes. */
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-
-  /* Pour s'assurer que la grille ne s'étende pas inutilement et se centre si moins de 4 items tiennent. */
-  /* Nous allons limiter la largeur max de la grille pour qu'elle ne puisse pas afficher plus de 4 items (ou 3, ou 2) confortablement */
-  /* puis la centrer avec margin auto. */
+  /* Commence avec auto-fit pour la responsivité sur les petits écrans */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
   
-  /* Définissons une largeur maximale pour la grille qui correspond à environ 4 items + les gaps */
-  /* Exemple: 4 * 220px (largeur min item) + 3 * 25px (gaps) = 880 + 75 = 955px */
-  /* Ou un peu plus pour donner de la marge aux '1fr' */
-  max-width: 1100px; /* Ajustez cette valeur. Doit être <= max-width du .container */
-  margin-left: auto; /* Centre la grille si sa max-width est atteinte et qu'elle est plus petite que son parent */
+  /* Pour centrer la grille elle-même dans son conteneur parent (.container) */
+  /* On donne une largeur max à la grille pour qu'elle ne s'étende pas trop */
+  /* Cette valeur est un exemple, vous pouvez l'ajuster. */
+  /* (4 items * ~250px de large) + (3 gaps * 25px) = 1000 + 75 = 1075px. */
+  /* Si votre .container fait 1140px, c'est bien. */
+  max-width: 1075px; /* Ou la largeur qui convient pour 4 de vos items + gaps */
+  margin-left: auto;
   margin-right: auto;
 
-  /* justify-content: center; centrera les items si la ligne n'est pas pleine. */
-  /* Par exemple, si seulement 3 items tiennent, ils seront centrés. */
+  /* justify-content: center; va centrer les pistes de colonnes si, par exemple, */
+  /* auto-fit ne crée que 2 ou 3 colonnes sur un écran plus petit et qu'elles n'occupent pas la max-width. */
   justify-content: center; 
   
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
+/* Media Query pour forcer 4 colonnes sur les écrans assez larges pour les afficher confortablement */
+/* Ajustez ce point de rupture (breakpoint) si nécessaire. */
+/* Par exemple, si chaque item fait au moins 220px + 25px de gap : (220*4) + (25*3) = 880 + 75 = 955px */
+@media (min-width: 992px) { /* À partir de cette largeur, on essaie d'avoir jusqu'à 4 colonnes */
+    .tarifs-grid {
+        /* Si vous avez EXACTEMENT 4 items, vous pouvez simplement faire : */
+        grid-template-columns: repeat(4, 1fr);
+        /* Cela créera 4 colonnes de taille égale. */
+        /* Le max-width: 1075px; et margin: auto; ci-dessus s'assureront que cette grille de 4 colonnes est centrée. */
+        /* Si vous préférez garder auto-fit pour que ça passe à 3, 2, 1 si l'écran se rétrécit avant 767px : */
+        /* grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); */
+        /* Dans ce cas, le max-width et margin:auto; sont encore plus importants. */
+    }
+}
+
+
 /* Sur les écrans très petits, votre media query existante prendra le dessus : */
 @media (max-width: 767px) { 
     .tarifs-grid {
         grid-template-columns: 1fr; /* Force une seule colonne */
-        max-width: 100%; /* Permet à la grille de prendre toute la largeur en 1 colonne */
+        max-width: 100%; /* Permet à la grille de prendre toute la largeur en 1 colonne, pas de centrage par margin: auto nécessaire ici */
     }
 }
-
 .tarif-item {
   background-color: #ffffff;
   padding: 25px 20px; /* Ajusté */
