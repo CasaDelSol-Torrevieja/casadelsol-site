@@ -581,20 +581,21 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
 
 /* Badge "Populaire" */
 .tarif-item-highlight::before {
-    content: 'POPULAIRE'; /* Ou 'LE + DEMANDÉ', 'HAUTE SAISON', etc. */
+    content: 'POPULAIRE'; 
     position: absolute;
-    top: -10px; /* Ajustez pour la position verticale */
-    right: -10px; /* Ajustez pour la position horizontale */
-    background-color: #1E2439; /* Fond noir/bleu foncé */
-    color: #ffffff; /* Texte blanc */
-    font-size: 10px; /* Petite taille */
-    font-weight: 700; /* Gras */
-    padding: 3px 8px; /* Padding interne */
-    border-radius: 4px; /* Coins arrondis */
-    text-transform: uppercase; /* Texte en majuscules */
-    z-index: 2; /* Pour qu'il soit au-dessus de la carte */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Petite ombre portée */
-    /* transform: rotate(5deg); */ /* Supprimez ou ajustez la rotation si vous n'en voulez pas */
+    top: -10px; 
+    right: -10px; 
+    background-color: #1E2439; 
+    color: #ffffff; 
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase; 
+    z-index: 2; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transform: rotate(7deg); /* <-- Décommentez et ajustez cette ligne */
+    transform-origin: bottom left; /* Optionnel: change le point de rotation */
 }
 
 /* Ajustement mobile pour le badge (si nécessaire) */
