@@ -206,7 +206,43 @@ li {
   color: #1E2439;
   cursor: pointer;
 }
+/* === Styles spécifiques pour la page vacances-a-torrevieja.html === */
 
+.guide-page-section h1.section-title { /* Titre principal de la page guide */
+  margin-top: 20px; /* Un peu plus d'espace si besoin */
+  margin-bottom: 20px;
+}
+
+.guide-page-section h2.section-title { /* Sous-titres de la page guide */
+  margin-top: 50px; /* Plus d'espace avant les sections H2 */
+  font-size: clamp(24px, 4vw, 32px); /* Ajustez la taille si besoin */
+}
+
+.guide-page-section h3 {
+  font-size: clamp(20px, 3vw, 24px); /* Ajustez la taille des H3 si besoin */
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #1E2439; /* Assurez-vous qu'ils ont la couleur des titres */
+}
+
+.guide-page-section ul {
+  list-style: disc; /* Remettre des puces pour les listes de cette page */
+  padding-left: 25px; /* Indentation pour les puces */
+  margin-bottom: 1.2em;
+}
+.guide-page-section ul li {
+  margin-bottom: 0.6em;
+  color: #3C4043; /* Assurer la couleur du texte de paragraphe */
+}
+
+/* La classe .activites-grid peut hériter de .gallery-grid */
+/* Si vous voulez des styles spécifiques pour les images de cette page : */
+/*
+.activites-grid img {
+  height: 230px; 
+  object-fit: cover;
+}
+*/
 /* === RESPONSIVE ADJUSTMENTS === */
 @media (max-width: 991px) { /* Tablettes et en dessous */
   #header nav { /* Le conteneur <nav> lui-même */
