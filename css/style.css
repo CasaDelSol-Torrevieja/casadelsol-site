@@ -453,118 +453,187 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
 
 /* === TARIFS SECTION === */
 .tarifs-section {
-    background-color: #f0f4f8; /* Fond spécifique pour cette section */
+    background-color: #f0f4f8; 
+    padding-top: 70px; /* Assurer le padding standard des sections */
+    padding-bottom: 70px; /* Assurer le padding standard des sections */
 }
 .tarifs-grid {
   display: grid;
-  /* Par défaut, on laisse auto-fit pour la responsivité sur mobile */
+  /* Défaut (mobile/tablette) : auto-fit pour remplir l'espace */
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
   gap: 20px;
   margin-top: 30px;
   margin-bottom: 30px;
+  /* Retire text-align: center si présent, car on utilise grid/flex pour le centrage */
 }
 
-/* Pour les écrans plus larges, on force 5 colonnes */
-@media (min-width: 1200px) { /* Vous pouvez ajuster ce point de rupture (breakpoint) */
+/* Pour les écrans plus larges (par exemple, au-delà de 992px, où vous pouvez afficher 4 colonnes) */
+/* Ajustez le point de rupture si 4 colonnes tiennent bien dès 768px */
+@media (min-width: 992px) { 
     .tarifs-grid {
-        grid-template-columns: repeat(5, 1fr);
+        /* Définit 4 colonnes de largeur égale */
+        grid-template-columns: repeat(4, 1fr); 
+        /* Centre la grille horizontalement DANS le conteneur */
+        /* On peut utiliser margin: auto sur la grille elle-même */
+        /* Ou utiliser justify-content sur le conteneur parent si le conteneur grid est aussi un flex/grid item */
+        /* Une méthode courante est de donner une largeur max à la grille et de la centrer */
+        max-width: calc(4 * 200px + 3 * 20px); /* Largeur de 4 items min-width + 3 gaps */
+        max-width: calc(4 * (100% / 4) + 3 * 20px); /* Largeur si on voulait qu'elles prennent toute la place */
+        /* Simplifions : centrons les items DANS les cellules de la grille si nécessaire */
+        /* justify-items: center; /* Centre le contenu de chaque cellule */
+        /* Ou, le plus simple pour centrer le bloc des 4 colonnes: */
+        /* Utiliser Flexbox sur un conteneur parent et centrer la grille (pas idéal avec votre structure actuelle) */
+        /* Mieux : centrer la grille elle-même si elle n'occupe pas toute la largeur */
+
+        /* Reprenons votre media query existante pour 992px et plus (avant 1200px) */
+        /* Vous aviez déjà une règle ici. Combinons */
     }
 }
+
 /* S'il y a un léger débordement avant 1200px, vous pouvez aussi utiliser un point de rupture intermédiaire */
 @media (min-width: 992px) and (max-width: 1199.98px) {
     .tarifs-grid {
-         /* 3 ou 4 colonnes ici si 5 est trop serré */
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+         /* Option 1 (si 4 colonnes ne tiennent pas, revenir à auto-fit): */
+         /* grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); */
+
+         /* Option 2 (si 4 colonnes tiennent et vous voulez les centrer, similaire à la règle 1200px): */
+         grid-template-columns: repeat(4, 1fr); 
+         max-width: calc(4 * 220px + 3 * 20px); /* Calculer la largeur approximative pour 4 items min-width */
+         margin-left: auto; /* Centrer le bloc des 4 colonnes */
+         margin-right: auto;
     }
 }
 
+
+/* Pour les écrans très larges, on force 4 colonnes maintenant qu'on en a 4 */
+@media (min-width: 1200px) { 
+    .tarifs-grid {
+        grid-template-columns: repeat(4, 1fr); /* Force 4 colonnes */
+        max-width: calc(4 * 220px + 3 * 20px); /* Calculer une largeur max si vous ne voulez pas qu'elles s'étirent trop */
+        /* Ou laissez sans max-width si vous voulez qu'elles s'étirent */
+         margin-left: auto; /* Centrer le bloc des 4 colonnes */
+         margin-right: auto;
+    }
+}
+
+
+/* Ajustement mobile pour l'item highlighté (reste inchangé) */
+@media (max-width: 767px) { 
+    .tarifs-grid { /* Sur mobile, 1 colonne, toujours centré car il prend toute la largeur */
+         grid-template-columns: 1fr; /* Redéfinir explicitement 1 colonne pour la clarté */
+         max-width: 100%; /* S'assurer qu'il prend toute la largeur dispo */
+         margin-left: auto; /* Centrage auto */
+         margin-right: auto;
+    }
 
 .tarif-item {
   background-color: #ffffff;
   padding: 30px 25px; /* Un peu plus de padding */
   border: 3px solid #F5A623; /* Bordure plus épaisse */
+  border-radius: 8px;
+  text-align: center;
   box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* Ombre légèrement plus forte */
-  /* ... autres styles ... */
-}
-.tarif-item .period {
-    font-size: 14px; /* Texte de période légèrement plus grand peut-être */
-    color: #5F6368;
-    margin-bottom: 20px; /* Plus d'espace avant le prix */
-    min-height: 45px; /* S'assurer qu'il y a assez de place pour 2 lignes même si le contenu est court */
-    line-height: 1.4;
-}
-.tarif-item .price-line {
-    font-size: 20px; /* Ligne de prix un peu plus grande */
-    /* ... */
-}
-.tarif-item .price-amount {
-    font-size: 32px; /* Montant du prix plus grand */
-    /* ... */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; 
 }
 
-/* Effet de survol optionnel pour tous les items */
+/* Styles pour les éléments internes d'un tarif item */
+.tarif-item h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1E2439;
+  margin-bottom: 8px;
+}
+.tarif-item .period {
+  font-size: 14px; /* <-- J'ai gardé les valeurs les plus grandes que vous aviez */
+  color: #5F6368;
+  margin-bottom: 20px; 
+  min-height: 45px; /* <-- J'ai gardé les valeurs les plus grandes que vous aviez */
+  line-height: 1.4; /* <-- J'ai gardé les valeurs les plus grandes que vous aviez */
+}
+.tarif-item .price-line {
+  font-size: 20px; /* <-- J'ai gardé les valeurs les plus grandes que vous aviez */
+  color: #5F6368;
+  font-weight: 500;
+  margin-top: auto;
+  margin-bottom: 0;
+}
+.tarif-item .price-amount {
+  font-size: 32px; /* <-- J'ai gardé les valeurs les plus grandes que vous aviez */
+  font-weight: 700;
+  color: #F5A623; 
+  display: inline-block;
+  margin-right: 5px; /* Espace entre le montant et "/ semaine" */
+}
+
+/* Styles spécifiques pour "À partir de" */
+.tarif-item .price-line .price-intro {
+  display: block; 
+  font-size: 14px; 
+  font-weight: 500;
+  color: #5F6368; 
+  margin-bottom: -5px; 
+  line-height: 1.2;
+}
+
+
+/* Effet de survol pour tous les items */
 .tarif-item:hover {
     transform: scale(1.03);
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
+
 /* Mise en avant de l'item avec la classe .tarif-item-highlight */
 .tarif-item-highlight {
-    border-color: #1E2439; /* Bordure plus foncée */
-    background-color: #fdfaf2; /* Fond très légèrement teinté */
-    transform: scale(1.05); /* Le faire ressortir un peu plus sur desktop */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* Ombre plus prononcée */
-    position: relative; /* Pour ajouter un badge si voulu */
-    z-index: 1; /* Pour s'assurer qu'il est par-dessus les autres au survol/highlight */
+    border-color: #1E2439; 
+    background-color: #fdfaf2; 
+    transform: scale(1.05); 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); 
+    position: relative; 
+    z-index: 1; 
 }
 
-/* Ajuster l'effet de survol pour qu'il ne cause pas de double scale si l'item est déjà highlighté */
+/* Ajuster l'effet de survol pour l'item highlighté */
 .tarif-item-highlight:hover {
-    transform: scale(1.06); /* Léger zoom supplémentaire au survol */
+    transform: scale(1.06); 
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 /* Style spécifique pour le prix de l'item highlighté */
 .tarif-item-highlight .price-amount {
-    color: #1E2439; /* Rendre le prix plus foncé pour l'item mis en avant */
+    color: #1E2439; 
 }
 
 /* OPTIONNEL : Ajouter un petit badge "Populaire" ou "Haute Saison" */
 .tarif-item-highlight::before {
-    content: 'POPULAIRE'; /* Texte du badge */
+    content: 'POPULAIRE'; 
     position: absolute;
-    top: -10px; /* Position verticale */
-    right: -10px; /* Position horizontale */
-    background-color: #1E2439; /* Couleur de fond du badge */
-    color: #ffffff; /* Couleur du texte du badge */
+    top: -10px; 
+    right: -10px; 
+    background-color: #1E2439; 
+    color: #ffffff; 
     font-size: 11px;
     font-weight: 700;
     padding: 3px 8px;
     border-radius: 4px;
-    transform: rotate(5deg); /* Légère rotation */
-    z-index: 2; /* Assure qu'il est au-dessus de tout */
+    transform: rotate(5deg); 
+    z-index: 2; 
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
-/* Ajuster le badge pour la Haute Saison si vous voulez un texte spécifique */
-.tarif-item-highlight h3:contains("Haute Saison") + .period + .price-line + .price-line::before { /* Sélecteur complexe et moins robuste */
-    /* Mieux vaut gérer le badge textuellement dans le HTML ou avec une autre classe */
-}
-/* Une approche plus simple pour le badge "Haute Saison" serait d'ajouter une classe spécifique */
-/* HTML: <div class="tarif-item tarif-item-highlight tarif-haute-saison"> */
-/* CSS: .tarif-haute-saison::before { content: 'HAUTE SAISON'; } */
 
-
-/* Ajustement mobile pour l'item highlighté (pour annuler ou réduire le scale si nécessaire) */
-@media (max-width: 767px) { /* Mobiles */
-    /* ... autres styles mobiles ... */
+/* Ajustement mobile pour l'item highlighté */
+@media (max-width: 767px) { 
     .tarif-item-highlight {
-        transform: scale(1); /* Annuler le scale sur mobile */
-        box-shadow: 0 5px 15px rgba(0,0,0,0.07); /* Revenir à l'ombre standard */
+        transform: scale(1); 
+        box-shadow: 0 5px 15px rgba(0,0,0,0.07); 
     }
-    .tarif-item-highlight:hover { /* Assurer qu'il n'y a pas de zoom bizarre au survol sur mobile */
+    .tarif-item-highlight:hover { 
          transform: scale(1);
          box-shadow: 0 5px 15px rgba(0,0,0,0.07);
     }
-    .tarif-item-highlight::before { /* Ajuster le badge sur mobile */
+    .tarif-item-highlight::before { 
         font-size: 10px;
         padding: 2px 6px;
         top: -8px;
