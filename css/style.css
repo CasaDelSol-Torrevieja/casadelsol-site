@@ -459,58 +459,38 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
 
 .tarifs-grid {
   display: grid;
-  gap: 25px; /* Un peu plus d'espace */
-  /* Responsive par défaut : commence avec 1 colonne, puis s'adapte */
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Ajustez minmax pour le nombre d'items souhaité par ligne */
+  gap: 25px;
+  /* Fait en sorte qu'il y ait au maximum 4 colonnes, et moins si l'écran est petit */
+  /* Chaque colonne prendra 1fr de l'espace disponible. */
+  /* Sur les écrans larges, cela devrait faire 4 colonnes. */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  /* Pour s'assurer que la grille ne s'étende pas inutilement et se centre si moins de 4 items tiennent. */
+  /* Nous allons limiter la largeur max de la grille pour qu'elle ne puisse pas afficher plus de 4 items (ou 3, ou 2) confortablement */
+  /* puis la centrer avec margin auto. */
   
-  /* Pour centrer la grille elle-même si elle n'occupe pas toute la largeur du container */
-  /* (Utile si vous avez un nombre d'items qui ne remplit pas la dernière ligne sur certains écrans) */
-  /* Mais avec auto-fit, les items vont s'étirer, donc ce n'est pas toujours nécessaire. */
-  /* Si vous voulez que la grille soit moins large que son conteneur et centrée : */
-  /* max-width: 900px; /* Exemple, à ajuster */
-  /* margin-left: auto; */
-  /* margin-right: auto; */
+  /* Définissons une largeur maximale pour la grille qui correspond à environ 4 items + les gaps */
+  /* Exemple: 4 * 220px (largeur min item) + 3 * 25px (gaps) = 880 + 75 = 955px */
+  /* Ou un peu plus pour donner de la marge aux '1fr' */
+  max-width: 1100px; /* Ajustez cette valeur. Doit être <= max-width du .container */
+  margin-left: auto; /* Centre la grille si sa max-width est atteinte et qu'elle est plus petite que son parent */
+  margin-right: auto;
 
-  /* Pour centrer les items À L'INTÉRIEUR de leurs cellules de grille si les cellules sont plus larges que les items */
-  /* justify-items: center; */ /* Peut être utile si minmax laisse beaucoup d'espace */
-
-  /* Pour aligner les colonnes elles-mêmes si la grille a une largeur fixe ou si auto-fit ne remplit pas */
-  justify-content: center; /* Important pour centrer les colonnes si elles ne remplissent pas tout l'espace alloué par le conteneur */
+  /* justify-content: center; centrera les items si la ligne n'est pas pleine. */
+  /* Par exemple, si seulement 3 items tiennent, ils seront centrés. */
+  justify-content: center; 
   
-  margin-top: 30px; /* Espace au-dessus de la grille */
-  margin-bottom: 30px; /* Espace en dessous de la grille */
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
-/* Media query pour s'assurer qu'on n'a pas plus de 5 colonnes (ou le nombre max souhaité) */
-/* Et pour ajuster la taille minimale des items sur les grands écrans */
-@media (min-width: 1200px) {
+/* Sur les écrans très petits, votre media query existante prendra le dessus : */
+@media (max-width: 767px) { 
     .tarifs-grid {
-        /* Si vous voulez un maximum de 5 colonnes et qu'elles soient bien réparties : */
-        /* Si vous avez exactement 5 items, vous pouvez faire : grid-template-columns: repeat(5, 1fr); */
-        /* Si vous voulez de la flexibilité avec auto-fit mais un maximum de 5 items visibles : */
-        /* Vous pouvez limiter la largeur du conteneur .tarifs-grid ou ajuster minmax. */
-        /* Pour 5 items comme vous avez, ceci est simple : */
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-        /* S'il y a 5 items, ils vont se répartir. Si vous en avez moins de 5, auto-fit s'en chargera. */
-        /* Si vous voulez FORCER 5 colonnes même avec moins d'items (ce qui laissera des trous): */
-        /* grid-template-columns: repeat(5, minmax(0, 1fr)); */
-        /* Pour votre cas avec 5 items, la ligne ci-dessous est probablement la meilleure pour les répartir : */
-        grid-template-columns: repeat(5, 1fr); /* Cela force 5 colonnes si la largeur le permet */
+        grid-template-columns: 1fr; /* Force une seule colonne */
+        max-width: 100%; /* Permet à la grille de prendre toute la largeur en 1 colonne */
     }
 }
-@media (max-width: 1199.98px) and (min-width: 992px) { /* Tablettes larges */
-    .tarifs-grid {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* 3 ou 4 items par ligne */
-    }
-}
-@media (max-width: 991.98px) and (min-width: 768px) { /* Tablettes */
-    .tarifs-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 2 ou 3 items par ligne */
-    }
-}
-/* Sur mobile (en dessous de 768px), auto-fit avec minmax(240px, 1fr) fera probablement 1 colonne, ce qui est bien. */
-/* La media query existante pour @media (max-width: 767px) gère déjà .tarifs-grid { grid-template-columns: 1fr; } */
-
 
 .tarif-item {
   background-color: #ffffff;
