@@ -497,7 +497,70 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
     transform: scale(1.03);
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
+/* Mise en avant de l'item avec la classe .tarif-item-highlight */
+.tarif-item-highlight {
+    border-color: #1E2439; /* Bordure plus foncée */
+    background-color: #fdfaf2; /* Fond très légèrement teinté */
+    transform: scale(1.05); /* Le faire ressortir un peu plus sur desktop */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* Ombre plus prononcée */
+    position: relative; /* Pour ajouter un badge si voulu */
+    z-index: 1; /* Pour s'assurer qu'il est par-dessus les autres au survol/highlight */
+}
 
+/* Ajuster l'effet de survol pour qu'il ne cause pas de double scale si l'item est déjà highlighté */
+.tarif-item-highlight:hover {
+    transform: scale(1.06); /* Léger zoom supplémentaire au survol */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Style spécifique pour le prix de l'item highlighté */
+.tarif-item-highlight .price-amount {
+    color: #1E2439; /* Rendre le prix plus foncé pour l'item mis en avant */
+}
+
+/* OPTIONNEL : Ajouter un petit badge "Populaire" ou "Haute Saison" */
+.tarif-item-highlight::before {
+    content: 'POPULAIRE'; /* Texte du badge */
+    position: absolute;
+    top: -10px; /* Position verticale */
+    right: -10px; /* Position horizontale */
+    background-color: #1E2439; /* Couleur de fond du badge */
+    color: #ffffff; /* Couleur du texte du badge */
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    transform: rotate(5deg); /* Légère rotation */
+    z-index: 2; /* Assure qu'il est au-dessus de tout */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+/* Ajuster le badge pour la Haute Saison si vous voulez un texte spécifique */
+.tarif-item-highlight h3:contains("Haute Saison") + .period + .price-line + .price-line::before { /* Sélecteur complexe et moins robuste */
+    /* Mieux vaut gérer le badge textuellement dans le HTML ou avec une autre classe */
+}
+/* Une approche plus simple pour le badge "Haute Saison" serait d'ajouter une classe spécifique */
+/* HTML: <div class="tarif-item tarif-item-highlight tarif-haute-saison"> */
+/* CSS: .tarif-haute-saison::before { content: 'HAUTE SAISON'; } */
+
+
+/* Ajustement mobile pour l'item highlighté (pour annuler ou réduire le scale si nécessaire) */
+@media (max-width: 767px) { /* Mobiles */
+    /* ... autres styles mobiles ... */
+    .tarif-item-highlight {
+        transform: scale(1); /* Annuler le scale sur mobile */
+        box-shadow: 0 5px 15px rgba(0,0,0,0.07); /* Revenir à l'ombre standard */
+    }
+    .tarif-item-highlight:hover { /* Assurer qu'il n'y a pas de zoom bizarre au survol sur mobile */
+         transform: scale(1);
+         box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+    }
+    .tarif-item-highlight::before { /* Ajuster le badge sur mobile */
+        font-size: 10px;
+        padding: 2px 6px;
+        top: -8px;
+        right: -8px;
+    }
+}
 
 .tarif-item h3 {
   font-size: 17px;
