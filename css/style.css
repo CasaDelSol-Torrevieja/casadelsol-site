@@ -1,4 +1,4 @@
-3666666666666666666666666666666666666666666666666666666666666666666/* === GLOBAL RESETS & DEFAULTS === */
+/* === GLOBAL RESETS & DEFAULTS === */
 *,
 *::before,
 *::after {
@@ -321,7 +321,7 @@ li {
 .site-footer .footer-left-side .footer-logo img {
   height: 50px; /* Taille du logo */
   margin-bottom: 10px; /* Moins d'espace sous le logo */
-  display: inline-block; /* Si le logo est le seul enfant de .footer-logo, il sera géré ici */
+  display: block; /* Si le logo est le seul enfant de .footer-logo, il sera géré ici */
 }
 .site-footer .footer-left-side .footer-logo {
     margin-bottom: 10px; /* Espace sous le logo si le texte arrive après */
