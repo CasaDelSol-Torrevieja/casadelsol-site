@@ -43,28 +43,23 @@ h1 { /* Styles spécifiques H1 pour la page d'accueil */
   font-weight: 800; /* Plus gras pour le titre principal */
   text-align: center;
   margin-bottom: 10px;
-  /* text-transform: uppercase; /* Si vous voulez spécifiquement le H1 de l'index en majuscule */
+  /* text-transform: uppercase; /* Décommentez si vous voulez ce H1 spécifique en majuscules */
 }
 
 h2 { /* Styles généraux pour les H2 (comme le sous-titre du hero) */
   font-size: clamp(22px, 4vw, 30px);
   font-weight: 700;
   text-align: center;
-  /* text-transform: uppercase; /* Si vous voulez spécifiquement le H2 du hero en majuscule */
-}
+  /* text-transform: uppercase; /* Décommentez si vous voulez ces H2 spécifiques en majuscules */
+} /* <<< ACCOLADE FERMANTE AJOUTÉE ICI */
 
 /* Classe spécifique pour les titres de section (souvent des H2) */
 .section-title { 
-    /* Si vous voulez que tous les .section-title soient en majuscules : */
-    /* text-transform: uppercase; */ 
-    /* La taille est déjà définie par le h2 auquel la classe est appliquée, 
-       mais vous pourriez la surcharger ici si besoin pour .section-title */
-    /* font-size: clamp(22px, 4vw, 30px); */
+    text-transform: uppercase; /* Tous les .section-title seront en majuscules */
     margin-bottom: 40px;
     position: relative; 
     padding-bottom: 10px;
-    text-align: center; /* Assurez-vous qu'il est centré si ce n'est pas hérité */
-    text-transform: uppercase;
+    text-align: center; 
 }
 .section-title::after {
     content: '';
@@ -74,7 +69,6 @@ h2 { /* Styles généraux pour les H2 (comme le sous-titre du hero) */
     background-color: #F5A623;
     margin: 10px auto 0;
 }
-
 h3 { /* Titres dans les blocs (logement, tarifs, faq) */
   font-size: 20px;
   font-weight: 600;
