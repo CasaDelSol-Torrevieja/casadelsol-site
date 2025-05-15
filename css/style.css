@@ -311,13 +311,48 @@ li {
 }
 
 .site-footer .footer-column {
-  flex: 1; /* Par défaut, chaque colonne essaie de prendre une part égale */
-  min-width: 220px; /* Largeur minimale avant de passer à la ligne */
+  flex: 1; 
+  min-width: 220px; 
+  text-align: left; /* Alignement à gauche par défaut pour toutes les colonnes */
 }
 
-.site-footer .footer-about .footer-logo img {
-  height: 50px; /* Ajustez la taille du logo */
-  margin-bottom: 15px;
+/* Si vous voulez que la colonne "About" ait son contenu (logo, description) centré DANS la colonne, */
+/* mais que les colonnes Navigation et Infos restent alignées à gauche : */
+/*
+.site-footer .footer-about {
+  text-align: center; 
+}
+.site-footer .footer-about .footer-description,
+.site-footer .footer-about .footer-contact-email,
+.site-footer .footer-about .footer-social-icons {
+  text-align: left; /* Pour que le texte à l'intérieur de ces éléments soit à gauche */
+  /* Vous pourriez avoir besoin d'ajuster les largeurs ou d'utiliser des marges pour un vrai centrage du bloc texte sous un logo centré */
+/* }
+*/
+
+.site-footer .footer-about {
+  text-align: left; /* Aligner à gauche la colonne "About" (logo, description, email) */
+  /* Si vous voulez que le logo lui-même soit centré DANS CETTE COLONNE, mais que le texte soit à gauche, */
+  /* alors le logo aurait besoin d'un margin: auto ou d'être dans un div centré. */
+  /* Pour l'instant, tout sera à gauche. */
+}
+.site-footer .footer-about .footer-logo { /* Si vous voulez le logo centré dans sa colonne mais le reste à gauche */
+    /* display: flex; justify-content: center; margin-bottom: 15px; */ /* Exemple */
+}
+
+.site-footer .footer-navigation {
+  text-align: left; /* Aligner à gauche les liens de navigation */
+}
+.site-footer .footer-navigation .footer-column-title,
+.site-footer .footer-information .footer-column-title {
+  /* Si vous voulez les titres "Navigation" et "Informations" spécifiquement centrés au-dessus de leurs listes alignées à gauche : */
+  /* text-align: center; */
+  /* Mais dans l'exemple Trendtrack, ils sont aussi à gauche. */
+  text-align: left; /* Pour correspondre à l'exemple Trendtrack */
+}
+
+.site-footer .footer-information {
+  text-align: left; /* Aligner à gauche les liens d'informations */
 }
 
 .site-footer .footer-description {
@@ -356,11 +391,11 @@ li {
 }
 
 .site-footer .footer-column-title {
-  font-size: 1.1em; /* 17px-18px environ */
+  font-size: 1.1em;
   font-weight: 700;
-  color: #1E2439; /* Couleur des titres */
+  color: #1E2439; 
   margin-bottom: 18px;
-  text-transform: none; /* Assurez-vous qu'il n'est pas en majuscules si non désiré */
+  text-align: left; /* Pour que les titres "Navigation" et "Informations" soient à gauche */
 }
 
 .site-footer .footer-column nav ul {
@@ -390,17 +425,20 @@ li {
 
 .site-footer .footer-bottom-content {
   display: flex;
-  flex-wrap: wrap; /* Pour les petits écrans */
-  justify-content: space-between; /* Copyright à gauche, "Made by" à droite */
+  flex-wrap: wrap;
+  justify-content: space-between; 
   align-items: center;
   font-size: 14px;
   color: #70757a;
+  /* text-align: left; /* Le texte à l'intérieur des <p> sera à gauche par défaut */
 }
 .site-footer .copyright { 
-  margin-bottom: 0; /* Annule la marge par défaut des <p> */
-}
-.site-footer .made-by { /* Si vous ajoutez un "Made by" */
   margin-bottom: 0;
+  /* text-align: left; /* Hérité de .footer-bottom-content */
+}
+.site-footer .made-by { 
+  margin-bottom: 0;
+  /* text-align: right; /* Si vous voulez que le texte "Made by" soit aligné à droite à l'intérieur de son propre espace */
 }
 
 /* Ajustements responsives pour le footer */
