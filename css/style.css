@@ -741,15 +741,58 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
     top: -10px;
 }
 
-.testimonial footer {
-  font-size: 15px;
-  color: #1E2439;
-  font-weight: 600;
-  text-align: center; /* Aligne le nom au centre */
-  margin-top: auto; /* Pousse le footer en bas de la carte */
+/* Styles pour le footer des témoignages */
+.testimonial footer.testimonial-author {
+  display: flex; 
+  align-items: center; 
+  justify-content: flex-end; /* Ou 'center' ou 'flex-start' */
+  margin-top: 20px; 
+  font-size: 15px; 
 }
-.testimonial footer::before {
-  content: "";
+
+.testimonial footer.testimonial-author::before {
+    content: ""; /* On retire le tiret "— " */
+}
+
+.testimonial-author .author-icon {
+  display: inline-block;
+  width: 24px;  /* Ajustez si vos PNG ont une taille préférée */
+  height: 24px; /* Ajustez si vos PNG ont une taille préférée */
+  margin-right: 8px; 
+  background-size: contain; /* ou 'cover' ou une taille spécifique comme '20px 20px' */
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle; 
+}
+
+/* Styles spécifiques pour vos icônes PNG */
+/* Assurez-vous que les noms de fichiers correspondent exactement, y compris l'extension .png */
+
+.testimonial-author .icon-famille {
+  background-image: url('../images/famille.webp'); 
+}
+
+.testimonial-author .icon-couple {
+  background-image: url('../images/couple.webp');
+}
+
+.testimonial-author .icon-homme { /* Pour un homme seul ou un témoignage d'un homme */
+  background-image: url('../images/homme.webp');
+}
+
+.testimonial-author .icon-femme { /* Pour une femme seule ou un témoignage d'une femme */
+  background-image: url('../images/femme.webp');
+}
+
+.testimonial-author .author-name {
+  font-weight: 600; 
+  color: #1E2439; 
+}
+
+.testimonial-author .author-date {
+  font-size: 0.9em; 
+  color: #5F6368; 
+  margin-left: 5px; 
 }
 
 /* Media query pour les mobiles (votre existante) */
