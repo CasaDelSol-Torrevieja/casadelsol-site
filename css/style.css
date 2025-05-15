@@ -687,114 +687,133 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
 
 /* === TEMOIGNAGES SECTION === */
 .temoignages-section {
-  /* background-color: #f8f9fa; 
+  /* Si vous voulez un fond spécifique pour CETTE section : */
+  /* background-color: #f8f9fa; */ 
+  /* Sinon, elle suivra la règle section:nth-child(even) si elle est paire et non exclue */
 }
 
+/* Paragraphe d'introduction sous le titre H2 de la section témoignages */
 .temoignages-section > .container > p:first-of-type {
-  max-width: 700px; 
+  max-width: 750px; /* Un peu plus de largeur si le texte est long */
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  margin-bottom: 30px; /
+  margin-bottom: 40px; /* Espace avant la grille des témoignages */
+  font-size: 1.05em; /* Un peu plus grand si souhaité */
+  line-height: 1.7;
 }
 
 .testimonial-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Min un peu plus grand pour des cartes plus larges */
   gap: 30px;
-  margin-top: 20px; 
+  /* margin-top est géré par la marge en bas du paragraphe d'intro, ou mettez 40px si pas de paragraphe d'intro */
+  /* Centrage de la grille elle-même si elle ne remplit pas la ligne (par exemple avec 1 ou 2 items) */
+  /* Ceci est optionnel et dépend de si vous voulez que la grille elle-même se centre */
+  /* S'il y a 3 items, ils rempliront la ligne sur desktop. S'il y en a 2, ils s'étireront (à cause de 1fr) ou vous pouvez les centrer. */
+  /* Pour centrer les colonnes dans la grille : */
+  justify-content: center; /* Si auto-fit crée moins de colonnes que possible */
 }
 
 .testimonial {
   background-color: #ffffff;
   padding: 30px 25px;
   border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.07); /* Ombre un peu plus douce */
   display: flex; 
-  flex-direction: column; 
-  /* text-align: left; */ /* Assurez-vous que ce n'est pas 'center' ici, ou ajoutez text-align: left; si besoin */
+  flex-direction: column;
+  text-align: left; /* IMPORTANT : Assure que le texte par défaut dans la carte est aligné à gauche */
 }
 
 .testimonial .quote {
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 16px; /* Ou 1em pour s'adapter à la taille de police de .testimonial */
+  line-height: 1.75; /* Un peu plus d'interligne pour la lisibilité */
   color: #3C4043;
-  margin-bottom: 20px;
+  margin-bottom: 25px; /* Plus d'espace avant le footer */
   flex-grow: 1; 
   font-style: italic;
   position: relative;
-  padding-left: 35px; 
-  text-align: left; /* Ajoutez ceci pour être sûr */
+  padding-left: 40px; /* Un peu plus d'espace pour les guillemets */
+  text-align: left; /* Redondant si .testimonial a text-align: left, mais ne fait pas de mal */
 }
+
 .testimonial .quote::before { 
     content: '“';
     font-family: Georgia, serif;
-    font-size: 40px;
+    font-size: 45px; /* Guillemets un peu plus grands */
     color: #F5A623;
     position: absolute;
     left: 0px;
-    top: -10px;
+    top: -15px; /* Ajuster pour la nouvelle taille de police */
+    line-height: 1; /* Empêche le guillemet d'ajouter trop de hauteur */
 }
 
 /* Styles pour le footer des témoignages */
 .testimonial footer.testimonial-author {
   display: flex; 
   align-items: center; 
-  justify-content: center; 
-  margin-top: 20px; 
+  justify-content: center; /* Centre l'icône, le nom et la date ensemble */
+  margin-top: auto; /* Pousse le footer en bas */
+  padding-top: 15px; /* Espace au-dessus du footer, si la citation est courte */
   font-size: 15px; 
+}
+
+.testimonial footer.testimonial-author::before {
+    content: ""; /* Plus de tiret automatique */
 }
 
 .testimonial-author .author-icon {
   display: inline-block;
-  width: 26px;  
-  height: 26px; 
-  margin-right: 8px; 
+  width: 28px;  /* Icônes un peu plus grandes */
+  height: 28px; 
+  margin-right: 10px; /* Plus d'espace */
   background-size: contain; 
   background-repeat: no-repeat;
   background-position: center;
   vertical-align: middle; 
+  flex-shrink: 0; /* Empêche l'icône de rétrécir si le texte est long */
 }
 
 .testimonial-author .icon-famille {
   background-image: url('../images/famille.webp'); 
 }
-
 .testimonial-author .icon-couple {
   background-image: url('../images/couple.webp');
 }
-
-.testimonial-author .icon-homme { /* Pour un homme seul ou un témoignage d'un homme */
+.testimonial-author .icon-homme {
   background-image: url('../images/homme.webp');
 }
-
-.testimonial-author .icon-femme { /* Pour une femme seule ou un témoignage d'une femme */
+.testimonial-author .icon-femme {
   background-image: url('../images/femme.webp');
 }
 
 .testimonial-author .author-name {
   font-weight: 600; 
   color: #1E2439; 
+  margin-right: 5px; /* Espace entre nom et date si la date est à côté */
 }
 
 .testimonial-author .author-date {
   font-size: 0.9em; 
   color: #5F6368; 
-  margin-left: 5px; 
+  /* margin-left: 5px; /* Plus besoin si .author-name a margin-right */
 }
 
-/* Media query pour les mobiles (votre existante) */
+/* Media query pour les mobiles */
 @media (max-width: 767px) { 
   .testimonial-grid { 
-    grid-template-columns: 1fr; /* Une seule colonne */
+    grid-template-columns: 1fr; 
   }
   .testimonial .quote { 
-    padding-left: 30px; /* Ajustement pour mobile */
+    padding-left: 35px; /* Conserver un padding correct */
   }
   .testimonial .quote::before { 
-    font-size: 35px; 
-    left: -5px; 
-    top: -5px; /* Ajustement pour mobile */
+    font-size: 40px; /* Ajuster si besoin */
+    left: 0px; 
+    top: -10px;
+  }
+  .testimonial footer.testimonial-author {
+    justify-content: center; /* Assurer le centrage sur mobile aussi */
   }
 }
 
