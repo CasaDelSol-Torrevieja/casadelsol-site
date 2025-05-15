@@ -153,12 +153,12 @@ li {
 }
 #header nav ul { /* Pour Desktop */
   display: flex;
-  gap: 28px;
+  gap: 22px;
 }
 #header nav li a {
   color: #3C4043;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 15px;
   padding: 5px 0;
   position: relative;
 }
@@ -749,6 +749,7 @@ footer {
     display: block;
     padding: 12px 20px;
     width: 100%;
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
   }
   #header nav li a::after {
       display: none;
