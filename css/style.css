@@ -8,22 +8,22 @@
 }
 
 html {
-  scroll-behavior: smooth; /* Défilement doux pour les ancres */
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: #ffffff; /* Dorik utilise un fond blanc pour le body */
+  background-color: #ffffff;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 17px;
   line-height: 1.7;
-  color: #3C4043; /* Couleur de texte principale (gris foncé) */
+  color: #3C4043;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
   width: 100%;
-  max-width: 1140px; /* Largeur de contenu principale */
+  max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
@@ -38,28 +38,26 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.75em;
 }
 
-h1 { /* Styles spécifiques H1 pour la page d'accueil */
-  font-size: clamp(28px, 5vw, 38px); /* Responsive */
-  font-weight: 800; /* Plus gras pour le titre principal */
+h1 { /* Pour la page d'accueil */
+  font-size: clamp(28px, 5vw, 38px);
+  font-weight: 800;
   text-align: center;
   margin-bottom: 10px;
-  /* text-transform: uppercase; /* Décommentez si vous voulez ce H1 spécifique en majuscules */
 }
 
-h2 { /* Styles généraux pour les H2 (comme le sous-titre du hero) */
+h2 { /* Pour le sous-titre du hero page d'accueil */
   font-size: clamp(22px, 4vw, 30px);
   font-weight: 700;
   text-align: center;
-  /* text-transform: uppercase; /* Décommentez si vous voulez ces H2 spécifiques en majuscules */
-} /* <<< ACCOLADE FERMANTE AJOUTÉE ICI */
+}
 
-/* Classe spécifique pour les titres de section (souvent des H2) */
-.section-title { 
-    text-transform: uppercase; /* Tous les .section-title seront en majuscules */
+.section-title { /* Classe pour les titres de section (H2) */
+    text-transform: uppercase;
     margin-bottom: 40px;
-    position: relative; 
+    position: relative;
     padding-bottom: 10px;
-    text-align: center; 
+    text-align: center;
+    font-size: clamp(22px, 4vw, 30px); /* Assure que la taille est cohérente avec les H2 */
 }
 .section-title::after {
     content: '';
@@ -69,8 +67,9 @@ h2 { /* Styles généraux pour les H2 (comme le sous-titre du hero) */
     background-color: #F5A623;
     margin: 10px auto 0;
 }
+
 h3 { /* Titres dans les blocs (logement, tarifs, faq) */
-  font-size: 20px;
+  font-size: 20px; /* Était 20px */
   font-weight: 600;
   color: #1E2439;
   margin-bottom: 15px;
@@ -86,20 +85,20 @@ p strong {
 }
 
 a {
-  color: #F5A623; /* Jaune doré pour les liens */
+  color: #F5A623;
   text-decoration: none;
   transition: color 0.2s ease-in-out;
 }
 a:hover {
-  color: #d18c14; /* Jaune plus foncé au survol */
-  text-decoration: none; /* Pas de soulignement par défaut, Dorik ne le fait pas beaucoup */
+  color: #d18c14;
+  text-decoration: none;
 }
 
 img {
   max-width: 100%;
   height: auto;
   display: block;
-  border-radius: 6px; /* Coins arrondis par défaut pour les images */
+  border-radius: 6px;
 }
 
 ul {
@@ -124,55 +123,13 @@ li {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 .button-primary:hover {
-  background-color: #F5A623;
+  background-color: #d18c14; /* Était #F5A623, le rendre plus foncé */
   color: #ffffff;
   text-decoration: none;
 }
 .button-large {
     padding: 14px 32px;
     font-size: 17px;
-}
-
-/* === RESERVATION SECTION === */
-.reservation-section {
-    /* Vous pouvez ajouter text-align: center; ici si vous voulez que tout ce qui est inline-block à l'intérieur soit centré par défaut, */
-    /* mais il est généralement mieux de cibler les éléments spécifiques. */
-}
-
-.reservation-section > .container > p:first-of-type { /* Cible le premier paragraphe après le H2 */
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-.calendar-placeholder {
-  border: 1px solid #d1d5db;
-  padding: 15px;
-  text-align: center; /* Centre le contenu TEXTUEL à l'intérieur du placeholder */
-  margin: 30px auto; /* Centre LE BLOC .calendar-placeholder lui-même */
-  background-color: #fdfdfd;
-  border-radius: 8px;
-  max-width: 750px; 
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-.calendar-placeholder iframe {
-  display: block; /* Nécessaire pour que margin: auto fonctionne si vous vouliez centrer l'iframe elle-même */
-  width: 100%; 
-  max-width: 100%; 
-  height: 600px; 
-  min-height: 400px; 
-  border: none; 
-  /* L'iframe prendra 100% de la largeur de .calendar-placeholder, donc elle sera centrée si .calendar-placeholder l'est. */
-  /* margin: 20px auto 0; /* Ce margin: auto ici n'aura pas d'effet si width:100% */
-  margin-top: 20px; /* Juste une marge en haut */
-}
-
-.reservation-action {
-  text-align: center; /* Centre le contenu inline/inline-block (le bouton, le paragraphe) */
-  margin-top: 30px;
 }
 
 /* === HEADER === */
@@ -194,21 +151,18 @@ li {
 .logo-container img {
   height: 50px; 
 }
-
-/* Styles de la navigation Desktop */
-#header nav ul {
-  display: flex; /* Affiché par défaut sur desktop */
+#header nav ul { /* Pour Desktop */
+  display: flex;
   gap: 28px;
 }
-#header nav li a { /* Styles de base pour les liens de nav desktop */
+#header nav li a {
   color: #3C4043;
   font-weight: 500;
   font-size: 16px;
   padding: 5px 0;
   position: relative;
-  text-decoration: none; /* Assurez-vous qu'il n'y a pas de soulignement par défaut */
 }
-#header nav li a::after { /* Effet de soulignement au survol pour desktop */
+#header nav li a::after {
     content: '';
     position: absolute;
     width: 0;
@@ -220,28 +174,18 @@ li {
     transition: width 0.3s ease;
     -webkit-transition: width 0.3s ease;
 }
-#header nav li a:hover::after { /* Comportement au survol pour desktop */
+#header nav li a:hover::after {
     width: 100%;
     left: 0;
-    /* background-color: #F5A623; /* Déjà défini dans ::after, pas besoin de redéfinir ici */
+    background-color: #F5A623;
 }
-#header nav li a:hover { /* Changement de couleur au survol pour desktop */
+#header nav li a:hover {
     color: #F5A623;
 }
-
-/* Bouton CTA dans le header (version desktop) */
-.header-cta { 
-  /* display: block; /* ou inline-block, selon le reste du layout du header */
-  /* Vous pouvez ajouter d'autres styles si besoin pour le positionner */
+#header nav ul li.mobile-cta-item { /* Caché sur desktop */
+  display: none;
 }
-
-/* Bouton CTA dans la liste nav (pour mobile, caché sur desktop) */
-#header nav ul li.mobile-cta-item {
-  display: none; 
-}
-
-/* Bouton Burger pour mobile (caché sur desktop) */
-#mobile-menu-toggle {
+#mobile-menu-toggle { /* Caché sur desktop */
   display: none;
   background: none;
   border: none;
@@ -249,236 +193,30 @@ li {
   color: #1E2439;
   cursor: pointer;
 }
-/* === Styles spécifiques pour la page vacances-a-torrevieja.html === */
-
-.guide-page-section h1.section-title { /* Titre principal de la page guide */
-  margin-top: 20px; /* Un peu plus d'espace si besoin */
-  margin-bottom: 20px;
-}
-
-.guide-page-section h2.section-title { /* Sous-titres de la page guide */
-  margin-top: 50px; /* Plus d'espace avant les sections H2 */
-  font-size: clamp(24px, 4vw, 32px); /* Ajustez la taille si besoin */
-}
-
-.guide-page-section h3 {
-  font-size: clamp(20px, 3vw, 24px); /* Ajustez la taille des H3 si besoin */
-  margin-top: 30px;
-  margin-bottom: 15px;
-  color: #1E2439; /* Assurez-vous qu'ils ont la couleur des titres */
-}
-
-.guide-page-section ul {
-  list-style: disc; /* Remettre des puces pour les listes de cette page */
-  padding-left: 25px; /* Indentation pour les puces */
-  margin-bottom: 1.2em;
-}
-.guide-page-section ul li {
-  margin-bottom: 0.6em;
-  color: #3C4043; /* Assurer la couleur du texte de paragraphe */
-}
-
-/* La classe .activites-grid peut hériter de .gallery-grid */
-/* Si vous voulez des styles spécifiques pour les images de cette page : */
-/*
-.activites-grid img {
-  height: 230px; 
-  object-fit: cover;
-}
-*/
-
-/* === NEW FOOTER STYLES === */
-.site-footer {
-  background-color: #ffffff; 
-  color: #5F6368; 
-  padding: 50px 0 30px;
-  font-size: 15px;
-  border-top: 1px solid #eaeaea;
-  /* text-align: center; n'est plus nécessaire globalement, le copyright sera centré via sa propre div */
-}
-
-.site-footer .footer-main-content {
-  display: flex;
-  flex-wrap: wrap; 
-  justify-content: space-between; /* Aligne gauche et droite aux extrémités */
-  gap: 30px; 
-  margin-bottom: 30px;
-  align-items: flex-start; /* Aligne les deux côtés en haut de leur conteneur */
-}
-
-.site-footer .footer-left-side {
-  flex-basis: 350px; /* Ajustez la largeur préférée du côté gauche */
-  flex-grow: 0; 
-  flex-shrink: 0; 
-  text-align: left; /* Le contenu texte dans ce côté est aligné à gauche */
-}
-
-.site-footer .footer-right-side {
-  display: flex; /* IMPORTANT : C'est le conteneur flex qui aligne "Navigation" et "Informations" */
-  flex-wrap: wrap; /* Permet aux colonnes de droite de passer à la ligne entre elles si pas assez de place */
-  gap: 30px; /* Espace entre les colonnes de droite */
-  justify-content: flex-end; /* Aligne les colonnes de droite VERS la droite */
-  /* align-items: flex-start; /* Aligne les colonnes de droite en haut de leur conteneur flex */
-  flex-grow: 1; /* Permet au côté droit de prendre l'espace restant */
-  /* align-self: flex-start; /* Pour s'aligner en haut si le conteneur parent (main-content) a align-items: center */
-}
-
-
-/* Styles pour les colonnes individuelles dans footer-right-side */
-.site-footer .footer-column { 
-  flex: 1; /* Chaque colonne de droite prend une part égale de l'espace DANS footer-right-side */
-  min-width: 150px; /* Largeur minimale de chaque colonne (Navigation ou Informations) */
-  text-align: left; /* Aligne le texte à gauche dans ces colonnes */
-}
-
-.site-footer .footer-column-title {
-  text-align: left; /* Les titres "Navigation" et "Informations" sont alignés à gauche */
-  /* ... */
-}
-
-/* Styles pour les listes dans les colonnes de droite */
-.site-footer .footer-column nav ul {
-  text-align: left; /* Assure que les listes sont alignées à gauche */
-  /* ... */
-}
-.site-footer .footer-column nav li {
-  /* ... */
-}
-.site-footer .footer-column nav a {
-  /* ... */
-}
-
-/* Ajustements pour aligner verticalement le logo et le texte principal */
-.site-footer .footer-brand-info {
-  display: flex; 
-  align-items: center; /* Aligne le logo et le texte verticalement au centre */
-  gap: 15px; 
-  margin-bottom: 10px; 
-}
-
-/* ... (reste des styles) ... */
-
-/* Media query pour les petits écrans où tout s'empile et se centre */
-@media (max-width: 767px) {
-  .site-footer .footer-main-content {
-    flex-direction: column; /* Empile gauche et droite */
-    align-items: center; /* Centre les blocs gauche et droite */
-    /* ... */
-  }
-  .site-footer .footer-left-side,
-  .site-footer .footer-right-side {
-      width: 100%; /* Prennent toute la largeur sur mobile */
-      text-align: center; /* Centrent leur contenu texte sur mobile */
-      align-items: center; /* Centrent leurs éléments flex enfants (comme footer-brand-info ou les colonnes de droite) */
-  }
-
-  .site-footer .footer-brand-info { /* Logo et texte principal sur mobile */
-    flex-direction: column; /* Empile le logo et le texte */
-    align-items: center; /* Centre logo et texte quand ils sont empilés */
-    /* ... */
-  }
-
-  .site-footer .footer-column { /* Colonnes Navigation/Information sur mobile */
-      text-align: center; /* Centre le texte à l'intérieur */
-      align-items: center; /* Centre les listes/titres si elles sont display:flex */
-  }
-  .site-footer .footer-column-title,
-  .site-footer .footer-column nav ul {
-      text-align: center; /* Assure le centrage sur mobile */
-  }
-
-/* === RESPONSIVE ADJUSTMENTS === */
-@media (max-width: 991px) { /* Tablettes et en dessous */
-  #header nav { /* Le conteneur <nav> lui-même */
-    display: none; /* Caché par défaut sur mobile, affiché par JS via la classe .active */
-    position: absolute;
-    top: 80px; /* Sous le header */
-    left: 0;
-    right: 0;
-    width: 100%;
-    background-color: #ffffff;
-    flex-direction: column;
-    padding: 15px 0;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    border-top: 1px solid #eaeaea;
-  }
-  #header nav.active { /* Quand le menu mobile est ouvert */
-    display: flex;
-  }
-  #header nav ul { /* La liste <ul> dans le menu mobile */
-    flex-direction: column;
-    align-items: center;
-    gap: 0; /* Pas de gap, le padding sur les <a> gère l'espacement */
-  }
-  #header nav li { /* Chaque item <li> dans le menu mobile */
-    width: 100%;
-    text-align: center;
-  }
-  #header nav li a { /* Chaque lien <a> dans le menu mobile */
-    display: block;
-    padding: 12px 20px; /* Espacement cliquable */
-    width: 100%;
-    /* La couleur et le font-weight sont hérités des styles desktop, c'est bien */
-  }
-  #header nav li a::after { /* Enlever l'effet de soulignement desktop sur mobile */
-      display: none;
-  }
-  /* Pas besoin de :hover spécifique pour le soulignement sur mobile si ::after est none */
-  /* Le :hover pour color: #F5A623; s'appliquera toujours, ce qui est bien */
-
-  /* Afficher et styler le bouton CTA dans le menu mobile */
-  #header nav ul li.mobile-cta-item {
-    display: block; 
-    margin-top: 15px; 
-    padding-bottom: 10px; 
-  }
-  #header nav ul li.mobile-cta-item a.button-primary {
-    display: inline-block; 
-    width: auto; 
-    padding: 10px 25px; 
-  }
-
-  /* Afficher le bouton burger */
-  #mobile-menu-toggle {
-    display: block; 
-  }
-
-  /* Cacher le bouton CTA original du header sur mobile */
-  .header-cta { 
-      display: none; 
-  }
-}
-
-/* ... reste de vos media queries pour mobiles plus petits ... */
-@media (max-width: 767px) { /* Mobiles */
-  /* ... */
-  /* Vos styles pour .calendar-placeholder iframe etc. sont bien ici ... */
-}
 
 /* === SECTIONS PADDING & STRUCTURE === */
 section {
   padding-top: 70px;
   padding-bottom: 70px;
 }
-section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alternance de fond léger pour certaines sections */
-    background-color: #f8f9fa; /* Blanc cassé très léger */
+section:nth-child(even):not(.tarifs-section):not(.contact-form-section):not(.faq-section) {
+    background-color: #f8f9fa;
 }
-.hero-section { /* Premier bloc sans padding en haut si header fixe */
-    padding-top: 40px; /* Moins de padding car sous le header */
+.hero-section {
+    padding-top: 40px;
 }
 .separator {
   border: 0;
   height: 1px;
   background-color: #e0e0e0;
-  margin: 0 auto; /* Prend la largeur du container */
+  margin: 40px auto; /* Ajouté pour espacer, prend la largeur du container */
 }
 
-
 /* === HERO SECTION === */
-.hero-section h2 { /* Sous-titre du Hero */
+.hero-section h2 {
   font-size: clamp(18px, 3vw, 24px);
   font-weight: 600;
-  color: #5F6368; /* Gris plus clair pour le sous-titre */
+  color: #5F6368;
   margin-bottom: 30px;
   margin-top: 5px;
 }
@@ -496,15 +234,6 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
-@media (max-width: 767px) {
-  .hero-image-container {
-    margin-top: 20px;
-    margin-bottom: 25px;
-  }
-  .hero-image {
-    max-width: 95%;
-  }
-}
 .hero-description {
   max-width: 750px;
   margin-left: auto;
@@ -516,39 +245,33 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
   line-height: 1.8;
 }
 
-
 /* === LOGEMENT SECTION === */
+.logement-section p { /* Paragraphe d'intro de la section logement */
+  text-align:center; 
+  max-width: 700px; 
+  margin-left:auto; 
+  margin-right:auto;
+  margin-bottom: 30px; /* Espace avant la grille */
+}
 .logement-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
-  margin-top: 20px;
-}
-@media (min-width: 768px) { /* Forcer 2 colonnes sur tablette */
-    .logement-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media (min-width: 992px) { /* Forcer 4 colonnes sur desktop si voulu, comme Dorik */
-    .logement-grid {
-        /* Si vous voulez absolument 4 colonnes comme sur Dorik, même si le contenu ne remplit pas: */
-        /* grid-template-columns: repeat(4, 1fr); */
-        /* Sinon, auto-fit est bien pour la flexibilité */
-    }
+  /* margin-top: 20px; /* Géré par la marge du paragraphe d'intro */
 }
 .logement-col {
-  background-color: #ffffff; /* Fond blanc pour les colonnes si section sur fond gris */
+  background-color: #ffffff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 .logement-col h3 .icon {
   margin-right: 10px;
-  font-size: 22px; /* Taille de l'emoji */
+  font-size: 22px;
   color: #F5A623;
 }
 .logement-col ul li {
-  padding-left: 10px; /* Petit décalage pour la lisibilité */
+  padding-left: 10px;
   position: relative;
   margin-bottom: 8px;
   color: #3C4043;
@@ -557,27 +280,28 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
     content: "•";
     color: #F5A623;
     position: absolute;
-    left: -5px; /* Ajuster position de la puce */
+    left: -5px;
     font-weight: bold;
 }
 
-
-/* === GALLERIE PHOTOS SECTION === */
-.gallery-grid {
+/* === GALLERIE PHOTOS SECTION & ACTIVITES GRID === */
+.gallery-section p, .activites-section-page p:first-of-type { /* Paragraphe d'intro */
+  text-align:center; 
+  max-width: 700px; 
+  margin-left:auto; 
+  margin-right:auto;
+  margin-bottom: 30px;
+}
+.gallery-grid { /* Utilisé aussi par .activites-grid */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
-  margin-top: 20px;
-}
-@media (min-width: 768px) {
-    .gallery-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur tablette et plus */
-    }
+  /* margin-top: 20px; */
 }
 .gallery-grid img {
   width: 100%;
-  height: 220px; /* Hauteur fixe pour uniformité */
-  object-fit: cover; /* Couvre sans déformer */
+  height: 220px;
+  object-fit: cover;
   border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
@@ -587,100 +311,65 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-
 /* === TARIFS SECTION === */
 .tarifs-section {
-    background-color: #f0f4f8; 
+    background-color: #f0f4f8;
 }
-
+.tarifs-section p:first-of-type { /* Paragraphe d'intro */
+  text-align:center; 
+  max-width: 700px; 
+  margin-left:auto; 
+  margin-right:auto;
+  margin-bottom: 30px;
+}
 .tarifs-grid {
   display: grid;
   gap: 25px;
-  /* Commence avec auto-fit pour la responsivité sur les petits écrans */
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
-  
-  /* Pour centrer la grille elle-même dans son conteneur parent (.container) */
-  /* On donne une largeur max à la grille pour qu'elle ne s'étende pas trop */
-  /* Cette valeur est un exemple, vous pouvez l'ajuster. */
-  /* (4 items * ~250px de large) + (3 gaps * 25px) = 1000 + 75 = 1075px. */
-  /* Si votre .container fait 1140px, c'est bien. */
-  max-width: 1075px; /* Ou la largeur qui convient pour 4 de vos items + gaps */
+  max-width: 1075px; 
   margin-left: auto;
   margin-right: auto;
-
-  /* justify-content: center; va centrer les pistes de colonnes si, par exemple, */
-  /* auto-fit ne crée que 2 ou 3 colonnes sur un écran plus petit et qu'elles n'occupent pas la max-width. */
   justify-content: center; 
-  
   margin-top: 30px;
   margin-bottom: 30px;
 }
-
-/* Media Query pour forcer 4 colonnes sur les écrans assez larges pour les afficher confortablement */
-/* Ajustez ce point de rupture (breakpoint) si nécessaire. */
-/* Par exemple, si chaque item fait au moins 220px + 25px de gap : (220*4) + (25*3) = 880 + 75 = 955px */
-@media (min-width: 992px) { /* À partir de cette largeur, on essaie d'avoir jusqu'à 4 colonnes */
-    .tarifs-grid {
-        /* Si vous avez EXACTEMENT 4 items, vous pouvez simplement faire : */
-        grid-template-columns: repeat(4, 1fr);
-        /* Cela créera 4 colonnes de taille égale. */
-        /* Le max-width: 1075px; et margin: auto; ci-dessus s'assureront que cette grille de 4 colonnes est centrée. */
-        /* Si vous préférez garder auto-fit pour que ça passe à 3, 2, 1 si l'écran se rétrécit avant 767px : */
-        /* grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); */
-        /* Dans ce cas, le max-width et margin:auto; sont encore plus importants. */
-    }
-}
-
-
-/* Sur les écrans très petits, votre media query existante prendra le dessus : */
-@media (max-width: 767px) { 
-    .tarifs-grid {
-        grid-template-columns: 1fr; /* Force une seule colonne */
-        max-width: 100%; /* Permet à la grille de prendre toute la largeur en 1 colonne, pas de centrage par margin: auto nécessaire ici */
-    }
-}
 .tarif-item {
   background-color: #ffffff;
-  padding: 25px 20px; /* Ajusté */
-  border: 2px solid #F5A623; /* Style de bordure de base */
+  padding: 25px 20px;
+  border: 2px solid #F5A623;
   border-radius: 8px;
   text-align: center;
   box-shadow: 0 5px 15px rgba(0,0,0,0.07);
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Aligne le contenu verticalement */
+  justify-content: space-between;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
-
 .tarif-item:hover {
-    transform: translateY(-5px) scale(1.02); /* Léger mouvement vers le haut et agrandissement */
+    transform: translateY(-5px) scale(1.02);
     box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
-
 .tarif-item h3 {
-  font-size: 18px; /* Un peu plus grand */
+  font-size: 18px;
   font-weight: 700;
   color: #1E2439;
   margin-bottom: 10px;
 }
-
 .tarif-item .period {
   font-size: 14px;
   color: #5F6368;
   margin-bottom: 15px;
-  min-height: 42px; /* Ajustez pour aligner les blocs de prix si les textes varient trop */
+  min-height: 42px;
   line-height: 1.4;
 }
-
 .tarif-item .price-line {
   font-size: 18px; 
-  color: #3C4043; /* Un peu plus foncé pour le texte " / semaine" */
+  color: #3C4043;
   font-weight: 500;
-  margin-top: auto; /* Pousse cette ligne vers le bas si l'item s'agrandit */
+  margin-top: auto;
   margin-bottom: 0;
 }
-
-.tarif-item .price-line .price-intro { /* Pour "À partir de" */
+.tarif-item .price-line .price-intro {
   display: block; 
   font-size: 14px; 
   font-weight: 500;
@@ -688,35 +377,28 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
   margin-bottom: -5px; 
   line-height: 1.2;
 }
-
 .tarif-item .price-amount {
-  font-size: 30px; /* Un peu plus grand */
-  font-weight: 800; /* Plus gras */
+  font-size: 30px;
+  font-weight: 800;
   color: #F5A623; 
-  display: inline-block; /* Ou block si vous voulez qu'il prenne toute la largeur avant "/ semaine" */
+  display: inline-block;
   margin-right: 3px;
 }
-
-/* Mise en avant spécifique pour l'item "Haute Saison" */
 .tarif-item-highlight {
-    border-color: #1E2439; /* Bordure plus foncée */
-    background-color: #fffbea; /* Fond légèrement crème/jaune très pâle */
-    transform: scale(1.05); /* Un peu plus grand par défaut */
-    z-index: 1; /* Pour qu'il soit au-dessus des autres au survol si transform change */
-    position: relative; /* Nécessaire pour le pseudo-élément ::before */
+    border-color: #1E2439;
+    background-color: #fffbea;
+    transform: scale(1.05);
+    z-index: 1;
+    position: relative;
 }
-
 .tarif-item-highlight:hover {
-    transform: translateY(-5px) scale(1.07); /* Effet de survol un peu plus prononcé */
+    transform: translateY(-5px) scale(1.07);
     box-shadow: 0 12px 30px rgba(0,0,0,0.18);
 }
-
 .tarif-item-highlight .price-amount {
     color: #F5A623; 
     font-size: 30px; 
 }
-
-/* Badge "Populaire" */
 .tarif-item-highlight::before {
     content: 'POPULAIRE'; 
     position: absolute;
@@ -731,193 +413,159 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
     text-transform: uppercase; 
     z-index: 2; 
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    transform: rotate(7deg); /* <-- Décommentez et ajustez cette ligne */
-    transform-origin: bottom left; /* Optionnel: change le point de rotation */
+    /* transform: rotate(7deg); */ /* Décommentez et ajustez si vous voulez la rotation */
+    /* transform-origin: bottom left; */
 }
-
-/* Ajustement mobile pour le badge (si nécessaire) */
-@media (max-width: 767px) { 
-    /* ... (vos autres styles mobiles) ... */
-
-    .tarif-item-highlight::before { 
-        font-size: 9px;
-        padding: 2px 6px;
-        top: -8px; /* Ajuster la position pour les plus petits écrans */
-        right: -8px;
-    }
-}
-
 .tarifs-notes {
   text-align: center;
   font-size: 16px;
   color: #3C4043;
-  margin-top: 40px; /* Plus d'espace */
+  margin-top: 40px;
   line-height: 1.6;
-  max-width: 700px; /* Pour que le texte ne soit pas trop large */
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Assurez-vous que les styles mobiles pour les tarifs sont bien appliqués */
-@media (max-width: 767px) { 
-    .tarifs-grid {
-        grid-template-columns: 1fr; /* Force une seule colonne */
-    }
-    .tarif-item-highlight {
-        transform: scale(1); /* Pas de mise à l'échelle par défaut sur mobile */
-    }
-    .tarif-item-highlight:hover {
-        transform: scale(1); /* Pas de mise à l'échelle au survol sur mobile */
-    }
-    /* Ajustement du badge sur mobile si activé */
-    /*
-    .tarif-item-highlight::before { 
-        font-size: 9px;
-        padding: 3px 7px;
-        top: -10px;
-    }
-    */
-}
-
-/* === TEMOIGNAGES SECTION === */
-.temoignages-section {
-  /* Si vous voulez un fond spécifique pour CETTE section : */
-  /* background-color: #f8f9fa; */ 
-  /* Sinon, elle suivra la règle section:nth-child(even) si elle est paire et non exclue */
-}
-
-/* Paragraphe d'introduction sous le titre H2 de la section témoignages */
-.temoignages-section > .container > p:first-of-type {
-  max-width: 750px; /* Un peu plus de largeur si le texte est long */
+/* === RESERVATION SECTION === */
+.reservation-section > .container > p:first-of-type {
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  margin-bottom: 40px; /* Espace avant la grille des témoignages */
-  font-size: 1.05em; /* Un peu plus grand si souhaité */
+  margin-bottom: 25px;
+}
+.calendar-placeholder {
+  border: 1px solid #d1d5db;
+  padding: 15px;
+  text-align: center;
+  margin: 30px auto;
+  background-color: #fdfdfd;
+  border-radius: 8px;
+  max-width: 750px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.calendar-placeholder iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 600px;
+  min-height: 400px; 
+  border: none;
+  margin-top: 20px;
+}
+.reservation-action {
+  text-align: center;
+  margin-top: 30px;
+}
+.paiement-securise-info {
+  margin-top: 15px;
+  font-size: 15px;
+  color: #5F6368;
+}
+.paiement-securise-info svg {
+  vertical-align: middle;
+  margin-right: 5px;
+  width: 16px; height: 16px;
+  fill: currentColor;
+}
+
+/* === TEMOIGNAGES SECTION === */
+.temoignages-section > .container > p:first-of-type {
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 1.05em;
   line-height: 1.7;
 }
-
 .testimonial-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Min un peu plus grand pour des cartes plus larges */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
-  /* margin-top est géré par la marge en bas du paragraphe d'intro, ou mettez 40px si pas de paragraphe d'intro */
-  /* Centrage de la grille elle-même si elle ne remplit pas la ligne (par exemple avec 1 ou 2 items) */
-  /* Ceci est optionnel et dépend de si vous voulez que la grille elle-même se centre */
-  /* S'il y a 3 items, ils rempliront la ligne sur desktop. S'il y en a 2, ils s'étireront (à cause de 1fr) ou vous pouvez les centrer. */
-  /* Pour centrer les colonnes dans la grille : */
-  justify-content: center; /* Si auto-fit crée moins de colonnes que possible */
+  justify-content: center;
 }
-
 .testimonial {
   background-color: #ffffff;
   padding: 30px 25px;
   border-radius: 8px;
-  box-shadow: 0 6px 25px rgba(0,0,0,0.07); /* Ombre un peu plus douce */
+  box-shadow: 0 6px 25px rgba(0,0,0,0.07);
   display: flex; 
   flex-direction: column;
-  text-align: left; /* IMPORTANT : Assure que le texte par défaut dans la carte est aligné à gauche */
+  text-align: left;
 }
-
 .testimonial .quote {
-  font-size: 16px; /* Ou 1em pour s'adapter à la taille de police de .testimonial */
-  line-height: 1.75; /* Un peu plus d'interligne pour la lisibilité */
+  font-size: 16px;
+  line-height: 1.75;
   color: #3C4043;
-  margin-bottom: 25px; /* Plus d'espace avant le footer */
+  margin-bottom: 25px;
   flex-grow: 1; 
   font-style: italic;
   position: relative;
-  padding-left: 40px; /* Un peu plus d'espace pour les guillemets */
-  text-align: left; /* Redondant si .testimonial a text-align: left, mais ne fait pas de mal */
+  padding-left: 40px;
 }
-
 .testimonial .quote::before { 
     content: '“';
     font-family: Georgia, serif;
-    font-size: 45px; /* Guillemets un peu plus grands */
+    font-size: 45px;
     color: #F5A623;
     position: absolute;
     left: 0px;
-    top: -15px; /* Ajuster pour la nouvelle taille de police */
-    line-height: 1; /* Empêche le guillemet d'ajouter trop de hauteur */
+    top: -15px;
+    line-height: 1;
 }
-
-/* Styles pour le footer des témoignages */
 .testimonial footer.testimonial-author {
   display: flex; 
   align-items: center; 
-  justify-content: center; /* Centre l'icône, le nom et la date ensemble */
-  margin-top: auto; /* Pousse le footer en bas */
-  padding-top: 15px; /* Espace au-dessus du footer, si la citation est courte */
+  justify-content: flex-start; /* Aligné à gauche par défaut */
+  margin-top: auto;
+  padding-top: 15px;
   font-size: 15px; 
 }
-
 .testimonial footer.testimonial-author::before {
-    content: ""; /* Plus de tiret automatique */
+    content: ""; 
 }
-
 .testimonial-author .author-icon {
   display: inline-block;
-  width: 28px;  /* Icônes un peu plus grandes */
+  width: 28px;
   height: 28px; 
-  margin-right: 10px; /* Plus d'espace */
+  margin-right: 10px;
   background-size: contain; 
   background-repeat: no-repeat;
   background-position: center;
   vertical-align: middle; 
-  flex-shrink: 0; /* Empêche l'icône de rétrécir si le texte est long */
+  flex-shrink: 0;
 }
-
-.testimonial-author .icon-famille {
-  background-image: url('../images/famille.webp'); 
-}
-.testimonial-author .icon-couple {
-  background-image: url('../images/couple.webp');
-}
-.testimonial-author .icon-homme {
-  background-image: url('../images/homme.webp');
-}
-.testimonial-author .icon-femme {
-  background-image: url('../images/femme.webp');
-}
-
+.testimonial-author .icon-famille { background-image: url('../images/famille.webp'); }
+.testimonial-author .icon-couple { background-image: url('../images/couple.webp'); }
+.testimonial-author .icon-homme { background-image: url('../images/homme.webp'); }
+.testimonial-author .icon-femme { background-image: url('../images/femme.webp'); }
 .testimonial-author .author-name {
   font-weight: 600; 
   color: #1E2439; 
-  margin-right: 5px; /* Espace entre nom et date si la date est à côté */
+  margin-right: 5px;
 }
-
 .testimonial-author .author-date {
   font-size: 0.9em; 
   color: #5F6368; 
-  /* margin-left: 5px; /* Plus besoin si .author-name a margin-right */
-}
-
-/* Media query pour les mobiles */
-@media (max-width: 767px) { 
-  .testimonial-grid { 
-    grid-template-columns: 1fr; 
-  }
-  .testimonial .quote { 
-    padding-left: 35px; /* Conserver un padding correct */
-  }
-  .testimonial .quote::before { 
-    font-size: 40px; /* Ajuster si besoin */
-    left: 0px; 
-    top: -10px;
-  }
-  .testimonial footer.testimonial-author {
-    justify-content: center; /* Assurer le centrage sur mobile aussi */
-  }
 }
 
 /* === FAQ SECTION === */
 .faq-section {
-    background-color: #f8f9fa; /* Fond spécifique */
+    background-color: #f8f9fa;
+}
+/* Paragraphe d'intro sous le titre H2 de la section FAQ (s'il existe) */
+.faq-section > .container > p:first-of-type {
+  text-align:center; 
+  max-width: 700px; 
+  margin-left:auto; 
+  margin-right:auto;
+  margin-bottom: 30px;
 }
 .faq-grid {
   max-width: 800px;
-  margin: 20px auto 0;
+  margin: 0 auto; /* Centré, plus de margin-top car géré par p ou H2 */
 }
 .faq-item details {
   background-color: #ffffff;
@@ -932,14 +580,14 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
   font-size: 17px;
   color: #1E2439;
   cursor: pointer;
-  list-style: none; /* Enlève le marqueur par défaut */
+  list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: background-color 0.2s ease;
 }
-.faq-item summary::-webkit-details-marker { display: none; } /* Cache marqueur sur Chrome/Safari */
-.faq-item summary::after { /* Icône flèche */
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
   content: '▼';
   font-size: 12px;
   color: #F5A623;
@@ -947,7 +595,7 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
   transition: transform 0.3s ease;
 }
 .faq-item details[open] summary {
-    background-color: #fdfaf2; /* Léger fond quand ouvert */
+    background-color: #fdfaf2;
     border-bottom: 1px solid #f0e5cf;
 }
 .faq-item details[open] summary::after {
@@ -961,26 +609,25 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
   margin-bottom: 0;
 }
 
-
 /* === CONTACT FORM SECTION === */
 .contact-form-section {
-    background-color: #1E2439; /* Fond foncé pour le contact */
+    background-color: #1E2439;
     color: #ffffff;
 }
 .contact-form-section .section-title,
 .contact-form-section .section-title::after {
-    color: #ffffff; /* Titre blanc sur fond foncé */
+    color: #ffffff;
 }
 .contact-form-section .section-title::after {
-    background-color: #F5A623; /* Garder le soulignement jaune */
+    background-color: #F5A623;
 }
-.contact-form-section p {
+.contact-form-section > .container > p:first-of-type { /* Cible le paragraphe sous le titre */
   max-width: 650px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   margin-bottom: 30px;
-  color: #e0e0e0; /* Texte légèrement moins blanc */
+  color: #e0e0e0;
   font-size: 18px;
 }
 .contact-action {
@@ -1000,325 +647,83 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
     color: #ffffff;
 }
 
+/* === STYLES SPÉCIFIQUES POUR LA PAGE vacances-a-torrevieja.html === */
+.guide-page-section { /* Conteneur principal de la page guide */
+    /* background-color: #f8f9fa; */ /* Exemple si vous voulez un fond différent */
+}
+.guide-page-section h1.section-title { 
+  margin-top: 0; /* Enlever la marge du haut si c'est le premier titre */
+  margin-bottom: 20px;
+  font-size: clamp(28px, 5vw, 40px); /* Taille spécifique pour le H1 de cette page */
+}
+.guide-page-section > .container > p:first-of-type { /* Premier paragraphe d'intro de la page */
+  text-align: center; 
+  max-width: 800px; 
+  margin-left: auto; 
+  margin-right: auto; 
+  margin-bottom: 30px; 
+  font-size: 1.1em;
+}
+.guide-page-section .section-title { /* Pour les H2 titres de section DANS la page guide */
+  margin-top: 50px; 
+  font-size: clamp(24px, 4vw, 32px);
+  /* text-transform: uppercase; /* Hérité de .section-title général */
+}
+.guide-page-section h3 {
+  font-size: clamp(20px, 3vw, 24px);
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #1E2439;
+}
+.guide-page-section ul {
+  list-style: disc; 
+  padding-left: 25px; 
+  margin-bottom: 1.2em;
+}
+.guide-page-section ul li {
+  margin-bottom: 0.6em;
+  color: #3C4043; 
+}
+/* La classe .activites-grid utilise .gallery-grid, donc pas besoin de styles ici sauf si spécifiques */
 
-/* === NEW FOOTER STYLES === */
-.site-footer {
-  background-color: #ffffff; /* Fond blanc */
-  color: #5F6368; 
+/* === FOOTER === */
+footer {
+  background-color: #f8f9fa;
   padding: 50px 0 30px;
+  text-align: center;
   font-size: 15px;
+  color: #5F6368;
   border-top: 1px solid #eaeaea;
 }
-
-/* Conteneur principal du footer (aligne les sections du haut et du bas) */
-.site-footer .container {
-    /* Le container est déjà centré et limité en largeur par défaut */
-    /* display: flex; flex-direction: column; si vous vouliez gérer les sections haut/bas avec flex */
-    /* Mais le séparateur hr et le positionnement block par défaut fonctionnent aussi */
+.footer-logo img {
+  height: 45px;
+  margin-bottom: 20px;
+  border-radius:0;
 }
-
-
-/* Conteneur Flex pour le contenu du HAUT du footer (Logo/Infos gauche et Nav/Infos droite) */
-.site-footer .footer-main-content {
-  display: flex;
-  flex-wrap: wrap; /* Permet aux colonnes de passer à la ligne */
-  justify-content: space-between; /* Met le côté gauche et le côté droit aux extrémités */
-  gap: 30px; /* Espace entre le côté gauche et le côté droit */
-  margin-bottom: 30px;
-  align-items: flex-start; /* Aligne le haut du côté gauche avec le haut du côté droit */
-  width: 100%; /* S'assure que ce conteneur prend toute la largeur du .container */
+.footer-nav {
+  margin-bottom: 20px;
 }
-
-/* Conteneur de Gauche : Logo, Infos de contact */
-.site-footer .footer-left-side {
-  /* flex-basis: 350px; */ /* Largeur de base - Laissez flex-grow/shrink gérer */
-  flex-grow: 0; /* N'essaie pas de s'étirer */
-  flex-shrink: 1; /* Peut rétrécir si nécessaire */
-  min-width: 250px; /* Largeur minimale pour ce bloc avant de passer à la ligne */
-  max-width: 400px; /* Limiter la largeur max si besoin */
-  text-align: left; /* Aligne le contenu texte à gauche */
-  /* align-items: flex-start; */ /* Si ce bloc devient flex, aligne ses éléments */
-}
-
-/* Conteneur Flex pour le logo et le texte principal ("CASA DEL SOL...") - Aligne logo et texte côte à côte */
-.site-footer .footer-brand-info {
-  display: flex; 
-  align-items: center; /* Aligne le logo et le texte verticalement au centre */
-  gap: 15px; /* Espace entre le logo et le texte */
-  margin-bottom: 10px; /* Espace sous ce bloc */
-  /* flex-wrap: wrap; */ /* Enlever si vous ne voulez PAS que ce bloc passe à la ligne en interne (texte sous logo) */
-  /* Si le texte est trop long, il passera à la ligne DANS le p, pas comme nouvel item flex */
-}
-
-.site-footer .footer-brand-info .footer-logo img {
-  height: 50px; /* <-- TAILLE DU LOGO */
-  margin-bottom: 0; 
-  display: block; 
-  flex-shrink: 0; /* Empêche le logo de rétrécir */
-}
-
-/* Texte CASA DEL SOL - Torrevieja | Location Appartement Vacances */
-.site-footer .footer-brand-info .footer-site-title {
-    font-size: 1em; 
-    font-weight: 400;
-    color: #3C4043;
-    margin-bottom: 0; 
-    line-height: 1.4; /* Ajuster l'interligne si le texte passe sur 2 lignes */
-}
-.site-footer .footer-brand-info .footer-site-title strong {
-    font-weight: 700; 
-    color: #1E2439;
-}
-
-.site-footer .footer-contact-email {
-    margin-bottom: 15px; 
-}
-.site-footer .footer-contact-email a {
-  font-size: 0.9em; /* MAIL PLUS PETIT */
-  color: #F5A623; 
-  text-decoration: none;
+.footer-nav a {
+  color: #5F6368;
+  margin: 0 10px;
+  font-size: 14px;
   font-weight: 500;
+  line-height: 1.8; /* Pour gérer le <br> dans la nav du footer */
 }
-.site-footer .footer-contact-email a:hover {
-    text-decoration: underline;
-}
-
-.site-footer .footer-social-icons {
-  margin-top: 10px;
-}
-/* Styles pour les icônes sociales (inchangés) */
-.site-footer .footer-social-icons a { margin-right: 12px; display: inline-block; }
-.site-footer .footer-social-icons img { width: 28px; height: 28px; opacity: 0.7; display: block; }
-.site-footer .footer-social-icons a:hover img { opacity: 1; }
-/* Placeholder text style */
-.site-footer .footer-social-icons p { font-size: 0.9em; color: #70757a; margin: 0; }
-
-
-/* Conteneur de Droite : Navigation et Informations (Colonnes) */
-.site-footer .footer-right-side {
-  display: flex; /* IMPORTANT : C'est le conteneur flex qui aligne "Navigation" et "Informations" côte à côte */
-  flex-wrap: wrap; /* Permet aux colonnes de droite de passer à la ligne entre elles */
-  gap: 30px; /* Espace entre les colonnes Navigation et Informations */
-  justify-content: flex-end; /* <-- Aligne les colonnes Navigation/Informations VERS la droite À L'INTÉRIEUR DE CE BLOC */
-  align-items: flex-start; /* Aligne les colonnes du haut dans ce bloc */
-  flex-grow: 1; /* Permet au côté droit de prendre l'espace restant */
-  /* Si le côté gauche est étroit, ce bloc va s'étirer et pousser son contenu (Nav/Infos) vers la droite */
-  /* align-self: flex-start; */ 
-}
-
-
-/* Styles pour les colonnes individuelles dans footer-right-side (Navigation et Informations) */
-.site-footer .footer-column { 
-  /* flex: 1; */ /* Retire flex:1 pour que la largeur soit gérée par min-width/max-content */
-  /* flex-basis: 150px; */ /* Peut définir une base si vous voulez */
-  min-width: 150px; /* Largeur minimale de chaque colonne */
-  /* max-width: 200px; */ /* Limiter la largeur max de chaque colonne si nécessaire */
-  flex-grow: 0; /* Ne pas les laisser grandir indéfiniment */
-  flex-shrink: 0; /* Ne pas les laisser rétrécir en dessous de min-width */
-  text-align: left; /* Aligne le texte à gauche dans ces colonnes */
-}
-
-
-.site-footer .footer-column-title {
-  font-size: 1.1em; 
-  font-weight: 700;
-  color: #1E2439; 
-  margin-bottom: 18px;
-  text-transform: none; 
-  text-align: left; /* Aligne les titres de colonne à gauche */
-}
-
-/* Styles pour les listes dans les colonnes de droite (inchangés) */
-.site-footer .footer-column nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: left; 
-}
-.site-footer .footer-column nav li {
-  margin-bottom: 10px;
-}
-.site-footer .footer-column nav a {
-  color: #5F6368; 
-  text-decoration: none;
-  font-weight: 400; 
-}
-.site-footer .footer-column nav a:hover {
+.footer-nav a:hover {
   color: #F5A623;
-  text-decoration: underline;
 }
-
-.site-footer .footer-separator {
-  border: 0;
-  height: 1px;
-  background-color: #e0e0e0;
-  margin: 30px 0;
-}
-
-.site-footer .footer-bottom-content {
-  display: flex;
-  flex-wrap: wrap; 
-  justify-content: space-between; /* Copyright à gauche, "Made by" à droite */
-  align-items: center;
+.copyright {
   font-size: 14px;
   color: #70757a;
-  width: 100%; /* S'assure qu'il prend toute la largeur sous le séparateur */
-}
-.site-footer .copyright { 
-  margin-bottom: 0; 
-}
-.site-footer .made-by { 
-  margin-bottom: 0;
 }
 
-/* Ajustements responsives pour le footer */
-/* Mobile styles first (typically @media (max-width: 767px)) are already elsewhere */
-/* Let's add styles for tablets/desktops if needed */
-
-@media (max-width: 767px) {
-   /* These styles already existed in your media query for mobiles. */
-   /* Let's move them into the main responsive block structure */
-}
-
-
-/* Consolidate all responsive adjustments in the main block below */
-/* === RESPONSIVE ADJUSTMENTS === */
-
-/* Tablet and Mobile adjustments (less than 991px) */
-@media (max-width: 991px) { 
-    /* Your header nav mobile styles are already here */
-    /* ... */
-
-    /* Footer responsive adjustments */
-    .site-footer .footer-main-content {
-        flex-direction: column; /* Empile gauche et droite sur mobile */
-        align-items: center; /* Centre les blocs gauche et droite */
-        gap: 30px; 
-    }
-    .site-footer .footer-left-side,
-    .site-footer .footer-right-side {
-        width: 100%; 
-        flex-basis: auto; 
-        align-items: center; /* Centre le contenu À L'INTÉRIEUR des côtés */
-        text-align: center; /* Centre le texte À L'INTÉRIEUR des côtés */
-    }
-
-    .site-footer .footer-brand-info { /* Logo et texte principal sur mobile */
-        flex-direction: column; /* Empile le logo et le texte */
-        align-items: center; /* Centre logo et texte */
-        gap: 5px; 
-    }
-    /* Ajuster les marges du logo et du texte principal sur mobile si empilés */
-     .site-footer .footer-brand-info .footer-logo {
-         margin-bottom: 5px;
-     }
-    .site-footer .footer-brand-info .footer-logo img {
-        margin-bottom: 0;
-    }
-    .site-footer .footer-brand-info .footer-site-title {
-        margin-bottom: 0;
-    }
-
-    .site-footer .footer-column { /* Colonnes Navigation/Information sur mobile */
-        width: 100%; 
-        min-width: auto;
-        text-align: center; 
-        align-items: center; 
-    }
-    .site-footer .footer-column-title,
-    .site-footer .footer-column nav ul {
-        text-align: center; 
-    }
-
-    .site-footer .footer-social-icons a {
-         margin: 0 8px; /* Centrer les icônes sociales sur mobile */
-    }
-
-    .site-footer .footer-bottom-content {
-      flex-direction: column; 
-      justify-content: center;
-      text-align: center;
-      gap: 10px;
-    }
-}
-
-/* Adjustments for screens where footer-left-side is side-by-side with footer-right-side */
-@media (min-width: 992px) { /* Adjust breakpoint if needed */
-     .site-footer .footer-left-side {
-         text-align: left; /* Ensure left alignment on desktop */
-         align-items: flex-start; /* Align internal flex items to start if it becomes flex */
-     }
-     .site-footer .footer-right-side {
-         justify-content: flex-end; /* Align Nav/Infos columns to the right */
-         text-align: left; /* Ensure text alignment in columns is left */
-     }
-     .site-footer .footer-column {
-         text-align: left; /* Ensure text alignment in columns is left */
-     }
-     .site-footer .footer-column-title,
-     .site-footer .footer-column nav ul {
-         text-align: left; /* Ensure titles and lists are left aligned */
-     }
-     .site-footer .footer-bottom-content {
-         text-align: left; /* Ensure bottom content is left aligned for copyright */
-     }
-     .site-footer .made-by {
-         text-align: right; /* Ensure 'Made by' is right aligned */
-     }
-
-     /* Restore row direction for footer-brand-info if it was set to column on mobile */
-     .site-footer .footer-brand-info {
-        flex-direction: row;
-        align-items: center;
-        /* gap and margins are defined outside media queries */
-     }
-
-     .site-footer .footer-logo {
-         margin-bottom: 0; /* Restore desktop margin */
-     }
-     .site-footer .footer-brand-info .footer-logo img {
-         margin-bottom: 0;
-     }
-     .site-footer .footer-brand-info .footer-site-title {
-         margin-bottom: 0;
-     }
-}
-
-/* Specific breakpoint for the Trendtrack layout (adjust if needed based on your design) */
-/* This breakpoint should be where footer-left-side and footer-right-side are side-by-side */
-@media (min-width: 768px) { /* Example breakpoint where they go side by side */
-    .site-footer .footer-main-content {
-         flex-direction: row; /* Align left and right side side by side */
-         align-items: flex-start; /* Align them at the top */
-         justify-content: space-between; /* Space them out */
-         /* gap is defined above */
-     }
-     .site-footer .footer-left-side,
-     .site-footer .footer-right-side {
-         width: auto; /* Let flex-basis/grow/shrink manage width */
-         flex-basis: auto; /* Let flex-basis manage width */
-         align-items: flex-start; /* Align content at the top within each side */
-         text-align: left; /* Ensure text is left aligned */
-     }
-      .site-footer .footer-left-side {
-          flex-basis: 350px; /* Give left side a preferred width on desktop */
-          min-width: 250px; /* Min width before it forces wrap */
-          flex-shrink: 1;
-          flex-grow: 0;
-      }
-      .site-footer .footer-right-side {
-          flex-grow: 1; /* Let right side take remaining space */
-          flex-shrink: 1;
-          flex-basis: auto;
-          justify-content: flex-end; /* Push content in right side to the end */
-      }
-}
 /* === RESPONSIVE ADJUSTMENTS === */
 @media (max-width: 991px) { /* Tablettes */
   #header nav {
-    display: none; /* Cacher la nav desktop */
+    display: none;
     position: absolute;
-    top: 80px; /* Sous le header */
+    top: 80px;
     left: 0;
     right: 0;
     width: 100%;
@@ -1328,7 +733,7 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     border-top: 1px solid #eaeaea;
   }
-  #header nav.active { /* Classe ajoutée par JS pour afficher */
+  #header nav.active {
     display: flex;
   }
   #header nav ul {
@@ -1345,41 +750,69 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
     padding: 12px 20px;
     width: 100%;
   }
-  #header nav li a::after { /* Enlever effet soulignement sur mobile */
+  #header nav li a::after {
       display: none;
   }
   #mobile-menu-toggle {
-    display: block; /* Afficher le bouton burger */
+    display: block;
   }
-  .header-cta { /* Cacher le bouton du header sur mobile si la nav prend toute la place */
-      display: none; /* Ou le styler différemment */
+  .header-cta {
+      display: none;
+  }
+  #header nav ul li.mobile-cta-item { /* Afficher le CTA dans le menu mobile */
+    display: block; 
+    margin-top: 15px; 
+    padding-bottom: 10px; 
+  }
+  #header nav ul li.mobile-cta-item a.button-primary {
+    display: inline-block; 
+    width: auto; 
+    padding: 10px 25px; 
   }
 }
 
 @media (max-width: 767px) { /* Mobiles */
   body { font-size: 16px; }
-  h1 { font-size: 26px; }
-  h2.section-title { font-size: 24px; margin-bottom: 30px; }
-  h3 { font-size: 18px; }
+  h1 { font-size: 26px; } /* Ajuste le H1 de l'index */
+  .guide-page-section h1.section-title { font-size: clamp(26px, 4.8vw, 32px); } /* H1 page guide */
+  
+  h2.section-title, .guide-page-section h2.section-title { font-size: 24px; margin-bottom: 30px; }
+  h3, .guide-page-section h3 { font-size: 18px; }
 
   section { padding-top: 50px; padding-bottom: 50px; }
   .hero-section { padding-top: 30px; }
 
   .logement-grid {
-    grid-template-columns: 1fr; /* 1 colonne */
+    grid-template-columns: 1fr;
     gap: 20px;
   }
-  .gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+  .gallery-grid { /* S'applique aussi à .activites-grid */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
   .gallery-grid img { height: 180px; }
 
   .tarifs-grid {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
+    max-width: 100%; /* S'assure qu'il prend toute la largeur */
   }
   .tarif-item-highlight {
-      transform: scale(1); 
+      transform: scale(1);
   }
+  .tarif-item-highlight:hover {
+      transform: scale(1);
+  }
+  .tarif-item-highlight::before { 
+    font-size: 9px;
+    padding: 2px 6px;
+    top: -8px;
+    right: -8px;
+  }
+
+  .testimonial-grid { grid-template-columns: 1fr; }
+  .testimonial .quote { padding-left: 30px; }
+  .testimonial .quote::before { font-size: 35px; left: 0px; top: -10px;}
+  .testimonial footer.testimonial-author { justify-content: center; }
+
 
   .faq-item summary { font-size: 16px; padding: 15px 20px; }
   .faq-item details p { font-size: 15px; padding: 0 20px 15px 20px; }
@@ -1397,3 +830,4 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
     min-height: 350px; 
     margin-top: 15px;
   }
+}
