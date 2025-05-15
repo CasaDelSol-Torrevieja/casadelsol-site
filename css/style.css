@@ -712,6 +712,7 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
   display: flex; 
   flex-direction: column; 
+  /* text-align: left; */ /* Assurez-vous que ce n'est pas 'center' ici, ou ajoutez text-align: left; si besoin */
 }
 
 .testimonial .quote {
@@ -723,6 +724,7 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
   font-style: italic;
   position: relative;
   padding-left: 35px; 
+  text-align: left; /* Ajoutez ceci pour être sûr */
 }
 .testimonial .quote::before { 
     content: '“';
