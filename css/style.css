@@ -687,28 +687,22 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
 
 /* === TEMOIGNAGES SECTION === */
 .temoignages-section {
-  /* background-color: #f8f9fa; /* Si elle doit avoir un fond spécifique, sinon elle prendra celui des sections paires/impaires */
+  /* background-color: #f8f9fa; 
 }
 
-/* Si vous avez un paragraphe d'introduction sous le titre H2 */
 .temoignages-section > .container > p:first-of-type {
-  max-width: 700px; /* Ou la largeur souhaitée */
+  max-width: 700px; 
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  margin-bottom: 30px; /* Espace avant la grille des témoignages */
+  margin-bottom: 30px; /
 }
 
 .testimonial-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Affiche autant de témoignages par ligne que possible */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
   gap: 30px;
-  margin-top: 20px; /* Ou 0 si le <p> d'intro a déjà une marge en bas */
-  /* Pour centrer la grille si elle est plus étroite que son conteneur (par exemple, si seulement 1 ou 2 items tiennent) */
-  /* max-width: 1000px; /* Exemple, à ajuster si besoin */
-  /* margin-left: auto; */
-  /* margin-right: auto; */
-  /* justify-content: center; /* Pour centrer les colonnes de la grille si elles n'occupent pas toute la largeur */
+  margin-top: 20px; 
 }
 
 .testimonial {
@@ -716,9 +710,8 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
   padding: 30px 25px;
   border-radius: 8px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  display: flex; /* Important pour la structure interne */
-  flex-direction: column; /* Les éléments enfants (quote, footer) s'empilent verticalement */
-  /* text-align: left; /* Par défaut, ou center si vous préférez pour la citation */
+  display: flex; 
+  flex-direction: column; 
 }
 
 .testimonial .quote {
@@ -726,7 +719,7 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
   line-height: 1.7;
   color: #3C4043;
   margin-bottom: 20px;
-  flex-grow: 1; /* Fait que la citation prend l'espace vertical disponible */
+  flex-grow: 1; 
   font-style: italic;
   position: relative;
   padding-left: 35px; 
@@ -745,30 +738,21 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
 .testimonial footer.testimonial-author {
   display: flex; 
   align-items: center; 
-  justify-content: center; /* Ou 'center' ou 'flex-start' */
+  justify-content: center; 
   margin-top: 20px; 
   font-size: 15px; 
 }
 
-.testimonial footer.testimonial-author::before {
-    content: ""; /* On retire le tiret "— " */
-    align-items: center; 
-    text-align: center;
-}
-
 .testimonial-author .author-icon {
   display: inline-block;
-  width: 26px;  /* Ajustez si vos PNG ont une taille préférée */
-  height: 26px; /* Ajustez si vos PNG ont une taille préférée */
+  width: 26px;  
+  height: 26px; 
   margin-right: 8px; 
-  background-size: contain; /* ou 'cover' ou une taille spécifique comme '20px 20px' */
+  background-size: contain; 
   background-repeat: no-repeat;
   background-position: center;
   vertical-align: middle; 
 }
-
-/* Styles spécifiques pour vos icônes PNG */
-/* Assurez-vous que les noms de fichiers correspondent exactement, y compris l'extension .png */
 
 .testimonial-author .icon-famille {
   background-image: url('../images/famille.webp'); 
