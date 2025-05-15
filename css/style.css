@@ -1,4 +1,4 @@
-/* === GLOBAL RESETS & DEFAULTS === */
+3666666666666666666666666666666666666666666666666666666666666666666/* === GLOBAL RESETS & DEFAULTS === */
 *,
 *::before,
 *::after {
@@ -1114,6 +1114,70 @@ footer {
   color: #70757a;
 }
 
+/* === NEW FOOTER STYLES === */
+/* ... (styles de .site-footer et .footer-main-content inchangés) ... */
+
+.site-footer .footer-left-side {
+  flex-basis: 300px; 
+  flex-grow: 0; 
+  flex-shrink: 0; 
+  text-align: left; 
+  /* Le text-align: left ici est pour les éléments qui ne sont pas flex (email, social icons) */
+}
+
+/* NOUVELLE RÈGLE : Conteneur flex pour le logo et le texte principal */
+.site-footer .footer-brand-info {
+  display: flex;
+  align-items: center; /* Aligne le logo et le texte verticalement au centre */
+  gap: 15px; /* Espace entre le logo et le texte */
+  margin-bottom: 10px; /* Espace sous ce bloc */
+}
+
+.site-footer .footer-brand-info .footer-logo img {
+  height: 50px; /* Taille du logo */
+  margin-bottom: 0; /* Réinitialise la marge bottom du logo */
+  display: block; /* Peut aider avec align-items */
+}
+
+.site-footer .footer-brand-info .footer-site-title {
+    font-size: 1.05em; 
+    font-weight: 400;
+    color: #3C4043;
+    margin-bottom: 0; /* Réinitialise la marge bottom */
+    line-height: 1.5; /* Assurez-vous que l'interligne est bon */
+}
+.site-footer .footer-brand-info .footer-site-title strong {
+    font-weight: 700; 
+    color: #1E2439;
+}
+
+/* Le reste des styles pour .footer-contact-email, .footer-social-icons, etc. sont inchangés */
+
+/* ... (reste des styles pour footer-right-side, footer-column, footer-bottom-content) ... */
+
+/* Ajustements responsives pour le footer */
+@media (max-width: 767px) {
+  .site-footer .footer-main-content {
+    /* ... */
+    align-items: center; /* Centre les blocs left-side et right-side sur mobile */
+    /* ... */
+  }
+  .site-footer .footer-left-side {
+      /* ... */
+      align-items: center; /* Centre le contenu (brand-info, email, social) À L'INTÉRIEUR du left-side sur mobile */
+      text-align: center; /* Centre le texte À L'INTÉRIEUR du left-side sur mobile */
+  }
+
+  /* NOUVELLE RÈGLE pour empiler le logo et le texte principal sur mobile si nécessaire */
+  .site-footer .footer-brand-info {
+    flex-direction: column; /* Empile le logo et le texte */
+    align-items: center; /* Centre logo et texte quand ils sont empilés */
+    gap: 5px; /* Moins d'espace entre eux sur mobile */
+  }
+  .site-footer .footer-brand-info .footer-logo, /* Cibler le conteneur du logo */
+  .site-footer .footer-brand-info .footer-site-title {
+      margin-bottom: 0; /* Supprime les marges bottom par défaut quand ils sont flex items */
+  }
 
 /* === RESPONSIVE ADJUSTMENTS === */
 @media (max-width: 991px) { /* Tablettes */
