@@ -752,12 +752,13 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
 
 .testimonial footer.testimonial-author::before {
     content: ""; /* On retire le tiret "— " */
+    align-items: center; 
 }
 
 .testimonial-author .author-icon {
   display: inline-block;
-  width: 24px;  /* Ajustez si vos PNG ont une taille préférée */
-  height: 24px; /* Ajustez si vos PNG ont une taille préférée */
+  width: 26px;  /* Ajustez si vos PNG ont une taille préférée */
+  height: 26px; /* Ajustez si vos PNG ont une taille préférée */
   margin-right: 8px; 
   background-size: contain; /* ou 'cover' ou une taille spécifique comme '20px 20px' */
   background-repeat: no-repeat;
