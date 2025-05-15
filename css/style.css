@@ -292,6 +292,149 @@ li {
   object-fit: cover;
 }
 */
+
+/* === NEW FOOTER STYLES === */
+.site-footer {
+  background-color: #ffffff; /* Fond blanc comme dans l'exemple, ou gardez #f8f9fa */
+  color: #5F6368; /* Couleur de texte par défaut pour le footer */
+  padding: 50px 0 30px;
+  font-size: 15px;
+  border-top: 1px solid #eaeaea;
+}
+
+.site-footer .footer-main-content {
+  display: flex;
+  flex-wrap: wrap; /* Permet aux colonnes de passer à la ligne sur mobile */
+  justify-content: space-between; /* Espace bien les colonnes */
+  gap: 30px; /* Espace entre les colonnes si elles passent à la ligne */
+  margin-bottom: 30px;
+}
+
+.site-footer .footer-column {
+  flex: 1; /* Par défaut, chaque colonne essaie de prendre une part égale */
+  min-width: 220px; /* Largeur minimale avant de passer à la ligne */
+}
+
+.site-footer .footer-about .footer-logo img {
+  height: 50px; /* Ajustez la taille du logo */
+  margin-bottom: 15px;
+}
+
+.site-footer .footer-description {
+  font-size: 0.95em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #3C4043; /* Texte un peu plus foncé pour la description */
+}
+
+.site-footer .footer-contact-email a {
+  color: #3C4043;
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 20px;
+  display: inline-block; /* Pour que la marge en bas s'applique */
+}
+.site-footer .footer-contact-email a:hover {
+  color: #F5A623;
+}
+
+.site-footer .footer-social-icons {
+  margin-top: 15px;
+}
+.site-footer .footer-social-icons a {
+  display: inline-block;
+  margin-right: 12px; /* Espace entre les icônes */
+}
+.site-footer .footer-social-icons img { /* Si vous utilisez des <img> pour les icônes */
+  width: 28px; /* Taille des icônes sociales */
+  height: 28px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+.site-footer .footer-social-icons a:hover img {
+  opacity: 1;
+}
+
+.site-footer .footer-column-title {
+  font-size: 1.1em; /* 17px-18px environ */
+  font-weight: 700;
+  color: #1E2439; /* Couleur des titres */
+  margin-bottom: 18px;
+  text-transform: none; /* Assurez-vous qu'il n'est pas en majuscules si non désiré */
+}
+
+.site-footer .footer-column nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.site-footer .footer-column nav li {
+  margin-bottom: 10px;
+}
+.site-footer .footer-column nav a {
+  color: #5F6368; /* Couleur des liens du footer */
+  text-decoration: none;
+  font-weight: 400; /* Moins gras que les liens principaux */
+}
+.site-footer .footer-column nav a:hover {
+  color: #F5A623;
+  text-decoration: underline;
+}
+
+.site-footer .footer-separator {
+  border: 0;
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 30px 0;
+}
+
+.site-footer .footer-bottom-content {
+  display: flex;
+  flex-wrap: wrap; /* Pour les petits écrans */
+  justify-content: space-between; /* Copyright à gauche, "Made by" à droite */
+  align-items: center;
+  font-size: 14px;
+  color: #70757a;
+}
+.site-footer .copyright { 
+  margin-bottom: 0; /* Annule la marge par défaut des <p> */
+}
+.site-footer .made-by { /* Si vous ajoutez un "Made by" */
+  margin-bottom: 0;
+}
+
+/* Ajustements responsives pour le footer */
+@media (max-width: 767px) {
+  .site-footer .footer-main-content {
+    flex-direction: column; /* Empile les colonnes sur mobile */
+    align-items: flex-start; /* Aligne le contenu de chaque colonne à gauche */
+    gap: 30px; /* Espace vertical entre les colonnes empilées */
+  }
+  .site-footer .footer-column {
+    width: 100%; /* Chaque colonne prend toute la largeur */
+    min-width: auto;
+    text-align: left; /* Ou center si vous préférez pour mobile */
+  }
+  .site-footer .footer-column-title {
+    /* text-align: center; /* Si vous voulez les titres centrés sur mobile */
+  }
+  .site-footer .footer-column nav ul {
+    /* text-align: center; /* Si vous voulez les listes centrées sur mobile */
+  }
+  .site-footer .footer-about,
+  .site-footer .footer-contact-email,
+  .site-footer .footer-social-icons {
+    /* text-align: center; /* Si vous voulez la colonne "about" centrée sur mobile */
+  }
+
+  .site-footer .footer-bottom-content {
+    flex-direction: column; /* Empile copyright et "made by" */
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
 /* === RESPONSIVE ADJUSTMENTS === */
 @media (max-width: 991px) { /* Tablettes et en dessous */
   #header nav { /* Le conteneur <nav> lui-même */
