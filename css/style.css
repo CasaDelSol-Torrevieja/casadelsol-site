@@ -745,11 +745,11 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
   font-size: 15px;
   color: #1E2439;
   font-weight: 600;
-  text-align: right; /* Aligne le nom à droite */
+  text-align: center; /* Aligne le nom au centre */
   margin-top: auto; /* Pousse le footer en bas de la carte */
 }
 .testimonial footer::before {
-  content: "— ";
+  content: "";
 }
 
 /* Media query pour les mobiles (votre existante) */
