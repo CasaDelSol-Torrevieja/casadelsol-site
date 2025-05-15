@@ -1008,102 +1008,226 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
 }
 
 
-/* === FOOTER === */
-footer {
-  background-color: #f8f9fa;
+/* === NEW FOOTER STYLES === */
+.site-footer {
+  background-color: #ffffff; /* Fond blanc */
+  color: #5F6368; 
   padding: 50px 0 30px;
-  text-align: center;
   font-size: 15px;
-  color: #5F6368;
   border-top: 1px solid #eaeaea;
 }
-.footer-logo img {
-  height: 45px;
-  margin-bottom: 20px;
-  border-radius:0;
-}
-.footer-nav {
-  margin-bottom: 20px;
-}
-.footer-nav a {
-  color: #5F6368;
-  margin: 0 10px;
-  font-size: 14px;
-  font-weight: 500;
-}
-.footer-nav a:hover {
-  color: #F5A623;
-}
-.copyright {
-  font-size: 14px;
-  color: #70757a;
+
+.site-footer .container {
+    /* Le container est déjà centré par défaut avec max-width et margin:auto */
+    /* Assurez-vous qu'il n'y a pas de text-align: center; global ici */
 }
 
-/* === NEW FOOTER STYLES === */
-/* ... (styles de .site-footer et .footer-main-content inchangés) ... */
-
-.site-footer .footer-left-side {
-  flex-basis: 300px; 
-  flex-grow: 0; 
-  flex-shrink: 0; 
-  text-align: left; 
-  /* Le text-align: left ici est pour les éléments qui ne sont pas flex (email, social icons) */
-}
-
-/* NOUVELLE RÈGLE : Conteneur flex pour le logo et le texte principal */
-.site-footer .footer-brand-info {
+.site-footer .footer-main-content {
   display: flex;
+  flex-wrap: wrap; /* Permet aux colonnes de passer à la ligne */
+  justify-content: space-between; /* Met le côté gauche et le côté droit aux extrémités */
+  /* Si vous voulez que le côté droit soit collé au côté gauche, utilisez flex-start ou supprimez justify-content */
+  gap: 30px; /* Espace entre le côté gauche et le côté droit */
+  margin-bottom: 30px;
+  align-items: flex-start; /* Aligne le haut du côté gauche avec le haut du côté droit */
+}
+
+/* Conteneur de Gauche : Logo, Infos de contact */
+.site-footer .footer-left-side {
+  /* Enlever la base width fixe pour laisser flex gérer la largeur */
+  /* flex-basis: 300px; */ 
+  flex-grow: 0; /* N'essaie pas de s'étirer */
+  flex-shrink: 1; /* Peut rétrécir si nécessaire */
+  /* Ajuster la largeur minimale si nécessaire pour éviter que le contenu ne s'écrase trop */
+  min-width: 250px; /* Exemple, ajustez */
+  max-width: 400px; /* Limiter la largeur max du côté gauche si besoin */
+  text-align: left; /* Aligne le contenu texte à gauche */
+}
+
+/* Conteneur flex pour le logo et le texte principal ("CASA DEL SOL...") */
+.site-footer .footer-brand-info {
+  display: flex; 
   align-items: center; /* Aligne le logo et le texte verticalement au centre */
   gap: 15px; /* Espace entre le logo et le texte */
   margin-bottom: 10px; /* Espace sous ce bloc */
+  /* Permettre à ce conteneur de passer à la ligne sur mobile */
+  flex-wrap: wrap;
 }
 
 .site-footer .footer-brand-info .footer-logo img {
-  height: 50px; /* Taille du logo */
-  margin-bottom: 0; /* Réinitialise la marge bottom du logo */
-  display: block; /* Peut aider avec align-items */
+  height: 50px; /* <-- TAILLE DU LOGO FIXÉE ICI */
+  margin-bottom: 0; 
+  display: block; 
+  flex-shrink: 0; /* Empêche le logo de rétrécir */
 }
 
+/* Texte CASA DEL SOL - Torrevieja | Location Appartement Vacances */
 .site-footer .footer-brand-info .footer-site-title {
-    font-size: 1.05em; 
+    font-size: 1em; /* Revenir à la taille standard ou ajuster */
     font-weight: 400;
     color: #3C4043;
-    margin-bottom: 0; /* Réinitialise la marge bottom */
-    line-height: 1.5; /* Assurez-vous que l'interligne est bon */
+    margin-bottom: 0; 
+    line-height: 1.5; /* Ajuster l'interligne si le texte passe sur 2 lignes */
+    /* flex-grow: 1; */ /* Permettre au texte de prendre l'espace si besoin */
 }
 .site-footer .footer-brand-info .footer-site-title strong {
-    font-weight: 700; 
+    font-weight: 700; /* Rendre la première partie en gras */
     color: #1E2439;
 }
 
-/* Le reste des styles pour .footer-contact-email, .footer-social-icons, etc. sont inchangés */
+.site-footer .footer-contact-email {
+    margin-bottom: 15px; 
+}
+.site-footer .footer-contact-email a {
+  font-size: 0.9em; /* <-- MAIL PLUS PETIT */
+  color: #F5A623; 
+  text-decoration: none;
+  font-weight: 500;
+}
+.site-footer .footer-contact-email a:hover {
+    text-decoration: underline;
+}
 
-/* ... (reste des styles pour footer-right-side, footer-column, footer-bottom-content) ... */
+.site-footer .footer-social-icons {
+  margin-top: 10px;
+}
+/* Styles pour les icônes sociales (inchangés) */
+.site-footer .footer-social-icons a { margin-right: 12px; display: inline-block; }
+.site-footer .footer-social-icons img { width: 28px; height: 28px; opacity: 0.7; display: block; } /* display: block pour img dans a */
+.site-footer .footer-social-icons a:hover img { opacity: 1; }
+/* Placeholder text style */
+.site-footer .footer-social-icons p { font-size: 0.9em; color: #70757a; margin: 0; }
+
+
+/* Conteneur de Droite : Navigation et Informations */
+.site-footer .footer-right-side {
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 30px; /* Espace entre les colonnes Navigation et Informations */
+  justify-content: flex-end; /* <-- Aligne les colonnes Navigation/Informations VERS la droite */
+  /* align-items: flex-start; */ 
+  flex-grow: 1; /* Permet au côté droit de prendre l'espace restant */
+  /* Si vous voulez aligner ce bloc à droite du conteneur parent si le côté gauche est petit : */
+  /* margin-left: auto; */
+}
+
+
+/* Styles pour les colonnes individuelles dans footer-right-side */
+.site-footer .footer-column { 
+  flex: 1; /* Les colonnes prennent une part égale de l'espace DANS footer-right-side */
+  min-width: 150px; /* Largeur minimale de chaque colonne (Navigation ou Informations) */
+  max-width: 250px; /* Limiter la largeur max de chaque colonne si nécessaire */
+  text-align: left; /* Aligne le texte à gauche dans ces colonnes */
+}
+
+
+.site-footer .footer-column-title {
+  font-size: 1.1em; 
+  font-weight: 700;
+  color: #1E2439; 
+  margin-bottom: 18px;
+  text-transform: none; 
+  text-align: left; /* Aligne les titres de colonne à gauche */
+}
+
+/* Styles pour les listes dans les colonnes de droite */
+.site-footer .footer-column nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left; /* Aligne les liens dans les listes à gauche */
+}
+.site-footer .footer-column nav li {
+  margin-bottom: 10px;
+}
+.site-footer .footer-column nav a {
+  color: #5F6368; 
+  text-decoration: none;
+  font-weight: 400; 
+}
+.site-footer .footer-column nav a:hover {
+  color: #F5A623;
+  text-decoration: underline;
+}
+
+.site-footer .footer-separator {
+  border: 0;
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 30px 0;
+}
+
+.site-footer .footer-bottom-content {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between; /* Copyright à gauche, "Made by" à droite */
+  align-items: center;
+  font-size: 14px;
+  color: #70757a;
+  width: 100%; 
+}
+.site-footer .copyright { 
+  margin-bottom: 0; 
+}
+.site-footer .made-by { 
+  margin-bottom: 0;
+}
 
 /* Ajustements responsives pour le footer */
 @media (max-width: 767px) {
   .site-footer .footer-main-content {
-    /* ... */
-    align-items: center; /* Centre les blocs left-side et right-side sur mobile */
-    /* ... */
+    flex-direction: column; /* Empile gauche et droite */
+    align-items: center; /* Centre les blocs gauche et droite */
+    gap: 30px; 
   }
-  .site-footer .footer-left-side {
-      /* ... */
-      align-items: center; /* Centre le contenu (brand-info, email, social) À L'INTÉRIEUR du left-side sur mobile */
-      text-align: center; /* Centre le texte À L'INTÉRIEUR du left-side sur mobile */
+  .site-footer .footer-left-side,
+  .site-footer .footer-right-side {
+      width: 100%; 
+      flex-basis: auto; 
+      align-items: center; /* Centre le contenu À L'INTÉRIEUR des côtés */
+      text-align: center; /* Centre le texte À L'INTÉRIEUR des côtés */
   }
 
-  /* NOUVELLE RÈGLE pour empiler le logo et le texte principal sur mobile si nécessaire */
-  .site-footer .footer-brand-info {
+  .site-footer .footer-brand-info { /* Logo et texte principal sur mobile */
     flex-direction: column; /* Empile le logo et le texte */
-    align-items: center; /* Centre logo et texte quand ils sont empilés */
-    gap: 5px; /* Moins d'espace entre eux sur mobile */
+    align-items: center; /* Centre logo et texte */
+    gap: 5px; 
   }
-  .site-footer .footer-brand-info .footer-logo, /* Cibler le conteneur du logo */
+  /* Ajuster les marges du logo et du texte principal sur mobile si empilés */
+   .site-footer .footer-brand-info .footer-logo {
+       margin-bottom: 5px;
+   }
+  .site-footer .footer-brand-info .footer-logo img {
+      margin-bottom: 0;
+  }
   .site-footer .footer-brand-info .footer-site-title {
-      margin-bottom: 0; /* Supprime les marges bottom par défaut quand ils sont flex items */
+      margin-bottom: 0;
   }
 
+
+  .site-footer .footer-column { /* Colonnes Navigation/Information sur mobile */
+      width: 100%; 
+      min-width: auto;
+      text-align: center; 
+      align-items: center; 
+  }
+  .site-footer .footer-column-title,
+  .site-footer .footer-column nav ul {
+      text-align: center; 
+  }
+
+  .site-footer .footer-social-icons a {
+       margin: 0 8px; /* Centrer les icônes sociales sur mobile */
+  }
+
+
+  .site-footer .footer-bottom-content {
+    flex-direction: column; 
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+  }
+}
 /* === RESPONSIVE ADJUSTMENTS === */
 @media (max-width: 991px) { /* Tablettes */
   #header nav {
