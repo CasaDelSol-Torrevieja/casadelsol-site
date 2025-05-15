@@ -11,7 +11,6 @@
   
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Liens Favicon basés sur votre structure -->
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
@@ -21,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-</head>
+
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -41,39 +40,23 @@
      "maxValue": 6
   },
   "amenityFeature": [
-    {
-      "@type": "LocationFeatureSpecification",
-      "value": "true",
-      "name": "Piscine partagée"
-    },
-    {
-      "@type": "LocationFeatureSpecification",
-      "value": "true",
-      "name": "Climatisation"
-    },
-    {
-      "@type": "LocationFeatureSpecification",
-      "value": "true",
-      "name": "Solarium privé"
-    },
-    {
-      "@type": "LocationFeatureSpecification",
-      "value": "true",
-      "name": "Wi-Fi gratuit"
-    }
+    { "@type": "LocationFeatureSpecification", "value": "true", "name": "Piscine partagée" },
+    { "@type": "LocationFeatureSpecification", "value": "true", "name": "Climatisation" },
+    { "@type": "LocationFeatureSpecification", "value": "true", "name": "Solarium privé" },
+    { "@type": "LocationFeatureSpecification", "value": "true", "name": "Wi-Fi gratuit" }
   ],
   "petsAllowed": "false",
   "tourBookingPage": "https://tally.so/r/nWqyEv",
   "photo": [
     {
       "@type": "ImageObject",
-      "contentUrl": "https://casadelsol-torrevieja.com/images/piscine-partagee-famille-torrevieja-vacances.jpg",
-      "caption": "Grande piscine partagée de la résidence"
+      "contentUrl": "https://www.casadelsol-torrevieja.com/images/piscine-residence-casa-del-sol-torrevieja.webp",
+      "caption": "Grande piscine partagée de la résidence Casa del Sol à Torrevieja"
     },
     {
       "@type": "ImageObject",
-      "contentUrl": "https://casadelsol-torrevieja.com/images/solarium-prive-transats-pergola-bbq-torrevieja.jpg",
-      "caption": "Solarium privé sur le toit"
+      "contentUrl": "https://www.casadelsol-torrevieja.com/images/solarium-prive-toit-casa-del-sol-torrevieja.webp",
+      "caption": "Solarium privé sur le toit avec transats et pergola à Casa Del Sol Torrevieja"
     }
    ],
    "offers": {
@@ -81,9 +64,9 @@
     "priceSpecification": {
       "@type": "PriceSpecification",
       "priceCurrency": "EUR",
-      "priceRange": "350-620"
+      "priceRange": "350-620" 
     },
-     "availability": "http://schema.org/InStock",
+     "availability": "http://schema.org/InStock", 
      "url": "https://www.casadelsol-torrevieja.com/#reservation"
   },
   "geo": { 
@@ -93,27 +76,27 @@
   } 
 }
 </script>
+</head>
+
 <body>
 
-  <!-- ====== Header ====== -->
   <header id="header">
     <div class="container">
       <div class="logo-container">
-        <a href="#"> 
-          <img src="images/logo-casa-del-sol-torrevieja.webp" alt="Logo Casa del Sol Torrevieja - Location appartement vacances"
-          >
+        <a href="#"> <!-- Lien vers l'accueil de la page (index.html) -->
+          <img src="images/logo-casa-del-sol-torrevieja.webp" alt="Logo Casa del Sol Torrevieja - Location appartement vacances">
         </a>
       </div>
       <nav>
         <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="index.html#logement">Logement</a></li>
-          <li><a href="index.html#galerie">Photos</a></li>
-          <li><a href="index.html#tarifs">Tarifs</a></li>
-          <li><a href="index.html#reservation">Disponibilités</a></li>
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#logement">Logement</a></li>
+          <li><a href="#galerie">Galerie Photos</a></li>
+          <li><a href="#tarifs">Tarifs</a></li>
+          <li><a href="#reservation">Disponibilités</a></li>
           <li><a href="vacances-a-torrevieja.html">Découvrir Torrevieja</a></li> 
-          <li><a href="index.html#temoignages">Avis Clients</a></li>
-          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="#temoignages">Avis Clients</a></li>
+          <li><a href="#faq">FAQ</a></li> <!-- Changé de faq.html à #faq si la FAQ est sur l'index -->
           <li class="mobile-cta-item"><a href="https://tally.so/r/nWqyEv" target="_blank" class="button-primary">Réserver votre séjour</a></li>
         </ul>
       </nav>
@@ -126,36 +109,34 @@
 
   <main>
 
-    <!-- ====== Section Accueil/Hero ====== -->
     <section id="accueil" class="hero-section">
       <div class="container">
         <h1>Casa Del Sol : Votre Location Vacances à Torrevieja</h1>
         <h2>Location Appartement pour 4/6 Personnes</h2>
         <div class="hero-image-container">
           <img src="images/piscine-residence-casa-del-sol-torrevieja.webp" 
-     alt="Grande piscine partagée ensoleillée de la résidence Casa del Sol, idéale pour des vacances en famille à Torrevieja" 
-     class="hero-image"
-     width="1400" 
-     height="933"> 
+               alt="Grande piscine partagée ensoleillée de la résidence Casa del Sol, idéale pour des vacances en famille à Torrevieja" 
+               class="hero-image"
+               width="1400" 
+               height="933"> 
         </div>
         <div class="hero-description">
             <p>Découvrez Casa del Sol, votre futur <strong>appartement de vacances à louer à Torrevieja</strong>, sur la magnifique <strong>Costa Blanca</strong> en Espagne. Un logement spacieux, lumineux et entièrement équipé, parfait pour votre <strong>séjour à Torrevieja</strong>.</p>
             <p>Idéalement situé dans un quartier calme, notre <strong>location saisonnière</strong> est à quelques pas des commerces, des plages de sable fin et du centre commercial Habaneras. Un choix parfait pour des <strong>vacances en famille à Torrevieja</strong> ou un séjour entre amis.</p>
-            <a href="vacances-a-torrevieja.html">Découvrez pourquoi Torrevieja est la destination idéale pour vos vacances.</a>
+            <p style="margin-top: 20px;"><a href="vacances-a-torrevieja.html" class="button-primary">Découvrir les activités à Torrevieja</a></p> <!-- Lien ajouté ici -->
         </div>
       </div>
     </section>
 
     <div class="container"><hr class="separator"></div>
 
-    <!-- ====== Section Le Logement ====== -->
     <section id="logement" class="logement-section">
-  <div class="container">
-    <h2 class="section-title">Votre Appartement de Vacances à Torrevieja</h2>
-    <p>Découvrez en détail l'intérieur confortable et les équipements de notre appartement Casa Del Sol, conçu pour rendre votre séjour à Torrevieja le plus agréable possible. Idéal pour les familles ou les couples, il offre tout le nécessaire pour des vacances réussies sur la Costa Blanca.<a href="#galerie">Voir les photos</a></p>
-  <div class="logement-grid">
+      <div class="container">
+        <h2 class="section-title">Votre Appartement de Vacances à Torrevieja</h2>
+        <p style="text-align:center; max-width: 700px; margin-left:auto; margin-right:auto;">Découvrez en détail l'intérieur confortable et les équipements de notre appartement Casa Del Sol, conçu pour rendre votre séjour à Torrevieja le plus agréable possible. Idéal pour les familles ou les couples, il offre tout le nécessaire pour des vacances réussies sur la Costa Blanca. <a href="#galerie">Voir les photos</a></p>
+        <div class="logement-grid">
           <div class="logement-col">
-            <h3><span class="icon">🛏️</span>CHAMBRES & COUCHAGES</h3>
+            <h3><span class="icon">🛏️</span>Chambres & Couchages</h3>
             <ul>
               <li>1 chambre avec lit double (140x190cm)</li>
               <li>1 chambre avec 2 lits simples (90x190cm)</li>
@@ -164,7 +145,7 @@
             </ul>
           </div>
           <div class="logement-col">
-            <h3><span class="icon">☀️</span>EXTERIEURS & DETENTE</h3>
+            <h3><span class="icon">☀️</span>Extérieurs & Détente</h3>
             <ul>
               <li><strong>Solarium privé</strong> avec pergola, transats et salon de jardin</li>
               <li><strong>Grande terrasse</strong> avec table et chaises pour repas en extérieur</li>
@@ -173,7 +154,7 @@
             </ul>
           </div>
           <div class="logement-col">
-            <h3><span class="icon">🍽️</span>CONFORT & ÉQUIPEMENTS</h3>
+            <h3><span class="icon">🍽️</span>Confort & Équipements</h3>
             <ul>
               <li><strong>Cuisine équipée :</strong> four, plaques vitro, frigo/congélateur, micro-ondes, cafetière Nespresso, bouilloire, grille-pain, vaisselle complète</li>
               <li><strong>Climatisation réversible</strong> (chaud/froid) dans le séjour et couloir des chambres</li>
@@ -185,7 +166,7 @@
             </ul>
           </div>
           <div class="logement-col">
-            <h3><span class="icon">📍</span>EMPLACEMENT PRIVILEGIE</h3>
+            <h3><span class="icon">📍</span>Emplacement Privilégié</h3>
             <ul>
               <li>Supermarchés (Mercadona, Lidl), restaurants, bars : <strong>5 min à pied</strong></li>
               <li>Centre commercial Habaneras (boutiques, cinéma) : <strong>10 min à pied</strong></li>
@@ -198,109 +179,51 @@
       </div>
     </section>
 
-    <!-- ====== Section Gallerie Photos ====== -->
     <section id="galerie" class="gallery-section">
-  <div class="container">
-    <h2 class="section-title">Photos de l'Appartement et de la Résidence à Torrevieja</h2>
-    <p>Explorez en images tous les espaces de votre future location de vacances : le salon lumineux, les chambres confortables, la cuisine équipée, ainsi que la grande piscine partagée et le solarium privé de Casa Del Sol.</p>
-    <div class="gallery-grid">
-  <a href="images/salon-climatise-canape-lit-casa-del-sol-torrevieja.webp" 
-     data-lightbox="gallery" 
-     data-title="Salon confortable avec climatisation et canapé convertible - Casa Del Sol Torrevieja">
-    <img src="images/salon-climatise-canape-lit-casa-del-sol-torrevieja.webp" 
-         alt="Salon cosy et lumineux de l'appartement Casa Del Sol à Torrevieja, avec canapé convertible et climatisation"
-         width="1400" 
-         height="933"
-         loading="lazy">
-  </a>
-  <a href="images/chambre-parentale-lit-double-casa-del-sol-torrevieja.webp" 
-     data-lightbox="gallery"
-     data-title="Chambre parentale spacieuse avec lit double - Casa Del Sol Torrevieja">
-    <img src="images/chambre-parentale-lit-double-casa-del-sol-torrevieja.webp" 
-         alt="Chambre parentale confortable avec grand lit double et rangement, appartement Casa Del Sol Torrevieja"
-         width="1400" 
-         height="933"
-         loading="lazy">
-  </a>
-  <a href="images/chambre-enfants-lits-simples-casa-del-sol-torrevieja.webp" 
-     data-lightbox="gallery"
-     data-title="Chambre enfants avec deux lits simples - Parfaite pour les familles - Casa Del Sol Torrevieja">
-    <img src="images/chambre-enfants-lits-simples-casa-del-sol-torrevieja.webp" 
-         alt="Chambre enfants lumineuse avec deux lits simples, parfaite pour des vacances en famille à Casa Del Sol, Torrevieja"
-         width="1400" 
-         height="933"
-         loading="lazy">
-  </a>
-  <a href="images/cuisine-equipee-casa-del-sol-torrevieja.webp" 
-     data-lightbox="gallery"
-     data-title="Cuisine entièrement équipée pour préparer vos repas - Casa Del Sol Torrevieja">
-    <img src="images/cuisine-equipee-casa-del-sol-torrevieja.webp" 
-         alt="Cuisine entièrement équipée de l'appartement Casa Del Sol Torrevieja, avec four, plaques, micro-ondes et lave-linge"
-         width="1400" 
-         height="933"
-         loading="lazy">
-  </a>
-  <a href="images/salle-de-bain-appartement-casa-del-sol-torrevieja.webp" 
-     data-lightbox="gallery"
-     data-title="Salle de bain avec baignoire et douche - Casa Del Sol Torrevieja">
-    <img src="images/salle-de-bain-appartement-casa-del-sol-torrevieja.webp" 
-         alt="Salle de bain fonctionnelle avec baignoire, douche et WC, appartement Casa Del Sol Torrevieja"
-         width="1400" 
-         height="933"
-         loading="lazy">
-  </a>
-  <a href="images/balcon-appartement-casa-del-sol-torrevieja.webp" 
-     data-lightbox="gallery"
-     data-title="Terrasse aménagée pour profiter de l'extérieur - Casa Del Sol Torrevieja">
-    <img src="images/balcon-appartement-casa-del-sol-torrevieja.webp" 
-         alt="Terrasse privée aménagée avec table et chaises pour repas en extérieur, appartement Casa Del Sol à Torrevieja"
-         width="1400" 
-         height="933"
-         loading="lazy">
-  </a>
-  <a href="images/solarium-prive-toit-casa-del-sol-torrevieja.webp" 
-     data-lightbox="gallery"
-     data-title="Solarium privé sur le toit avec transats et vue - Casa Del Sol Torrevieja">
-    <img src="images/solarium-prive-toit-casa-del-sol-torrevieja.webp" 
-         alt="Grand solarium privé sur le toit avec transats, pergola et vue dégagée, Casa Del Sol Torrevieja"
-         width="1400" 
-         height="933"
-         loading="lazy">
-  </a>
-  <a href="images/piscine-residence-casa-del-sol-torrevieja.webp" 
-     data-lightbox="gallery"
-     data-title="Grande piscine partagée de la résidence - Casa Del Sol Torrevieja">
-    <img src="images/piscine-residence-casa-del-sol-torrevieja.webp" 
-         alt="Piscine partagée de la résidence Casa del Sol à Torrevieja, avec espace pour enfants, pour des vacances relaxantes"
-         width="1400" 
-         height="933"
-         loading="lazy">
-  </a>
-  <a href="images/vue-balcon-appartement-casa-del-sol-torrevieja.webp" 
-     data-lightbox="gallery"
-     data-title="Vue depuis le balcon sur les environs verdoyants - Casa Del Sol Torrevieja">
-    <img src="images/vue-balcon-appartement-casa-del-sol-torrevieja.webp" 
-         alt="Vue depuis le balcon de l'appartement Casa Del Sol à Torrevieja, avec palmiers et environnement verdoyant"
-         width="1400" 
-         height="933"
-         loading="lazy">
-  </a>
-</div>
+      <div class="container">
+        <h2 class="section-title">Photos de l'Appartement et de la Résidence à Torrevieja</h2>
+        <p style="text-align:center; max-width: 700px; margin-left:auto; margin-right:auto;">Explorez en images tous les espaces de votre future location de vacances : le salon lumineux, les chambres confortables, la cuisine équipée, ainsi que la grande piscine partagée et le solarium privé de Casa Del Sol.</p>
+        <div class="gallery-grid">
+          <a href="images/salon-climatise-canape-lit-casa-del-sol-torrevieja.webp" data-lightbox="gallery" data-title="Salon confortable avec climatisation et canapé convertible - Casa Del Sol Torrevieja">
+            <img src="images/salon-climatise-canape-lit-casa-del-sol-torrevieja.webp" alt="Salon cosy et lumineux de l'appartement Casa Del Sol à Torrevieja, avec canapé convertible et climatisation" width="1400" height="933" loading="lazy">
+          </a>
+          <a href="images/chambre-parentale-lit-double-casa-del-sol-torrevieja.webp" data-lightbox="gallery" data-title="Chambre parentale spacieuse avec lit double - Casa Del Sol Torrevieja">
+            <img src="images/chambre-parentale-lit-double-casa-del-sol-torrevieja.webp" alt="Chambre parentale confortable avec grand lit double et rangement, appartement Casa Del Sol Torrevieja" width="1400" height="933" loading="lazy">
+          </a>
+          <a href="images/chambre-enfants-lits-simples-casa-del-sol-torrevieja.webp" data-lightbox="gallery" data-title="Chambre enfants avec deux lits simples - Parfaite pour les familles - Casa Del Sol Torrevieja">
+            <img src="images/chambre-enfants-lits-simples-casa-del-sol-torrevieja.webp" alt="Chambre enfants lumineuse avec deux lits simples, parfaite pour des vacances en famille à Casa Del Sol, Torrevieja" width="1400" height="933" loading="lazy">
+          </a>
+          <a href="images/cuisine-equipee-casa-del-sol-torrevieja.webp" data-lightbox="gallery" data-title="Cuisine entièrement équipée pour préparer vos repas - Casa Del Sol Torrevieja">
+            <img src="images/cuisine-equipee-casa-del-sol-torrevieja.webp" alt="Cuisine entièrement équipée de l'appartement Casa Del Sol Torrevieja, avec four, plaques, micro-ondes et lave-linge" width="1400" height="933" loading="lazy">
+          </a>
+          <a href="images/salle-de-bain-appartement-casa-del-sol-torrevieja.webp" data-lightbox="gallery" data-title="Salle de bain avec baignoire et douche - Casa Del Sol Torrevieja">
+            <img src="images/salle-de-bain-appartement-casa-del-sol-torrevieja.webp" alt="Salle de bain fonctionnelle avec baignoire, douche et WC, appartement Casa Del Sol Torrevieja" width="1400" height="933" loading="lazy">
+          </a>
+          <a href="images/balcon-appartement-casa-del-sol-torrevieja.webp" data-lightbox="gallery" data-title="Terrasse aménagée pour profiter de l'extérieur - Casa Del Sol Torrevieja">
+            <img src="images/balcon-appartement-casa-del-sol-torrevieja.webp" alt="Terrasse privée aménagée avec table et chaises pour repas en extérieur, appartement Casa Del Sol à Torrevieja" width="1400" height="933" loading="lazy">
+          </a>
+          <a href="images/solarium-prive-toit-casa-del-sol-torrevieja.webp" data-lightbox="gallery" data-title="Solarium privé sur le toit avec transats et vue - Casa Del Sol Torrevieja">
+            <img src="images/solarium-prive-toit-casa-del-sol-torrevieja.webp" alt="Grand solarium privé sur le toit avec transats, pergola et vue dégagée, Casa Del Sol Torrevieja" width="1400" height="933" loading="lazy">
+          </a>
+          <a href="images/piscine-residence-casa-del-sol-torrevieja.webp" data-lightbox="gallery" data-title="Grande piscine partagée de la résidence - Casa Del Sol Torrevieja">
+            <img src="images/piscine-residence-casa-del-sol-torrevieja.webp" alt="Piscine partagée de la résidence Casa del Sol à Torrevieja, avec espace pour enfants, pour des vacances relaxantes" width="1400" height="933" loading="lazy">
+          </a>
+          <a href="images/vue-balcon-appartement-casa-del-sol-torrevieja.webp" data-lightbox="gallery" data-title="Vue depuis le balcon sur les environs verdoyants - Casa Del Sol Torrevieja">
+            <img src="images/vue-balcon-appartement-casa-del-sol-torrevieja.webp" alt="Vue depuis le balcon de l'appartement Casa Del Sol à Torrevieja, avec palmiers et environnement verdoyant" width="1400" height="933" loading="lazy">
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- ====== Section Tarifs ====== -->
     <section id="tarifs" class="tarifs-section">
-  <div class="container">
-    <h2 class="section-title">Tarifs de Location 2025 / 2026</h2> <!-- Ou Garder TARIFS 2025 / 2026 -->
-    <p>Consultez nos tarifs pour la location de l'appartement Casa Del Sol à Torrevieja, valables pour la saison 2025-2026. Nos prix sont transparents et comprennent les charges (selon usage raisonnable) et le linge de maison, sans frais de plateforme cachés.</p>
-    <div class="tarifs-grid">
+      <div class="container">
+        <h2 class="section-title">Tarifs de Location 2025 / 2026</h2>
+        <p style="text-align:center; max-width: 700px; margin-left:auto; margin-right:auto;">Consultez nos tarifs pour la location de l'appartement Casa Del Sol à Torrevieja. Nos prix sont transparents, charges et linge de maison inclus (selon usage raisonnable), sans frais de plateforme cachés.</p>
+        <div class="tarifs-grid">
           <div class="tarif-item">
             <h3>Basse Saison</h3>
             <p class="period">(1er Oct. au 31 Mai - hors vacances scolaires)</p>
-            <p class="price-line">
-            <span class="price-intro">À partir de</span>
-            <span class="price-amount">350€</span><br>/ semaine</p>
+            <p class="price-line"><span class="price-intro">À partir de</span> <span class="price-amount">350€</span><br>/ semaine</p>
           </div>
           <div class="tarif-item">
             <h3>Vacances Scolaires</h3>
@@ -319,25 +242,20 @@
           </div>
         </div>
         <div class="tarifs-notes">
-          <p>🔁 Tarifs dégressifs possibles selon la durée du séjour (à partir de 2 semaines). Minimum 7 nuits en haute saison (arrivée et départ le samedi).</p>
-          <p>En dehors de ces dates ou pour un séjour plus long, merci de nous <a href="#contact-form-section">contacter pour un devis personnalisé</a>.</p>
+          <p>🔁 Tarifs dégressifs possibles dès 2 semaines. Minimum 7 nuits en haute saison (arrivée/départ le samedi).</p>
+          <p>Pour des durées spécifiques ou hors saison, <a href="#contact-form-section">contactez-nous pour un devis personnalisé</a>.</p>
         </div>
       </div>
     </section>
 
-    <!-- ====== Section Disponibilités & Réservation ====== -->
     <section id="reservation" class="reservation-section">
       <div class="container">
-        <h2 class="section-title">DISPONIBILITÉS & RÉSERVATION EN LIGNE</h2>
+        <h2 class="section-title">Disponibilités & Réservation en Ligne</h2>
         <p>Réservez dès maintenant votre séjour à Torrevieja et profitez du soleil espagnol dans un logement tout confort, <strong>sans intermédiaire ni frais de plateforme cachés.</strong></p>
         <div class="calendar-placeholder">
           <p>📅 <strong>Consultez notre planning à jour avant d’envoyer votre demande.</strong></p>
           <p>(Les périodes colorées sont déjà réservées)</p>
-          
-          <!-- === CODE IFRAME GOOGLE CALENDAR CORRECT === -->
          <iframe src="https://calendar.google.com/calendar/embed?src=68efbd08743677d707940e57ffee048a6b04f46892731e455b71eff50bb9cfea%40group.calendar.google.com&ctz=Europe%2FParis" style="border: 0" frameborder="0" scrolling="no"></iframe>
-          <!-- === FIN CODE IFRAME === -->
-
           <p style="font-size:0.9em; margin-top:10px;"><em>Calendrier mis à jour régulièrement. Contactez-nous pour confirmer.</em></p>
         </div>
         <div class="reservation-action">
@@ -347,11 +265,10 @@
       </div>
     </section>
 
-        <!-- ====== Section Témoignages ====== -->
     <section id="temoignages" class="temoignages-section">
       <div class="container">
             <h2 class="section-title">Avis de nos Locataires à Casa Del Sol Torrevieja</h2>
-            <p>Découvrez ce que disent nos hôtes précédents ! Leurs témoignages reflètent l'expérience d'un agréable séjour vacances dans notre appartement à Torrevieja, apprécié pour son confort, ses équipements et son emplacement idéal.</p>
+            <p style="text-align:center; max-width: 700px; margin-left:auto; margin-right:auto;">Découvrez ce que disent nos hôtes précédents ! Leurs témoignages reflètent l'expérience d'un agréable séjour vacances dans notre appartement à Torrevieja.</p>
             <div class="testimonial-grid">
                 <article class="testimonial">
                     <p class="quote">"Appartement conforme à l'annonce et aux photos, facile de se garer, piscine très agréable. Beau temps ! Bonne situation géographique, commerces à proximité. Tout pour passer de bonnes vacances !"</p>
@@ -377,11 +294,44 @@
                   <span class="author-date">- Août 2024</span>
                   </footer>  
                 </article>
-                </div>
+            </div>
         </div>
     </section>
     
-    <!-- ====== Section Contact Form (simulée par un CTA) ====== -->
+    <section id="faq" class="faq-section"> <!-- Section FAQ sur la page d'accueil -->
+        <div class="container">
+            <h2 class="section-title">Foire Aux Questions (FAQ)</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <details>
+                        <summary>Puis-je annuler une réservation ?</summary>
+                        <p>Oui, l’annulation est possible. Toutefois, l’acompte versé (30% du montant total) reste acquis. En cas de circonstances exceptionnelles, n’hésitez pas à nous contacter pour trouver une solution amiable.</p>
+                    </details>
+                </div>
+                <div class="faq-item">
+                    <details>
+                        <summary>Le logement est-il adapté aux familles avec enfants ?</summary>
+                        <p>Absolument. L’appartement dispose de deux chambres, d’un canapé-lit et d’un lit bébé sur demande. La résidence propose aussi une piscine pour enfants et des aires de jeux à proximité.</p>
+                    </details>
+                </div>
+                <!-- Ajoutez d'autres questions/réponses ici -->
+                <div class="faq-item">
+                    <details>
+                        <summary>Y a-t-il des frais supplémentaires ?</summary>
+                        <p>Le ménage de fin de séjour est facturé 70€. La consommation électrique est incluse jusqu’à 200 kWh par semaine (amplement suffisant pour un usage normal). Au-delà, une facturation de 0,30€/kWh peut s’appliquer.</p>
+                    </details>
+                </div>
+                <div class="faq-item">
+                     <details>
+                        <summary>Quels sont les horaires de check-in et check-out ?</summary>
+                        <p>L'arrivée (check-in) se fait à partir de 16h. Le départ (check-out) doit être effectué avant 11h. Une certaine flexibilité peut être possible sur demande et selon les disponibilités.</p>
+                    </details>
+                </div>
+            </div>
+            <p style="text-align:center; margin-top:30px;">D'autres questions ? Consultez notre <a href="faq.html">page FAQ complète</a> ou <a href="#contact-form-section">contactez-nous</a>.</p>
+        </div>
+    </section>
+
     <section id="contact-form-section" class="contact-form-section">
         <div class="container">
             <h2 class="section-title">Contact et Demande de Devis pour votre Séjour à Torrevieja</h2>
@@ -395,37 +345,32 @@
 
   </main>
 
-  <!-- ====== Footer ====== -->
   <footer>
     <div class="container">
       <div class="footer-logo">
-        <img src="images/logo-casa-del-sol-torrevieja.webp" alt="Logo Casa del Sol Torrevieja - Location appartement vacances"
-        >
+        <img src="images/logo-casa-del-sol-torrevieja.webp" alt="Logo Casa del Sol Torrevieja - Location appartement vacances">
       </div>
       <nav class="footer-nav">
-  <a href="index.html">Accueil</a> |
-  <a href="index.html#logement">Logement</a> |
-  <a href="index.html#galerie">Photos</a> |
-  <a href="index.html#tarifs">Tarifs</a> |
-  <a href="index.html#reservation">Disponibilités</a> | 
-  <a href="vacances-a-torrevieja.html">Découvrir Torrevieja</a> |
-  <a href="index.html#temoignages">Avis Clients</a> |
-  <a href="index.html#faq">FAQ</a> <br> 
-  <a href="mentions-legales.html" target="_blank">Mentions légales</a> | 
-  <a href="politique-de-confidentialite.html" target="_blank">Politique de confidentialité</a>
-</nav>
+        <a href="#">Accueil</a> |
+        <a href="#logement">Logement</a> |
+        <a href="#tarifs">Tarifs</a> |
+        <a href="#reservation">Disponibilités</a> | 
+        <a href="vacances-a-torrevieja.html">Découvrir Torrevieja</a> |
+        <a href="#temoignages">Avis Clients</a> |
+        <a href="#faq">FAQ</a> <br> 
+        <a href="mentions-legales.html" target="_blank">Mentions légales</a> | 
+        <a href="politique-de-confidentialite.html" target="_blank">Politique de confidentialité</a>
+      </nav>
       <p class="copyright">© <span id="currentYear"></span> Casa Del Sol Torrevieja. Tous droits réservés. Location d'appartement de vacances.</p>
     </div>
   </footer>
 
-  <!-- Lightbox CSS & JS (Optionnel, pour un effet galerie amélioré) -->
-  <!-- Vous pouvez l'héberger vous-même ou utiliser un CDN -->
-  <!-- Exemple avec Lightbox2 : https://lokeshdhakar.com/projects/lightbox2/ -->
-  <!-- <link href="path/to/lightbox.min.css" rel="stylesheet" /> -->
-  <!-- <script src="path/to/lightbox.min.js"></script> -->
+  <!-- Lightbox (Assurez-vous d'avoir les fichiers lightbox.min.css et lightbox.min.js) -->
+  <!-- <link href="css/lightbox.min.css" rel="stylesheet" /> -->
+  <!-- <script src="js/lightbox.min.js"></script> -->
+  <!-- <script> if (typeof lightbox !== 'undefined') { lightbox.option({ 'resizeDuration': 200, 'wrapAround': true, 'albumLabel': "Image %1 sur %2" }); } </script> -->
 
   <script>
-    // Script simple pour le menu mobile et l'année du copyright
     document.addEventListener('DOMContentLoaded', function() {
       const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
       const nav = document.querySelector('header nav');
@@ -441,11 +386,10 @@
         currentYearSpan.textContent = new Date().getFullYear();
       }
 
-      // Fermer le menu si on clique sur un lien (pour une SPA-like)
       const navLinks = document.querySelectorAll('header nav a');
       navLinks.forEach(link => {
         link.addEventListener('click', () => {
-          if (nav.classList.contains('active')) {
+          if (nav.classList.contains('active') && (link.getAttribute('href').startsWith('#') || window.location.pathname === link.pathname)) {
             nav.classList.remove('active');
             mobileMenuToggle.setAttribute('aria-expanded', 'false');
           }
