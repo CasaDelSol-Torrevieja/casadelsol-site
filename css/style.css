@@ -746,7 +746,6 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
         right: -8px;
     }
 }
-*/
 
 .tarifs-notes {
   text-align: center;
@@ -1371,16 +1370,15 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
     gap: 20px;
   }
   .gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Images plus petites */
-     /* ou grid-template-columns: 1fr 1fr; */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
   }
   .gallery-grid img { height: 180px; }
 
   .tarifs-grid {
-    grid-template-columns: 1fr; /* Tarifs en 1 colonne */
+    grid-template-columns: 1fr; 
   }
   .tarif-item-highlight {
-      transform: scale(1); /* Pas de zoom sur mobile pour la mise en page */
+      transform: scale(1); 
   }
 
   .faq-item summary { font-size: 16px; padding: 15px 20px; }
@@ -1389,7 +1387,6 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
   .button-primary { padding: 10px 20px; font-size: 15px;}
   .button-large { padding: 12px 24px; font-size: 16px;}
 
-  /* Styles pour l'iframe du calendrier sur mobile */
   .calendar-placeholder {
     padding: 10px; 
     margin-left: 0; 
@@ -1400,4 +1397,4 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
     min-height: 350px; 
     margin-top: 15px;
   }
-} /* Fin de la media query @media (max-width: 767px) */
+}
