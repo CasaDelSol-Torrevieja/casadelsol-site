@@ -295,121 +295,116 @@ li {
 
 /* === NEW FOOTER STYLES === */
 .site-footer {
-  background-color: #ffffff; /* Fond blanc comme dans l'exemple, ou gardez #f8f9fa */
-  color: #5F6368; /* Couleur de texte par défaut pour le footer */
+  background-color: #ffffff; 
+  color: #5F6368; 
   padding: 50px 0 30px;
   font-size: 15px;
   border-top: 1px solid #eaeaea;
+  /* text-align: center; n'est plus nécessaire globalement, le copyright sera centré via sa propre div */
 }
 
 .site-footer .footer-main-content {
   display: flex;
-  flex-wrap: wrap; /* Permet aux colonnes de passer à la ligne sur mobile */
-  justify-content: space-between; /* Espace bien les colonnes */
-  gap: 30px; /* Espace entre les colonnes si elles passent à la ligne */
+  flex-wrap: wrap; 
+  justify-content: space-between; /* Met la colonne gauche et la colonne droite aux extrémités */
+  gap: 30px; 
   margin-bottom: 30px;
 }
 
-.site-footer .footer-column {
-  flex: 1; 
-  min-width: 220px; 
-  text-align: left; /* Alignement à gauche par défaut pour toutes les colonnes */
+/* Styles pour le côté gauche */
+.site-footer .footer-left-side {
+  flex-basis: 300px; /* Largeur de base pour la colonne gauche, ajustez si besoin */
+  flex-grow: 0; /* N'essaie pas de s'étirer */
+  flex-shrink: 0; /* N'essaie pas de rétrécir en dessous de flex-basis si possible */
+  text-align: left; /* Aligne le contenu texte à gauche */
+}
+.site-footer .footer-left-side .footer-logo img {
+  height: 50px; /* Taille du logo */
+  margin-bottom: 10px; /* Moins d'espace sous le logo */
+  display: inline-block; /* Si le logo est le seul enfant de .footer-logo, il sera géré ici */
+}
+.site-footer .footer-left-side .footer-logo {
+    margin-bottom: 10px; /* Espace sous le logo si le texte arrive après */
 }
 
-/* Si vous voulez que la colonne "About" ait son contenu (logo, description) centré DANS la colonne, */
-/* mais que les colonnes Navigation et Infos restent alignées à gauche : */
-/*
-.site-footer .footer-about {
-  text-align: center; 
-}
-.site-footer .footer-about .footer-description,
-.site-footer .footer-about .footer-contact-email,
-.site-footer .footer-about .footer-social-icons {
-  text-align: left; /* Pour que le texte à l'intérieur de ces éléments soit à gauche */
-  /* Vous pourriez avoir besoin d'ajuster les largeurs ou d'utiliser des marges pour un vrai centrage du bloc texte sous un logo centré */
-/* }
-*/
 
-.site-footer .footer-about {
-  text-align: left; /* Aligner à gauche la colonne "About" (logo, description, email) */
-  /* Si vous voulez que le logo lui-même soit centré DANS CETTE COLONNE, mais que le texte soit à gauche, */
-  /* alors le logo aurait besoin d'un margin: auto ou d'être dans un div centré. */
-  /* Pour l'instant, tout sera à gauche. */
+.site-footer .footer-site-title {
+    font-size: 1.05em; /* Taille légèrement plus grande */
+    font-weight: 400;
+    color: #3C4043;
+    margin-bottom: 10px; /* Espace sous le texte titre */
+    line-height: 1.5;
 }
-.site-footer .footer-about .footer-logo { /* Si vous voulez le logo centré dans sa colonne mais le reste à gauche */
-    /* display: flex; justify-content: center; margin-bottom: 15px; */ /* Exemple */
+.site-footer .footer-site-title strong {
+    font-weight: 700; /* Rend la première partie en gras */
+    color: #1E2439;
 }
 
-.site-footer .footer-navigation {
-  text-align: left; /* Aligner à gauche les liens de navigation */
+.site-footer .footer-contact-email {
+    margin-bottom: 15px; /* Espace sous l'email */
 }
-.site-footer .footer-navigation .footer-column-title,
-.site-footer .footer-information .footer-column-title {
-  /* Si vous voulez les titres "Navigation" et "Informations" spécifiquement centrés au-dessus de leurs listes alignées à gauche : */
-  /* text-align: center; */
-  /* Mais dans l'exemple Trendtrack, ils sont aussi à gauche. */
-  text-align: left; /* Pour correspondre à l'exemple Trendtrack */
-}
-
-.site-footer .footer-information {
-  text-align: left; /* Aligner à gauche les liens d'informations */
-}
-
-.site-footer .footer-description {
-  font-size: 0.95em;
-  line-height: 1.6;
-  margin-bottom: 15px;
-  color: #3C4043; /* Texte un peu plus foncé pour la description */
-}
-
 .site-footer .footer-contact-email a {
-  color: #3C4043;
+  font-size: 0.9em; /* Rendre le mail plus petit comme demandé */
+  color: #F5A623; /* Couleur d'accent pour l'email */
   text-decoration: none;
   font-weight: 500;
-  margin-bottom: 20px;
-  display: inline-block; /* Pour que la marge en bas s'applique */
 }
 .site-footer .footer-contact-email a:hover {
-  color: #F5A623;
+    text-decoration: underline;
 }
 
 .site-footer .footer-social-icons {
-  margin-top: 15px;
+  margin-top: 10px; /* Moins d'espace au-dessus */
 }
-.site-footer .footer-social-icons a {
-  display: inline-block;
-  margin-right: 12px; /* Espace entre les icônes */
-}
-.site-footer .footer-social-icons img { /* Si vous utilisez des <img> pour les icônes */
-  width: 28px; /* Taille des icônes sociales */
-  height: 28px;
-  opacity: 0.7;
-  transition: opacity 0.2s ease;
-}
-.site-footer .footer-social-icons a:hover img {
-  opacity: 1;
+/* Les styles pour les icônes sociales elles-mêmes (.footer-social-icons a, .footer-social-icons img) restent les mêmes que précédemment */
+.site-footer .footer-social-icons a { margin-right: 12px; }
+.site-footer .footer-social-icons img { width: 28px; height: 28px; opacity: 0.7; }
+.site-footer .footer-social-icons a:hover img { opacity: 1; }
+
+
+/* Styles pour le côté droit (Navigation et Informations) */
+.site-footer .footer-right-side {
+  display: flex; /* Conteneur flex pour les colonnes de droite */
+  flex-wrap: wrap; /* Permet aux colonnes de droite de passer à la ligne entre elles si nécessaire */
+  gap: 30px; /* Espace entre les colonnes de droite (Navigation et Informations) */
+  justify-content: space-around; /* Ou space-between, pour répartir l'espace entre Nav et Infos */
+  /* align-items: flex-start; /* Aligne les colonnes de droite en haut */
+  flex-grow: 1; /* Permet au côté droit de prendre l'espace restant sur la ligne */
+  /* Pour aligner le groupe de droite à droite si le côté gauche ne prend pas beaucoup de place : */
+  /* justify-content: flex-end; */
 }
 
+
+.site-footer .footer-column { /* Styles communs aux colonnes de droite */
+  flex: 1; /* Les colonnes Navigation et Informations prennent une part égale de l'espace disponible dans footer-right-side */
+  min-width: 150px; /* Largeur minimale avant de passer à la ligne (pour chaque colonne de droite) */
+  /* Pas besoin de text-align: left ici, il sera appliqué aux ul/li/a */
+}
+
+
 .site-footer .footer-column-title {
-  font-size: 1.1em;
+  font-size: 1.1em; 
   font-weight: 700;
   color: #1E2439; 
   margin-bottom: 18px;
-  text-align: left; /* Pour que les titres "Navigation" et "Informations" soient à gauche */
+  text-transform: none; /* Les titres de colonne ne sont pas en majuscules par défaut */
+  text-align: left; /* Aligne les titres de colonne à gauche */
 }
 
+/* Styles pour les listes de liens dans les colonnes de droite */
 .site-footer .footer-column nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  text-align: left; /* Aligne les liens dans les listes à gauche */
 }
 .site-footer .footer-column nav li {
   margin-bottom: 10px;
 }
 .site-footer .footer-column nav a {
-  color: #5F6368; /* Couleur des liens du footer */
+  color: #5F6368; 
   text-decoration: none;
-  font-weight: 400; /* Moins gras que les liens principaux */
+  font-weight: 400; 
 }
 .site-footer .footer-column nav a:hover {
   color: #F5A623;
@@ -425,48 +420,48 @@ li {
 
 .site-footer .footer-bottom-content {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; 
+  flex-wrap: wrap; 
+  justify-content: space-between; /* Copyright à gauche, "Made by" à droite */
   align-items: center;
   font-size: 14px;
   color: #70757a;
-  /* text-align: left; /* Le texte à l'intérieur des <p> sera à gauche par défaut */
+  width: 100%; /* S'assure qu'il prend toute la largeur sous le séparateur */
 }
 .site-footer .copyright { 
-  margin-bottom: 0;
-  /* text-align: left; /* Hérité de .footer-bottom-content */
+  margin-bottom: 0; 
 }
 .site-footer .made-by { 
   margin-bottom: 0;
-  /* text-align: right; /* Si vous voulez que le texte "Made by" soit aligné à droite à l'intérieur de son propre espace */
 }
 
 /* Ajustements responsives pour le footer */
 @media (max-width: 767px) {
   .site-footer .footer-main-content {
-    flex-direction: column; /* Empile les colonnes sur mobile */
-    align-items: flex-start; /* Aligne le contenu de chaque colonne à gauche */
-    gap: 30px; /* Espace vertical entre les colonnes empilées */
+    flex-direction: column; 
+    align-items: center; /* Centre les blocs left-side et right-side sur mobile */
+    gap: 30px; 
   }
-  .site-footer .footer-column {
-    width: 100%; /* Chaque colonne prend toute la largeur */
-    min-width: auto;
-    text-align: left; /* Ou center si vous préférez pour mobile */
-  }
-  .site-footer .footer-column-title {
-    /* text-align: center; /* Si vous voulez les titres centrés sur mobile */
-  }
-  .site-footer .footer-column nav ul {
-    /* text-align: center; /* Si vous voulez les listes centrées sur mobile */
-  }
-  .site-footer .footer-about,
-  .site-footer .footer-contact-email,
-  .site-footer .footer-social-icons {
-    /* text-align: center; /* Si vous voulez la colonne "about" centrée sur mobile */
+  .site-footer .footer-left-side,
+  .site-footer .footer-right-side {
+      width: 100%; /* Les deux côtés prennent toute la largeur disponible sur mobile */
+      flex-basis: auto; /* Réinitialise la flex-basis sur mobile */
+      align-items: center; /* Centre le contenu À L'INTÉRIEUR des côtés sur mobile */
+      text-align: center; /* Centre le texte À L'INTÉRIEUR des côtés sur mobile */
   }
 
+  .site-footer .footer-column { /* Colonnes de droite sur mobile */
+      width: 100%; /* Navigation et Information prennent toute la largeur dans footer-right-side */
+      min-width: auto;
+      text-align: center; /* Centre les listes et titres Navigation/Information sur mobile */
+  }
+  .site-footer .footer-column-title,
+  .site-footer .footer-column nav ul {
+      text-align: center; /* Assure que les titres et listes sont centrés sur mobile */
+  }
+
+
   .site-footer .footer-bottom-content {
-    flex-direction: column; /* Empile copyright et "made by" */
+    flex-direction: column; 
     justify-content: center;
     text-align: center;
     gap: 10px;
