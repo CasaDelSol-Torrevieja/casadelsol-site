@@ -745,7 +745,7 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
 .testimonial footer.testimonial-author {
   display: flex; 
   align-items: center; 
-  justify-content: flex-end; /* Ou 'center' ou 'flex-start' */
+  justify-content: center; /* Ou 'center' ou 'flex-start' */
   margin-top: 20px; 
   font-size: 15px; 
 }
@@ -753,6 +753,7 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
 .testimonial footer.testimonial-author::before {
     content: ""; /* On retire le tiret "— " */
     align-items: center; 
+    text-align: center;
 }
 
 .testimonial-author .author-icon {
