@@ -685,6 +685,88 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section) { /* Alt
     */
 }
 
+/* === TEMOIGNAGES SECTION === */
+.temoignages-section {
+  /* background-color: #f8f9fa; /* Si elle doit avoir un fond spécifique, sinon elle prendra celui des sections paires/impaires */
+}
+
+/* Si vous avez un paragraphe d'introduction sous le titre H2 */
+.temoignages-section > .container > p:first-of-type {
+  max-width: 700px; /* Ou la largeur souhaitée */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-bottom: 30px; /* Espace avant la grille des témoignages */
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Affiche autant de témoignages par ligne que possible */
+  gap: 30px;
+  margin-top: 20px; /* Ou 0 si le <p> d'intro a déjà une marge en bas */
+  /* Pour centrer la grille si elle est plus étroite que son conteneur (par exemple, si seulement 1 ou 2 items tiennent) */
+  /* max-width: 1000px; /* Exemple, à ajuster si besoin */
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  /* justify-content: center; /* Pour centrer les colonnes de la grille si elles n'occupent pas toute la largeur */
+}
+
+.testimonial {
+  background-color: #ffffff;
+  padding: 30px 25px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  display: flex; /* Important pour la structure interne */
+  flex-direction: column; /* Les éléments enfants (quote, footer) s'empilent verticalement */
+  /* text-align: left; /* Par défaut, ou center si vous préférez pour la citation */
+}
+
+.testimonial .quote {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #3C4043;
+  margin-bottom: 20px;
+  flex-grow: 1; /* Fait que la citation prend l'espace vertical disponible */
+  font-style: italic;
+  position: relative;
+  padding-left: 35px; 
+}
+.testimonial .quote::before { 
+    content: '“';
+    font-family: Georgia, serif;
+    font-size: 40px;
+    color: #F5A623;
+    position: absolute;
+    left: 0px;
+    top: -10px;
+}
+
+.testimonial footer {
+  font-size: 15px;
+  color: #1E2439;
+  font-weight: 600;
+  text-align: right; /* Aligne le nom à droite */
+  margin-top: auto; /* Pousse le footer en bas de la carte */
+}
+.testimonial footer::before {
+  content: "— ";
+}
+
+/* Media query pour les mobiles (votre existante) */
+@media (max-width: 767px) { 
+  .testimonial-grid { 
+    grid-template-columns: 1fr; /* Une seule colonne */
+  }
+  .testimonial .quote { 
+    padding-left: 30px; /* Ajustement pour mobile */
+  }
+  .testimonial .quote::before { 
+    font-size: 35px; 
+    left: -5px; 
+    top: -5px; /* Ajustement pour mobile */
+  }
+}
+
 /* === FAQ SECTION === */
 .faq-section {
     background-color: #f8f9fa; /* Fond spécifique */
@@ -875,10 +957,6 @@ footer {
   .tarif-item-highlight {
       transform: scale(1); /* Pas de zoom sur mobile pour la mise en page */
   }
-
-  .testimonial-grid { grid-template-columns: 1fr; }
-  .testimonial .quote { padding-left: 30px; }
-  .testimonial .quote::before { font-size: 35px; left: -5px; top: -5px;}
 
   .faq-item summary { font-size: 16px; padding: 15px 20px; }
   .faq-item details p { font-size: 15px; padding: 0 20px 15px 20px; }
