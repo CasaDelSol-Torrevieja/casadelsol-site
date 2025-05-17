@@ -281,12 +281,19 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section):not(.faq
 
 /* Styles pour les équipements cachés (par défaut) */
 .equipement-item.equipement-hidden {
-  display: none !important; 
+  display: none !important; /* Important pour s'assurer qu'il est caché par JS et CSS initialement */
 }
-/* Quand on veut les montrer via JS */
-.equipement-item.equipement-visible {
-  display: flex; 
-}
+
+/* Si vous utilisez une classe pour révéler, sinon .equipement-item suffit si son display est flex */
+/* .equipement-item.equipement-revealed {
+  display: flex;
+  animation: fadeIn 0.5s ease-in-out; /* Optionnel pour un effet d'apparition */
+/* } */
+
+/* @keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+} */
 
 /* Style pour le bouton "Afficher tout" (inspiration Airbnb) */
 .button-secondary {
