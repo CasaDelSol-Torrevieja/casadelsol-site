@@ -245,43 +245,76 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section):not(.faq
   line-height: 1.8;
 }
 
-/* === LOGEMENT SECTION === */
-.logement-section p { /* Paragraphe d'intro de la section logement */
+/* === LOGEMENT SECTION (STYLE AIRBNB) === */
+.logement-section.airbnb-style .equipements-grid {
+  display: grid;
+  /* Sur desktop, on vise 2 colonnes */
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 15px 30px; /* Espace vertical plus petit, horizontal plus grand */
+  margin-top: 30px;
+}
+
+.equipement-item {
+  display: flex;
+  align-items: center; /* Aligne l'icône et le texte sur la même ligne verticalement */
+  padding: 8px 0; /* Un peu d'espace vertical pour chaque item */
+  font-size: 16px; /* Taille de texte standard pour les équipements */
+  color: #3C4043;
+}
+
+.equipement-icon {
+  display: inline-flex; /* Pour bien contenir l'img */
+  align-items: center;
+  margin-right: 15px; /* Espace entre l'icône et le texte */
+  flex-shrink: 0; /* Empêche l'icône de rétrécir */
+}
+
+.equipement-icon img {
+  width: 22px; /* Taille des icônes SVG */
+  height: 22px;
+  /* Pour colorer les SVG via CSS (si ce sont des SVG monochromes et que vous voulez changer leur couleur) */
+  /* Assurez-vous que le SVG n'a pas de "fill" en dur ou qu'il est "currentColor" */
+  /* filter: invert(38%) sepia(6%) saturate(636%) hue-rotate(170deg) brightness(91%) contrast(88%); */ /* Exemple pour un gris */
+  /* ou si vous utilisez des icônes qui prennent bien la couleur du texte: */
+  /* color: #3C4043; */ /* et dans le SVG, fill="currentColor" */
+}
+
+/* Styles pour les équipements cachés (par défaut) */
+.equipement-item.equipement-hidden {
+  display: none;
+}
+/* Quand on veut les montrer via JS */
+.equipement-item.equipement-visible {
+  display: flex; 
+}
+
+/* Style pour le bouton "Afficher tout" (inspiration Airbnb) */
+.button-secondary {
+  display: inline-block;
+  background-color: transparent;
+  color: #1E2439; /* Couleur de texte foncée */
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #b0b0b0; /* Bordure grise claire */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+.button-secondary:hover {
+  background-color: #f8f9fa; /* Léger fond gris au survol */
+  border-color: #3C4043; /* Bordure un peu plus foncée */
+}
+
+/* Styles pour la section Logement si elle a un paragraphe d'intro */
+.logement-section.airbnb-style > .container > p:first-of-type {
   text-align:center; 
   max-width: 700px; 
   margin-left:auto; 
   margin-right:auto;
-  margin-bottom: 30px; /* Espace avant la grille */
-}
-.logement-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  /* margin-top: 20px; /* Géré par la marge du paragraphe d'intro */
-}
-.logement-col {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-.logement-col h3 .icon {
-  margin-right: 10px;
-  font-size: 22px;
-  color: #F5A623;
-}
-.logement-col ul li {
-  padding-left: 10px;
-  position: relative;
-  margin-bottom: 8px;
-  color: #3C4043;
-}
-.logement-col ul li::before {
-    content: "•";
-    color: #F5A623;
-    position: absolute;
-    left: -5px;
-    font-weight: bold;
+  margin-bottom: 30px;
 }
 
 /* === GALLERIE PHOTOS SECTION & ACTIVITES GRID === */
