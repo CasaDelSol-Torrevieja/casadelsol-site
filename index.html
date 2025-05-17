@@ -130,129 +130,92 @@
 
     <div class="container"><hr class="separator"></div>
 
-    <section id="logement" class="logement-section">
+    !-- ====== Section Le Logement ====== -->
+    <section id="logement" class="logement-section"> <!-- J'ai enlevé airbnb-style pour l'instant, on le mettra si on garde la grille en dessous -->
       <div class="container">
         <h2 class="section-title">Votre Appartement de Vacances à Torrevieja</h2>
-        <p style="text-align:center; max-width: 700px; margin-left:auto; margin-right:auto;">Découvrez en détail l'intérieur confortable et les équipements de notre appartement Casa Del Sol, conçu pour rendre votre séjour à Torrevieja le plus agréable possible. Idéal pour les familles ou les couples, il offre tout le nécessaire pour des vacances réussies sur la Costa Blanca. <a href="#galerie">Voir les photos</a></p>
+        <p style="text-align:center; max-width: 700px; margin-left:auto; margin-right:auto; margin-bottom: 40px;"> <!-- Marge en bas augmentée -->
+          Découvrez en détail l'intérieur confortable et les équipements de notre appartement Casa Del Sol, conçu pour rendre votre séjour à Torrevieja le plus agréable possible. Idéal pour les familles ou les couples, il offre tout le nécessaire pour des vacances réussies sur la Costa Blanca.
+        </p>
+
+        <!-- NOUVELLE SECTION POUR LES 5 ÉQUIPEMENTS CLÉS -->
+        <div class="equipements-cles-wrapper">
+          <div class="equipement-cle-item">
+            <img src="images/icons/wifi-icon.svg" alt="Icône Wi-Fi" class="equipement-cle-icon"> <!-- REMPLACEZ PAR VOTRE NOM D'ICÔNE -->
+            <p>Connexion Wi-Fi<br>Haut Débit</p>
+          </div>
+          <div class="equipement-cle-item">
+            <img src="images/icons/pool-icon.svg" alt="Icône Piscine" class="equipement-cle-icon"> <!-- REMPLACEZ PAR VOTRE NOM D'ICÔNE -->
+            <p>Piscine Partagée<br>Adultes & Enfants</p>
+          </div>
+          <div class="equipement-cle-item">
+            <img src="images/icons/kitchen-icon.svg" alt="Icône Cuisine" class="equipement-cle-icon"> <!-- REMPLACEZ PAR VOTRE NOM D'ICÔNE -->
+            <p>Cuisine Équipée<br>& Fonctionnelle</p>
+          </div>
+          <div class="equipement-cle-item">
+            <img src="images/icons/parking-icon.svg" alt="Icône Parking" class="equipement-cle-icon"> <!-- REMPLACEZ PAR VOTRE NOM D'ICÔNE -->
+            <p>Parking Gratuit<br>sur Place</p>
+          </div>
+          <div class="equipement-cle-item">
+            <img src="images/icons/washing-machine-icon.svg" alt="Icône Lave-linge" class="equipement-cle-icon"> <!-- REMPLACEZ PAR VOTRE NOM D'ICÔNE -->
+            <p>Lave-linge<br>(Gratuit)</p>
+          </div>
+        </div>
+        <!-- FIN DE LA NOUVELLE SECTION -->
+
+        <hr class="separator" style="margin-top: 50px; margin-bottom: 50px;"> <!-- Espacement ajusté -->
         
-            <!-- NOUVELLE SECTION POUR LES 5 ÉQUIPEMENTS CLÉS -->
-    <div class="equipements-cles-wrapper">
-      <div class="equipement-cle-item">
-        <img src="images/icons/wifi-solid-color.svg" alt="Wi-Fi gratuit" class="equipement-cle-icon"> <!-- Icône Wi-Fi colorée -->
-        <p>Connexion Wi-Fi<br>Haut Débit</p>
-      </div>
-      <div class="equipement-cle-item">
-        <img src="images/icons/person-swimming-solid-color.svg" alt="Piscine partagée" class="equipement-cle-icon"> <!-- Icône Piscine colorée -->
-        <p>Piscine Partagée<br> Adultes & Enfants</p>
-      </div>
-      <div class="equipement-cle-item">
-        <img src="images/icons/utensils-solid-color.svg" alt="Cuisine équipée" class="equipement-cle-icon"> <!-- Icône Cuisine colorée -->
-        <p>Cuisine Équipée<br>& Fonctionnelle</p>
-      </div>
-      <div class="equipement-cle-item">
-        <img src="images/icons/car-solid-color.svg" alt="Parking gratuit" class="equipement-cle-icon"> <!-- Icône Parking colorée -->
-        <p>Parking Gratuit<br>sur Place</p>
-      </div>
-      <div class="equipement-cle-item">
-        <img src="images/icons/shirt-solid-color.svg" alt="Lave-linge" class="equipement-cle-icon"> <!-- Icône Lave-linge colorée -->
-        <p>Lave-linge<br>(Gratuit)</p>
-      </div>
-
-    <div class="equipements-action" style="text-align: center; margin-top: 30px;">
-      <button id="show-all-equipements" class="button-secondary">Afficher les équipements supplémentaires</button>
-    </div>
-      
-    </div>
-    <!-- FIN DE LA NOUVELLE SECTION -->
-
-    <hr class="separator" style="margin-top: 40px; margin-bottom: 40px;"> <!-- Séparateur optionnel -->
-    
-    <h3 style="text-align:center; font-size: 1.5em; margin-bottom:30px;">Tous nos équipements en détail :</h3>
+        <h3 style="text-align:center; font-size: 1.6em; margin-bottom:30px; color: #1E2439;">Tous nos équipements en détail :</h3> <!-- Titre pour la grille détaillée -->
         
-        <div class="equipements-grid">
-      <!-- Item 1 -->
-      <div class="equipement-item">
-        <span class="equipement-icon"><img src="images/lit-double.svg" alt=""></span> <!-- Remplacez par vos icônes SVG -->
-        <span>Chambre principale avec lit double (140x190cm)</span>
-      </div>
-      <!-- Item 2 -->
-      <div class="equipement-item">
-        <span class="equipement-icon"><img src="images/lit-jumeaux.svg" alt=""></span>
-        <span>Seconde chambre avec 2 lits simples (90x190cm)</span>
-      </div>
-      <!-- Item 3 -->
-      <div class="equipement-item">
-        <span class="equipement-icon"><img src="images/canape-lit.svg" alt=""></span>
-        <span>Canapé-lit confortable dans le salon (140x190cm)</span>
-      </div>
-      <!-- Item 4 -->
-      <div class="equipement-item">
-        <span class="equipement-icon"><img src="images/lit-bebe.svg" alt=""></span>
-        <span>Lit bébé pliant disponible sur demande</span>
-      </div>
-      <!-- Item 5 -->
-      <div class="equipement-item">
-        <span class="equipement-icon"><img src="images/mobilier-exterieur.svg" alt=""></span>
-        <span>Solarium privé avec pergola, transats et salon de jardin</span>
-      </div>
-      <!-- Item 6 -->
-      <div class="equipement-item">
-        <span class="equipement-icon"><img src="images/icons/table-picnic.svg" alt=""></span> <!-- Icône à trouver -->
-        <span>Grande terrasse avec table et chaises pour repas</span>
-      </div>
-      <!-- Item 7 -->
-      <div class="equipement-item">
-        <span class="equipement-icon"><img src="images/piscine.svg" alt=""></span>
-        <span>Piscine partagée sécurisée avec bassin pour enfants</span>
-      </div>
-      <!-- Item 8 -->
-      <div class="equipement-item">
-        <span class="equipement-icon"><img src="images/cuisine.svg" alt=""></span>
-        <span>Cuisine entièrement équipée (four, plaques, frigo, etc.)</span>
-      </div>
-      <!-- Item 9 -->
-      <div class="equipement-item">
-        <span class="equipement-icon"><img src="images/climatisation.svg" alt=""></span>
-        <span>Climatisation réversible (chaud/froid)</span>
-      </div>
-      <!-- Item 10 -->
-      <div class="equipement-item">
-        <span class="equipement-icon"><img src="images/wifi.svg" alt=""></span>
-        <span>Wi-Fi haut débit gratuit (fibre optique)</span>
-      </div>
-      <!-- Item 11 -->
-      <div class="equipement-item">
-        <span class="equipement-icon"><img src="images/smart-tv.svg" alt=""></span>
-        <span>Télévision écran plat (chaînes françaises et internationales)</span>
-      </div>
-      <!-- Item 12 -->
-      <div class="equipement-item">
-        <span class="equipement-icon"><img src="images/machine-a-laver.svg" alt=""></span> <!-- Ou icône machine à laver -->
-        <span>Lave-linge, étendoir, fer et table à repasser</span>
-      </div>
-      
-      <!-- Vous pouvez ajouter plus d'items ici. -->
-      <!-- Pour les items "cachés" initialement, vous pourriez leur donner une classe : -->
-      <div class="equipement-item equipement-hidden">
-        <span class="equipement-icon"><img src="images/parking.svg" alt=""></span>
-        <span>Parking gratuit et facile autour de la résidence</span>
-      </div>
-      <div class="equipement-item equipement-hidden">
-        <span class="equipement-icon"><img src="images/icons/store-solid.svg" alt=""></span>
-        <span>Proximité commerces (supermarchés, restaurants)</span>
-      </div>
-      <!-- etc. pour tous vos équipements -->
+        <div class="equipements-grid"> <!-- La grille de style Airbnb -->
+          <!-- Item 1 -->
+          <div class="equipement-item">
+            <span class="equipement-icon"><img src="images/icons/bed-solid.svg" alt=""></span> <!-- REMPLACEZ PAR VOS ICÔNES SVG POUR LA LISTE -->
+            <span>Chambre principale avec lit double (140x190cm)</span>
+          </div>
+          <!-- Item 2 -->
+          <div class="equipement-item">
+            <span class="equipement-icon"><img src="images/icons/users-solid.svg" alt=""></span>
+            <span>Seconde chambre avec 2 lits simples (90x190cm)</span>
+          </div>
+          <!-- Item 3 -->
+          <div class="equipement-item">
+            <span class="equipement-icon"><img src="images/icons/couch-solid.svg" alt=""></span>
+            <span>Canapé-lit confortable dans le salon (140x190cm)</span>
+          </div>
+          <!-- Item 4 -->
+          <div class="equipement-item">
+            <span class="equipement-icon"><img src="images/icons/baby-carriage-solid.svg" alt=""></span>
+            <span>Lit bébé pliant disponible sur demande</span>
+          </div>
+          <!-- Item 5 (anciennement Solarium, exemple) -->
+          <div class="equipement-item">
+            <span class="equipement-icon"><img src="images/icons/sun-solid.svg" alt=""></span>
+            <span>Solarium privé avec pergola et transats</span>
+          </div>
+           <!-- Item 6 (anciennement Terrasse, exemple) -->
+          <div class="equipement-item">
+            <span class="equipement-icon"><img src="images/icons/table-picnic.svg" alt=""></span> <!-- Utilisez votre icône pour terrasse/table -->
+            <span>Grande terrasse avec table et chaises</span>
+          </div>
+          <!-- ... CONTINUEZ AVEC TOUS VOS AUTRES ÉQUIPEMENTS ... -->
+          <!-- Exemple d'item caché -->
+          <div class="equipement-item equipement-hidden">
+            <span class="equipement-icon"><img src="images/icons/tv-solid.svg" alt=""></span>
+            <span>Télévision écran plat (chaînes FR/INT)</span>
+          </div>
+          <div class="equipement-item equipement-hidden">
+            <span class="equipement-icon"><img src="images/icons/store-solid.svg" alt=""></span>
+            <span>Proximité commerces (supermarchés, restaurants)</span>
+          </div>
+        </div>
 
-    </div>
+        <div class="equipements-action" style="text-align: center; margin-top: 40px;"> <!-- Marge augmentée -->
+          <button id="show-all-equipements" class="button-secondary">Afficher les équipements supplémentaires</button>
+        </div>
 
-    <div class="equipements-action" style="text-align: center; margin-top: 30px;">
-      <button id="show-all-equipements" class="button-secondary">Afficher tous les équipements</button>
-      <!-- button-secondary est une nouvelle classe de bouton à créer, style Airbnb -->
-    </div>
-
-  </div>
-</section>
-
+      </div>
+    </section>
     <section id="galerie" class="gallery-section">
       <div class="container">
         <h2 class="section-title">Photos de l'Appartement et de la Résidence à Torrevieja</h2>
