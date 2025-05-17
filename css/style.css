@@ -314,13 +314,13 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section):not(.faq
 .equipement-icon {
   display: inline-flex;
   align-items: center;
-  margin-right: 12px; /* Espace icône-texte ajusté */
+  margin-right: 15px; /* Espace icône-texte ajusté */
   flex-shrink: 0;
 }
 
 .equipement-icon img { /* Pour les petites icônes de la liste */
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   /* Pour la couleur des petites icônes si SVG monochromes */
   /* filter: invert(56%) sepia(98%) saturate(1351%) hue-rotate(3deg) brightness(100%) contrast(93%); */ /* Couleur #F5A623 */
   /* Ou fill: #F5A623; directement dans le SVG, ou color + fill="currentColor" */
