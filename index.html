@@ -419,61 +419,58 @@
   <!-- <script src="js/lightbox.min.js"></script> -->
   <!-- <script> if (typeof lightbox !== 'undefined') { lightbox.option({ 'resizeDuration': 200, 'wrapAround': true, 'albumLabel': "Image %1 sur %2" }); } </script> -->
 
-  <script>
-      // Script simple pour le menu mobile et l'année du copyright
-  document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-    const nav = document.querySelector('header nav');
-    if (mobileMenuToggle && nav) {
-      mobileMenuToggle.addEventListener('click', function() {
-        nav.classList.toggle('active');
-        this.setAttribute('aria-expanded', nav.classList.contains('active'));
-      });
-    }
-
-    const currentYearSpan = document.getElementById('currentYear');
-    if (currentYearSpan) {
-      currentYearSpan.textContent = new Date().getFullYear();
-    }
-
-    // Fermer le menu si on clique sur un lien
-    const navLinks = document.querySelectorAll('header nav a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        // Vérifie si le menu est actif ET si le lien est une ancre sur la page actuelle OU si le lien pointe vers la page actuelle
-        if (nav.classList.contains('active') && (link.getAttribute('href').startsWith('#') || window.location.pathname === link.pathname || link.getAttribute('href') === window.location.pathname)) {
-          nav.classList.remove('active');
-          mobileMenuToggle.setAttribute('aria-expanded', 'false');
-        }
-      });
-    });
-
-    // --- CODE POUR LE BOUTON "AFFICHER LES ÉQUIPEMENTS" ---
-    const showAllEquipementsButton = document.getElementById('show-all-equipements');
-    const equipementsGrid = document.querySelector('.logement-section .equipements-grid');
-
-    if (showAllEquipementsButton && equipementsGrid) {
-      const hiddenEquipements = equipementsGrid.querySelectorAll('.equipement-item.equipement-hidden');
-
-      if (hiddenEquipements.length > 0) {
-        showAllEquipementsButton.textContent = `Afficher les ${hiddenEquipements.length} équipements supplémentaires`;
-        
-        showAllEquipementsButton.addEventListener('click', function() {
-          hiddenEquipements.forEach(item => {
-            item.classList.remove('equipement-hidden'); // Enlève la classe qui cache
-            item.style.display = 'flex'; // S'assure qu'il est visible avec le bon display
-          });
-          this.style.display = 'none'; // Cache le bouton lui-même
+    <script>
+    // Script simple pour le menu mobile et l'année du copyright
+    document.addEventListener('DOMContentLoaded', function() { // Accolade ouvrante (1)
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const nav = document.querySelector('header nav');
+      if (mobileMenuToggle && nav) {
+        mobileMenuToggle.addEventListener('click', function() {
+          nav.classList.toggle('active');
+          this.setAttribute('aria-expanded', nav.classList.contains('active'));
         });
-      } else {
-        showAllEquipementsButton.style.display = 'none'; // Cache le bouton s'il n'y a rien à montrer
       }
-    }
-    // --- FIN DU CODE ---
 
- </script>
+      const currentYearSpan = document.getElementById('currentYear');
+      if (currentYearSpan) {
+        currentYearSpan.textContent = new Date().getFullYear();
+      }
 
+      // Fermer le menu si on clique sur un lien
+      const navLinks = document.querySelectorAll('header nav a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (nav.classList.contains('active') && (link.getAttribute('href').startsWith('#') || window.location.pathname === link.pathname || link.getAttribute('href') === window.location.pathname)) {
+            nav.classList.remove('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+
+      // --- CODE POUR LE BOUTON "AFFICHER LES ÉQUIPEMENTS" ---
+      const showAllEquipementsButton = document.getElementById('show-all-equipements');
+      const equipementsGrid = document.querySelector('.logement-section .equipements-grid');
+
+      if (showAllEquipementsButton && equipementsGrid) { // Accolade ouvrante (2)
+        const hiddenEquipements = equipementsGrid.querySelectorAll('.equipement-item.equipement-hidden');
+
+        if (hiddenEquipements.length > 0) { // Accolade ouvrante (3)
+          showAllEquipementsButton.textContent = `Afficher les ${hiddenEquipements.length} équipements supplémentaires`;
+          
+          showAllEquipementsButton.addEventListener('click', function() { // Accolade ouvrante (4)
+            hiddenEquipements.forEach(item => { // Accolade ouvrante (5)
+              item.classList.remove('equipement-hidden');
+              item.style.display = 'flex'; 
+            }); // Accolade fermante (5)
+            this.style.display = 'none'; 
+          }); // Accolade fermante (4)
+        } else { // Accolade ouvrante pour else (6)
+          showAllEquipementsButton.style.display = 'none'; 
+        } // Accolade fermante (6) (et aussi pour l'if de hiddenEquipements.length > 0, donc c'est la fermante 3)
+      } // Accolade fermante (2)
+      // --- FIN DU CODE ---
+
+    }); // <<< C'EST CETTE ACCOLADE FERMANTE (1) QUI MANQUAIT PROBABLEMENT !
+  </script>
 </body>
-
-  
 </html>
