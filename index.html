@@ -448,13 +448,11 @@
       });
     });
 
-    // --- NOUVEAU CODE POUR LE BOUTON "AFFICHER LES ÉQUIPEMENTS" ---
+    // --- CODE POUR LE BOUTON "AFFICHER LES ÉQUIPEMENTS" ---
     const showAllEquipementsButton = document.getElementById('show-all-equipements');
-    // Assurez-vous que la classe .logement-section.airbnb-style existe bien sur la section logement
-    const equipementsGrid = document.querySelector('.logement-section .equipements-grid'); // Simplifié le sélecteur si .airbnb-style n'est pas ajouté
+    const equipementsGrid = document.querySelector('.logement-section .equipements-grid');
 
     if (showAllEquipementsButton && equipementsGrid) {
-      // Sélectionne uniquement les items qui ont la classe .equipement-hidden DANS la grille
       const hiddenEquipements = equipementsGrid.querySelectorAll('.equipement-item.equipement-hidden');
 
       if (hiddenEquipements.length > 0) {
@@ -462,18 +460,16 @@
         
         showAllEquipementsButton.addEventListener('click', function() {
           hiddenEquipements.forEach(item => {
-            item.classList.remove('equipement-hidden');
-            // Pour que le CSS .equipement-item.equipement-visible s'applique (si vous l'utilisez)
-            // ou simplement le fait d'enlever .equipement-hidden et que .equipement-item a display:flex
-            item.style.display = 'flex'; // Force l'affichage si le CSS ne le fait pas via une autre classe
+            item.classList.remove('equipement-hidden'); // Enlève la classe qui cache
+            item.style.display = 'flex'; // S'assure qu'il est visible avec le bon display
           });
-          this.style.display = 'none'; // Cacher le bouton "Afficher tout"
+          this.style.display = 'none'; // Cache le bouton lui-même
         });
       } else {
-        showAllEquipementsButton.style.display = 'none'; // Pas d'équipements à cacher/montrer
+        showAllEquipementsButton.style.display = 'none'; // Cache le bouton s'il n'y a rien à montrer
       }
     }
-    // --- FIN DU NOUVEAU CODE ---
+    // --- FIN DU CODE ---
 
  </script>
 
