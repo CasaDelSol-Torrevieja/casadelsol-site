@@ -896,11 +896,53 @@ footer {
     min-height: 350px; 
     margin-top: 15px;
   }
-   .logement-section.airbnb-style .equipements-grid {
-    grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-    gap: 10px 0; /* Espace vertical seulement */
+  @media (max-width: 991px) { /* Tablettes */
+  /* ... (autres styles tablettes) ... */
+  .equipements-cles-wrapper {
+    gap: 15px;
+  }
+  .equipement-cle-item {
+    flex-basis: calc(33.333% - 15px); /* 3 items par ligne */
+    /* Si moins de 3 items, ils seront centrés grâce à justify-content: center sur le wrapper */
+  }
+}
+
+@media (max-width: 767px) { /* Mobiles */
+  /* ... (vos autres styles mobiles) ... */
+
+  .equipements-cles-wrapper {
+    gap: 15px;
+  }
+  .equipement-cle-item {
+    flex-basis: calc(50% - 10px); /* 2 items par ligne */
+    padding: 15px 10px; /* Ajuster padding pour plus petits cadres */
+  }
+  .equipement-cle-icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 8px;
+  }
+  .equipement-cle-item p {
+    font-size: 13px;
+  }
+
+  .logement-section .equipements-grid { /* Grille détaillée sur mobile */
+    grid-template-columns: 1fr; 
+    gap: 8px 0; 
   }
   .equipement-item {
-    padding: 10px 0; /* Un peu plus d'espace sur mobile */
+    padding: 8px 0;
+    font-size: 15px;
   }
+  .equipement-icon img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) { /* Très petits écrans */
+    .equipement-cle-item {
+        flex-basis: 100%; /* 1 item par ligne, centré */
+        max-width: 280px; /* Pour qu'il ne soit pas trop large */
+    }
 }
