@@ -410,95 +410,62 @@
   <!-- <script> if (typeof lightbox !== 'undefined') { lightbox.option({ 'resizeDuration': 200, 'wrapAround': true, 'albumLabel': "Image %1 sur %2" }); } </script> -->
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-      const nav = document.querySelector('header nav');
-      if (mobileMenuToggle && nav) {
-        mobileMenuToggle.addEventListener('click', function() {
-          nav.classList.toggle('active');
-          this.setAttribute('aria-expanded', nav.classList.contains('active'));
-        });
-      }
-
-      const currentYearSpan = document.getElementById('currentYear');
-      if (currentYearSpan) {
-        currentYearSpan.textContent = new Date().getFullYear();
-      }
-
-      const navLinks = document.querySelectorAll('header nav a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          if (nav.classList.contains('active') && (link.getAttribute('href').startsWith('#') || window.location.pathname === link.pathname)) {
-            nav.classList.remove('active');
-            mobileMenuToggle.setAttribute('aria-expanded', 'false');
-          }
-        });
+      // Script simple pour le menu mobile et l'année du copyright
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const nav = document.querySelector('header nav');
+    if (mobileMenuToggle && nav) {
+      mobileMenuToggle.addEventListener('click', function() {
+        nav.classList.toggle('active');
+        this.setAttribute('aria-expanded', nav.classList.contains('active'));
       });
     }
-   const showAllEquipementsButton = document.getElementById('show-all-equipements');
-const hiddenEquipements = document.querySelectorAll('.equipements-grid .equipement-hidden');
-const maxVisibleByDefault = 10; // Nombre d'équipements visibles par défaut avant de cliquer sur le bouton
 
-if (showAllEquipementsButton && hiddenEquipements.length > 0) {
-  // Initialement, on ne montre que les X premiers (non cachés) + on s'assure que les "hidden" le sont.
-  // Cette partie est plus complexe si vous ne voulez PAS cacher les X premiers mais seulement ceux avec la classe .equipement-hidden.
-  // Pour l'instant, on se base sur la classe .equipement-hidden.
-  // On peut cacher le bouton s'il n'y a rien à montrer de plus.
-  // Ou adapter le texte du bouton.
-  
-  // Si on veut cacher certains par défaut et les montrer
-  let hiddenItemsArray = Array.from(hiddenEquipements);
-  // Cacher tous les items "hidden" par défaut (au cas où le CSS ne le ferait pas assez vite)
-  hiddenItemsArray.forEach(item => item.style.display = 'none');
+    const currentYearSpan = document.getElementById('currentYear');
+    if (currentYearSpan) {
+      currentYearSpan.textContent = new Date().getFullYear();
+    }
 
-
-  showAllEquipementsButton.addEventListener('click', function() {
-    hiddenItemsArray.forEach(item => {
-      item.style.display = 'flex'; // Ou la valeur de display originale de .equipement-item
-      // Ou ajoutez une classe .equipement-visible et retirez .equipement-hidden
-      // item.classList.add('equipement-visible');
-      // item.classList.remove('equipement-hidden');
-    });
-    this.style.display = 'none'; // Cacher le bouton "Afficher tout" après avoir cliqué
-  });
-
-  // Optionnel: si vous voulez afficher X items, puis les autres au clic.
-  // Il faudrait alors ne pas mettre la classe .equipement-hidden sur les X premiers.
-  // Et ajuster le JS pour ne cibler que ceux qui sont réellement à afficher.
-  // Pour simplifier, on se base sur le fait que vous mettez .equipement-hidden sur ceux à cacher.
-  // On peut aussi changer le texte du bouton pour indiquer combien d'autres sont cachés.
-  if (hiddenItemsArray.length > 0) {
-      showAllEquipementsButton.textContent = `Afficher les ${hiddenItemsArray.length} autres équipements`;
-  } else {
-      showAllEquipementsButton.style.display = 'none'; // Pas d'équipements cachés, on cache le bouton
-  }
-
-
-} else if (showAllEquipementsButton) {
-    showAllEquipementsButton.style.display = 'none'; // Si le bouton existe mais pas d'items cachés
-};
-    const showAllEquipementsButton = document.getElementById('show-all-equipements');
-const equipementsGrid = document.querySelector('.logement-section.airbnb-style .equipements-grid');
-
-if (showAllEquipementsButton && equipementsGrid) {
-  const hiddenEquipements = equipementsGrid.querySelectorAll('.equipement-item.equipement-hidden');
-
-  if (hiddenEquipements.length > 0) {
-    showAllEquipementsButton.textContent = `Afficher les ${hiddenEquipements.length} équipements supplémentaires`;
-    
-    showAllEquipementsButton.addEventListener('click', function() {
-      hiddenEquipements.forEach(item => {
-        item.classList.remove('equipement-hidden');
-        // Optionnel: ajouter une classe pour une transition si vous en voulez une
-        // item.classList.add('equipement-revealed'); 
+    // Fermer le menu si on clique sur un lien
+    const navLinks = document.querySelectorAll('header nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        // Vérifie si le menu est actif ET si le lien est une ancre sur la page actuelle OU si le lien pointe vers la page actuelle
+        if (nav.classList.contains('active') && (link.getAttribute('href').startsWith('#') || window.location.pathname === link.pathname || link.getAttribute('href') === window.location.pathname)) {
+          nav.classList.remove('active');
+          mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        }
       });
-      this.style.display = 'none'; // Cacher le bouton "Afficher tout"
     });
-  } else {
-    showAllEquipementsButton.style.display = 'none'; // Pas d'équipements à cacher/montrer
-  }
-}
-  </script>
+
+    // --- NOUVEAU CODE POUR LE BOUTON "AFFICHER LES ÉQUIPEMENTS" ---
+    const showAllEquipementsButton = document.getElementById('show-all-equipements');
+    // Assurez-vous que la classe .logement-section.airbnb-style existe bien sur la section logement
+    const equipementsGrid = document.querySelector('.logement-section .equipements-grid'); // Simplifié le sélecteur si .airbnb-style n'est pas ajouté
+
+    if (showAllEquipementsButton && equipementsGrid) {
+      // Sélectionne uniquement les items qui ont la classe .equipement-hidden DANS la grille
+      const hiddenEquipements = equipementsGrid.querySelectorAll('.equipement-item.equipement-hidden');
+
+      if (hiddenEquipements.length > 0) {
+        showAllEquipementsButton.textContent = `Afficher les ${hiddenEquipements.length} équipements supplémentaires`;
+        
+        showAllEquipementsButton.addEventListener('click', function() {
+          hiddenEquipements.forEach(item => {
+            item.classList.remove('equipement-hidden');
+            // Pour que le CSS .equipement-item.equipement-visible s'applique (si vous l'utilisez)
+            // ou simplement le fait d'enlever .equipement-hidden et que .equipement-item a display:flex
+            item.style.display = 'flex'; // Force l'affichage si le CSS ne le fait pas via une autre classe
+          });
+          this.style.display = 'none'; // Cacher le bouton "Afficher tout"
+        });
+      } else {
+        showAllEquipementsButton.style.display = 'none'; // Pas d'équipements à cacher/montrer
+      }
+    }
+    // --- FIN DU NOUVEAU CODE ---
+
+ </script>
 
 </body>
 
