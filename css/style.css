@@ -281,7 +281,7 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section):not(.faq
 
 /* Styles pour les équipements cachés (par défaut) */
 .equipement-item.equipement-hidden {
-  display: none;
+  display: none !important; 
 }
 /* Quand on veut les montrer via JS */
 .equipement-item.equipement-visible {
@@ -863,5 +863,12 @@ footer {
     height: 450px; 
     min-height: 350px; 
     margin-top: 15px;
+  }
+   .logement-section.airbnb-style .equipements-grid {
+    grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    gap: 10px 0; /* Espace vertical seulement */
+  }
+  .equipement-item {
+    padding: 10px 0; /* Un peu plus d'espace sur mobile */
   }
 }
