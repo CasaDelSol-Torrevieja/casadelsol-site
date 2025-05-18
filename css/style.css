@@ -799,6 +799,38 @@ footer {
   color: #70757a;
 }
 
+/* === FOOTER === */
+footer {
+  background-color: #f8f9fa;
+  padding: 50px 0 30px;
+  text-align: center;
+  font-size: 15px;
+  color: #5F6368;
+  border-top: 1px solid #eaeaea;
+}
+.footer-logo img {
+  height: 45px;
+  margin-bottom: 20px;
+  border-radius:0;
+}
+.footer-nav {
+  margin-bottom: 20px;
+}
+.footer-nav a {
+  color: #5F6368;
+  margin: 0 10px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.8; /* Pour gérer le <br> dans la nav du footer */
+}
+.footer-nav a:hover {
+  color: #F5A623;
+}
+.copyright {
+  font-size: 14px;
+  color: #70757a;
+}
+
 /* === RESPONSIVE ADJUSTMENTS === */
 @media (max-width: 991px) { /* Tablettes */
   #header nav {
