@@ -716,6 +716,11 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section):not(.faq
 .guide-page-section { /* Conteneur principal de la page guide */
     /* background-color: #f8f9fa; */ /* Exemple si vous voulez un fond différent */
 }
+.hero-activites h1 { /* Cible le H1 dans la section hero de la page activités */
+  text-transform: uppercase;
+  /* Vous pouvez garder le style en ligne pour font-size ou le déplacer ici aussi */
+  /* font-size: clamp(30px, 5vw, 42px); */
+}
 .guide-page-section h1.section-title { 
   margin-top: 0; /* Enlever la marge du haut si c'est le premier titre */
   margin-bottom: 20px;
