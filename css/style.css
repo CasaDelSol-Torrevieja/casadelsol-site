@@ -751,6 +751,17 @@ section:nth-child(even):not(.tarifs-section):not(.contact-form-section):not(.faq
 }
 /* La classe .activites-grid utilise .gallery-grid, donc pas besoin de styles ici sauf si spécifiques */
 
+/* === STYLES SPÉCIFIQUES POUR LA PAGE vacances-a-torrevieja.html === */
+.guide-page-section { /* Conteneur principal de la page guide */
+    /* background-color: #f8f9fa; */ /* Exemple si vous voulez un fond différent */
+}
+.guide-page-section h1.section-title { 
+  margin-top: 0; /* Enlever la marge du haut si c'est le premier titre */
+  margin-bottom: 20px;
+  font-size: clamp(28px, 5vw, 40px); /* Taille spécifique pour le H1 de cette page */
+}
+/* ... et le reste de vos styles pour .guide-page-section ... */
+
 /* === FOOTER === */
 footer {
   background-color: #f8f9fa;
