@@ -24,57 +24,96 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Apartment",
+  "@type": "Apartment", // Ou "VacationRental" si vous voulez être plus spécifique pour Google
   "name": "Appartement Casa Del Sol Torrevieja",
   "description": "Location d'appartement de vacances à Torrevieja (Costa Blanca) pour 4 à 6 personnes, avec piscine partagée et solarium privé.",
+  "image": [ // Recommandé d'avoir l'image principale de l'appartement ici aussi
+    "https://www.casadelsol-torrevieja.com/images/piscine-residence-casa-del-sol-torrevieja.webp",
+    "https://www.casadelsol-torrevieja.com/images/solarium-prive-toit-casa-del-sol-torrevieja.webp"
+    // Ajoutez d'autres URL d'images clés ici si vous le souhaitez
+   ],
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Torrevieja",
     "addressRegion": "Alicante",
+    "postalCode": "0318X", // Ajoutez le code postal si vous le connaissez
     "addressCountry": "ES"
   },
-  "numberOfRooms": 2.5,
+  "numberOfRooms": { // Peut être plus précis
+    "@type": "QuantitativeValue",
+    "value": 2, // Nombre de chambres à coucher
+    "unitText": "chambres" 
+  },
+  // "numberOfRooms": 2.5, // L'ancienne version est aussi acceptable
   "occupancy": {
      "@type": "QuantitativeValue",
      "minValue": 4,
-     "maxValue": 6
+     "maxValue": 6,
+     "unitText": "personnes"
   },
   "amenityFeature": [
     { "@type": "LocationFeatureSpecification", "value": "true", "name": "Piscine partagée" },
     { "@type": "LocationFeatureSpecification", "value": "true", "name": "Climatisation" },
     { "@type": "LocationFeatureSpecification", "value": "true", "name": "Solarium privé" },
-    { "@type": "LocationFeatureSpecification", "value": "true", "name": "Wi-Fi gratuit" }
+    { "@type": "LocationFeatureSpecification", "value": "true", "name": "Wi-Fi gratuit" },
+    { "@type": "LocationFeatureSpecification", "value": "true", "name": "Cuisine équipée" },
+    { "@type": "LocationFeatureSpecification", "value": "true", "name": "Lave-linge" },
+    { "@type": "LocationFeatureSpecification", "value": "true", "name": "Parking gratuit" }
+    // Ajoutez d'autres équipements importants
   ],
   "petsAllowed": "false",
-  "tourBookingPage": "https://tally.so/r/nWqyEv",
-  "photo": [
-    {
-      "@type": "ImageObject",
-      "contentUrl": "https://www.casadelsol-torrevieja.com/images/piscine-residence-casa-del-sol-torrevieja.webp",
-      "caption": "Grande piscine partagée de la résidence Casa del Sol à Torrevieja"
-    },
-    {
-      "@type": "ImageObject",
-      "contentUrl": "https://www.casadelsol-torrevieja.com/images/solarium-prive-toit-casa-del-sol-torrevieja.webp",
-      "caption": "Solarium privé sur le toit avec transats et pergola à Casa Del Sol Torrevieja"
-    }
-   ],
-   "offers": {
-    "@type": "Offer",
-    "priceSpecification": {
-      "@type": "PriceSpecification",
-      "priceCurrency": "EUR",
-      "priceRange": "350-620" 
-    },
-     "availability": "http://schema.org/InStock", 
-     "url": "https://www.casadelsol-torrevieja.com/#reservation"
-  },
+  "url": "https://www.casadelsol-torrevieja.com/", // URL canonique de cette page
+  "tourBookingPage": "https://tally.so/r/nWqyEv", // Correct si c'est la page de réservation
   "geo": { 
     "@type": "GeoCoordinates",
     "latitude": "37.9849",  
     "longitude": "-0.6804"
-  } 
-}
+  },
+  // Solution pour les offres de prix :
+  // Soit en utilisant 'potentialAction' avec un 'ReserveAction'
+  // Ou, plus simplement pour Google, en se concentrant sur les informations de base de l'appartement.
+  // Google préfère souvent que les offres soient liées à un 'Product' ou 'Service'.
+  // Pour une 'VacationRental', on peut l'indiquer, mais le 'priceRange' doit être structuré différemment.
+
+  // Alternative pour les offres, si vous voulez essayer de la structurer :
+  // Cette structure est plus pour un produit, mais Google pourrait l'interpréter pour une location.
+  // Il n'y a pas de "VacationRentalPosting" standard comme pour JobPosting.
+  // On peut essayer d'utiliser "RentAction" si Google le supporte pour les résultats enrichis de location.
+
+  // Option simplifiée (souvent suffisante) :
+  // Google comprendra les tarifs à partir de votre page.
+  // Si vous voulez spécifier un prix, le mieux serait d'avoir une page par "offre" (par saison par ex.)
+  // ou d'utiliser une structure plus complexe si vous avez un système de réservation intégré.
+
+  // Pour l'instant, je vais retirer la section "offers" complexe car elle cause des avertissements
+  // et Google peut extraire les tarifs de votre page.
+  // Si vous voulez la garder et la corriger, voici comment :
+  /*
+   "potentialAction": { // Indique une action possible
+    "@type": "ReserveAction", // L'action est de réserver
+    "target": 
+    "@type": "EntryPoint",
+      "urlTemplate": "https://www.casadelsol-torrevieja.com/#reservation", // Ou votre page de réservation Tally
+      "actionPlatform": [
+        "http://schema.org/DesktopWebPlatform",
+        "http://schema.org/IOSPlatform",
+        "http://schema.org/AndroidPlatform"
+      ]
+    },
+    "priceSpecification": { // Spécification du prix pour cette action de réservation
+      "@type": "CompoundPriceSpecification", // Pour une gamme de prix
+      "name": "Tarif hebdomadaire",
+      "priceCurrency": "EUR",
+      "minPrice": "350.00", // Format numérique
+      "maxPrice": "620.00"  // Format numérique
+    }
+  }
+  */
+  // Note: 'VacationRental' est un type plus spécifique que 'Apartment' que Google
+  // pourrait mieux comprendre pour les résultats de recherche de location.
+  // Vous pouvez changer "@type": "Apartment" en "@type": "VacationRental" et voir si c'est mieux accepté.
+  // VacationRental est un type en attente sur schema.org mais utilisé par Google.
+
 </script>
 </head>
 
