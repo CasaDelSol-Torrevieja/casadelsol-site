@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demande Reçue - Casa Del Sol Torrevieja</title>
+  <meta name="description" content="Merci pour votre demande concernant la location de notre appartement Casa Del Sol à Torrevieja. Nous vous répondrons dans les plus brefs délais.">
+  
+  <!-- IMPORTANT : Empêcher l'indexation de cette page de remerciement -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="stylesheet" href="css/style.css"> <!-- Votre CSS principal -->
+
+  <!-- Liens Favicon (identiques à l'index) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="shortcut icon" href="/favicon.ico"> 
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Styles spécifiques pour la page de remerciement pour la centrer joliment */
+    body.remerciement-page {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .remerciement-page main {
+      flex-grow: 1;
+      display: flex;
+      align-items: center; /* Centre verticalement le contenu */
+      justify-content: center; /* Centre horizontalement le contenu */
+    }
+    .remerciement-content {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #f8f9fa; /* Fond léger pour le bloc de contenu */
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: 20px;
+    }
+    .remerciement-content h1 {
+      color: #1E2439;
+      font-size: clamp(24px, 4vw, 32px);
+      margin-bottom: 20px;
+    }
+    .remerciement-content p {
+      font-size: 1.1em;
+      line-height: 1.7;
+      margin-bottom: 25px;
+      color: #3C4043;
+    }
+    .remerciement-icon {
+        font-size: 48px; /* Taille de l'emoji ou de l'icône */
+        color: #28a745; /* Vert pour succès */
+        margin-bottom: 20px;
+        display: block;
+    }
+  </style>
+</head>
+<body class="remerciement-page"> <!-- Classe pour styler spécifiquement le body si besoin -->
+
+  <!-- Header simplifié (optionnel, vous pouvez garder le header complet) -->
+  <header id="header" style="position: static; box-shadow: none;"> <!-- Moins proéminent -->
+    <div class="container">
+      <div class="logo-container" style="margin: 0 auto;"> <!-- Logo centré -->
+        <a href="index.html"> 
+          <img src="images/logo-casa-del-sol-torrevieja.webp" 
+               alt="Logo Casa del Sol Torrevieja - Location appartement vacances">
+        </a>
+      </div>
+      <!-- Pas de nav ni de bouton burger ici pour simplifier -->
+    </div>
+  </header>
+
+  <main>
+    <div class="remerciement-content">
+      <span class="remerciement-icon">✔️</span> <!-- Ou une image/icône SVG de coche verte -->
+      <h1>Merci pour votre demande !</h1>
+      <p>Votre message concernant la location de l'appartement <strong>Casa Del Sol à Torrevieja</strong> a bien été envoyé.</p>
+      <p>Nous l'examinerons attentivement et nous vous répondrons dans les plus brefs délais, généralement sous 24 à 48 heures.</p>
+      <p>En attendant, n'hésitez pas à continuer d'explorer notre site :</p>
+      <a href="index.html" class="button-primary" style="margin-top: 10px;">Retour à l'accueil</a>
+      <a href="vacances-a-torrevieja.html" class="button-secondary" style="margin-top: 10px; margin-left:10px;">Découvrir Torrevieja</a>
+    </div>
+  </main>
+
+  <footer id="footer" style="background-color: transparent; border-top:none;"> <!-- Footer simplifié -->
+    <div class="container">
+      <p class="copyright" style="color: #70757a;">© <span id="currentYear"></span> Casa Del Sol Torrevieja. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentYearSpan = document.getElementById('currentYear');
+      if (currentYearSpan) {
+        currentYearSpan.textContent = new Date().getFullYear();
+      }
+    });
+  </script>
+</body>
+</html>
